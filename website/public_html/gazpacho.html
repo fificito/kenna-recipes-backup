@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Gazpacho Recipe</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="gazpacho.html" class="active">English</a>
+        <a href="gazpacho-es.html">Español</a>
+    </div>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+    
+    <header>
+        <h1>Easy Gazpacho Recipe</h1>
+        <p class="subtitle"><a href="https://www.loveandlemons.com/gazpacho-recipe/" target="_blank">Love and Lemons Recipe →</a></p>
+        <div class="category-badge">Soups</div>
+        <div class="category-badge">Appetizer</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep Time</span>
+            <span class="meta-value">10 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Chilling Time</span>
+            <span class="meta-value">2 hours</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Total Time</span>
+            <span class="meta-value">2 hours 10 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Servings</span>
+            <span class="meta-value">4 to 6</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredients</h3>
+        <ul class="recipe-list-styled">
+            <li>1 English cucumber (or regular cucumber, peeled)</li>
+            <li>2½ pounds fresh tomatoes (or 2 cans crushed tomatoes)</li>
+            <li>1 red bell pepper (or 2 fresno chiles for heat)</li>
+            <li>3 garlic cloves</li>
+            <li>¼ red onion (rinsed to reduce sharpness)</li>
+            <li>½ cup fresh cilantro (optional but recommended)</li>
+            <li>½ cup extra-virgin olive oil</li>
+            <li>3 tablespoons red wine vinegar or sherry vinegar</li>
+            <li>Salt and pepper to taste</li>
+        </ul>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>For Serving (Optional Garnishes)</h3>
+        <ul class="recipe-list-styled">
+            <li>Diced cucumber</li>
+            <li>Cherry tomatoes, halved</li>
+            <li>Fresh herbs (cilantro, basil)</li>
+            <li>Extra olive oil</li>
+            <li>Croutons or roasted chickpeas</li>
+            <li>Hard boiled eggs, chopped</li>
+            <li>Avocado slices</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instructions</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Prepare the Vegetables</h4>
+            <div class="instruction-text">
+                Dice some of the cucumber and set aside for garnish. Peel the remaining cucumber. Roughly chop the tomatoes, bell pepper, garlic, and red onion.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Blend the Soup</h4>
+            <div class="instruction-text">
+                Add the peeled cucumber, tomatoes, bell pepper, garlic, red onion, cilantro, olive oil, vinegar, salt, and pepper to a blender. Blend until smooth, working in batches if necessary (this recipe makes a lot of soup). You may need to blend in 2-3 batches depending on your blender size.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Chill the Soup</h4>
+            <div class="instruction-text">
+                Transfer the blended gazpacho to a large bowl or pitcher. Refrigerate for at least 2 hours (or up to 3 days). The longer it chills, the more the flavors meld and develop, making it more complex and refreshing. The soup becomes even better on days 2 and 3!
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Adjust Seasoning</h4>
+            <div class="instruction-text">
+                Before serving, taste and adjust seasoning with salt, pepper, and vinegar to your preference. The soup should be balanced between tangy, rich, and refreshing.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Serve</h4>
+            <div class="instruction-text">
+                Serve cold in glasses or bowls. Garnish with diced cucumber, cherry tomatoes, fresh herbs, and a drizzle of olive oil. You can also add croutons, roasted chickpeas, hard boiled eggs, or avocado for a more substantial meal.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Chef's Tips</h3>
+        <ul>
+            <li><strong>Use Quality Tomatoes:</strong> The quality of your tomatoes will really affect the final dish. Fresh, ripe tomatoes in summer are best. If using canned, look for high-quality crushed tomatoes.</li>
+            <li><strong>Fresno Chiles vs Bell Pepper:</strong> This recipe traditionally uses red bell pepper, but fresno chiles add a wonderful heat. Choose based on your preference.</li>
+            <li><strong>Batch Blending:</strong> This recipe makes a lot of soup! Don't hesitate to blend in multiple batches to ensure smooth, even texture.</li>
+            <li><strong>Rinsing the Onion:</strong> Rinsing raw red onion under cold water before blending tames its sharp, pungent flavor.</li>
+            <li><strong>Chilling is Essential:</strong> The 2-hour chill time is not optional! It allows all the flavors to meld and develop properly. Rushing this step will result in a less flavorful soup.</li>
+            <li><strong>Make Ahead:</strong> Gazpacho actually tastes better the longer it sits. Make it the day before and it will be even more delicious!</li>
+            <li><strong>Vegan & Gluten-Free:</strong> This recipe is naturally vegan and gluten-free, making it perfect for various dietary preferences.</li>
+        </ul>
+    </div>
+</body>
+</html>

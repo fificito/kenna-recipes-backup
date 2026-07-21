@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta Fácil de Gazpacho</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="gazpacho.html">English</a>
+        <a href="gazpacho-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Receta Fácil de Gazpacho</h1>
+        <p class="subtitle"><a href="https://www.loveandlemons.com/gazpacho-recipe/" target="_blank">Receta Love and Lemons →</a></p>
+        <div class="category-badge">Sopas</div>
+        <div class="category-badge">Entrada</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Tiempo de Preparación</span>
+            <span class="meta-value">10 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo de Enfriamiento</span>
+            <span class="meta-value">2 horas</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">2 horas 10 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">4 a 6</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredientes</h3>
+        <ul class="recipe-list-styled">
+            <li>1 pepino inglés (o pepino regular, pelado)</li>
+            <li>1.2 kg de tomates frescos (o 2 latas de tomate molido)</li>
+            <li>1 pimiento morrón rojo (o 2 chiles fresno para más picor)</li>
+            <li>3 dientes de ajo</li>
+            <li>¼ cebolla morada (enjuagada para reducir su sabor fuerte)</li>
+            <li>½ taza de cilantro fresco (opcional pero recomendado)</li>
+            <li>½ taza de aceite de oliva virgen extra</li>
+            <li>3 cucharadas de vinagre de vino tinto o vinagre de jerez</li>
+            <li>Sal y pimienta al gusto</li>
+        </ul>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Para Servir (Guarniciones Opcionales)</h3>
+        <ul class="recipe-list-styled">
+            <li>Pepino picado</li>
+            <li>Tomates cherry, cortados por la mitad</li>
+            <li>Hierbas frescas (cilantro, albahaca)</li>
+            <li>Aceite de oliva extra</li>
+            <li>Picatostes o garbanzos asados</li>
+            <li>Huevos cocidos, picados</li>
+            <li>Rodajas de aguacate</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Preparar las Verduras</h4>
+            <div class="instruction-text">
+                Pica parte del pepino y reserva para guarnición. Pela el resto del pepino. Corta en trozos los tomates, pimiento, ajo y cebolla morada.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Licuar la Sopa</h4>
+            <div class="instruction-text">
+                Añade el pepino pelado, tomates, pimiento, ajo, cebolla morada, cilantro, aceite de oliva, vinagre, sal y pimienta a la licuadora. Licúa hasta obtener una consistencia suave, trabajando en lotes si es necesario (esta receta rinde mucha sopa). Posiblemente necesites licuar en 2-3 lotes dependiendo del tamaño de tu licuadora.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Enfriar la Sopa</h4>
+            <div class="instruction-text">
+                Transfiere el gazpacho licuado a un tazón o jarra grande. Refrigera durante al menos 2 horas (o hasta 3 días). Cuanto más tiempo esté en el refrigerador, más se fusionan y desarrollan los sabores, haciéndola más compleja y refrescante. ¡La sopa será aún mejor los días 2 y 3!
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Ajustar el Sazón</h4>
+            <div class="instruction-text">
+                Antes de servir, prueba la sopa y ajusta el sazón con sal, pimienta y vinagre según tu preferencia. La sopa debe estar equilibrada entre lo ácido, lo rico y lo refrescante.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Servir</h4>
+            <div class="instruction-text">
+                Sirve bien fría en vasos o tazones. Adorna con pepino picado, tomates cherry, hierbas frescas y un chorrito de aceite de oliva. También puedes añadir picatostes, garbanzos asados, huevos cocidos o aguacate para una comida más sustancial.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef</h3>
+        <ul>
+            <li><strong>Usa Tomates de Calidad:</strong> La calidad de los tomates afectará significativamente el resultado final. Los tomates frescos y maduros del verano son los mejores. Si usas tomates enlatados, busca marcas de buena calidad.</li>
+            <li><strong>Chiles Fresno vs Pimiento Morrón:</strong> Esta receta tradicionalmente usa pimiento morrón rojo, pero los chiles fresno añaden un picor maravilloso. Elige según tu preferencia.</li>
+            <li><strong>Licuado en Lotes:</strong> ¡Esta receta rinde mucha sopa! No dudes en licuar en varios lotes para asegurar una textura suave y uniforme.</li>
+            <li><strong>Enjuaga la Cebolla:</strong> Enjuagar la cebolla morada cruda bajo agua fría antes de licuar suaviza su sabor fuerte y pungente.</li>
+            <li><strong>El Enfriamiento es Esencial:</strong> ¡El tiempo de 2 horas de enfriamiento no es opcional! Permite que todos los sabores se fusionen y desarrollen adecuadamente. Saltarse este paso resultará en una sopa menos sabrosa.</li>
+            <li><strong>Prepara con Anticipación:</strong> El gazpacho en realidad sabe mejor cuanto más tiempo reposa. ¡Prepáralo el día anterior y será aún más delicioso!</li>
+            <li><strong>Vegana y Sin Gluten:</strong> Esta receta es naturalmente vegana y sin gluten, lo que la hace perfecta para diferentes preferencias dietéticas.</li>
+        </ul>
+    </div>
+</body>
+</html>

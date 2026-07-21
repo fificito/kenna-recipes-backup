@@ -5,306 +5,188 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kenna's Recipes</title>
     <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    max-width: 800px;
+    background-color: #fdfbf7;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
     margin: 0 auto;
     padding: 2rem;
-    background-color: #fdfbf7;
 }
 
 header {
     text-align: center;
     margin-bottom: 3rem;
+    padding-bottom: 2rem;
     border-bottom: 2px solid #e0dcd0;
-    padding-bottom: 1rem;
 }
 
 h1 {
     color: #5d4037;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
 .subtitle {
-    font-style: italic;
     color: #8d6e63;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-style: italic;
 }
 
-.category-section {
-    margin-bottom: 2rem;
+.language-switcher {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    text-align: center;
 }
 
-.category-header {
+.language-switcher a {
     color: #795548;
-    border-left: 4px solid #795548;
-    padding-left: 1rem;
-    margin-bottom: 1rem;
-}
-
-.recipe-list {
-    list-style: none;
-    padding: 0;
-}
-
-.recipe-list li {
-    margin: 0.5rem 0;
-}
-
-.recipe-list a {
-    color: #388e3c;
     text-decoration: none;
     font-weight: 500;
-    cursor: pointer;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
-.recipe-list a:hover {
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+main {
+    padding: 2rem 0;
+}
+
+.recipe-category {
+    margin-bottom: 3rem;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #c49a7f;
+}
+
+.recipe-category h2 {
+    color: #5d4037;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #f5f2eb;
+}
+
+.recipes-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.recipe-item {
+    padding: 1rem;
+    background: #fef5f1;
+    border-radius: 6px;
+    border: 1px solid #f0e6dd;
+    transition: all 0.3s ease;
+}
+
+.recipe-item:hover {
+    background: #fff5f0;
+    box-shadow: 0 4px 12px rgba(197, 154, 127, 0.2);
+    transform: translateY(-2px);
+}
+
+.recipe-item a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    display: block;
+    padding: 0.5rem 0;
+}
+
+.recipe-item a:hover {
+    color: #5d4037;
     text-decoration: underline;
 }
 
-.recipe-card {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border: 1px solid #e0dcd0;
-    margin-top: 2rem;
-    display: none;
+.empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #999;
 }
 
-.recipe-card.active {
-    display: block;
-}
-
-.recipe-card h2 {
-    color: #5d4037;
-    border-bottom: 2px solid #fdfbf7;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.ingredient-group {
-    margin-bottom: 1.5rem;
-}
-
-.ingredient-group h3 {
-    font-size: 1.1rem;
-    color: #795548;
+.empty-state h2 {
+    color: #bbb;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
-.recipe-list-styled {
-    list-style: none;
-    padding: 0;
+.empty-state p {
+    color: #ccc;
 }
 
-.recipe-list-styled li {
-    padding: 0.4rem 0;
-    border-bottom: 1px solid #f5f2eb;
-}
-
-.recipe-list-styled li:last-child {
-    border-bottom: none;
-}
-
-.instruction-list {
-    padding-left: 1.2rem;
-}
-
-.instruction-list li {
-    margin-bottom: 1rem;
-}
-
-.back-button {
-    color: #795548;
-    text-decoration: none;
-    font-weight: 500;
-    cursor: pointer;
-    display: none;
-    margin-bottom: 2rem;
-}
-
-.back-button.active {
-    display: inline-block;
-}
-
-.back-button:hover {
-    text-decoration: underline;
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #999;
+    border-top: 1px solid #e0dcd0;
+    margin-top: 3rem;
+    font-size: 0.9rem;
 }
     </style>
 </head>
 <body>
-    <div class="language-switcher" style="text-align: center; margin-bottom: 2rem;">
-        <a href="index.html" style="color: #795548; text-decoration: none; font-weight: 500; margin: 0 0.5rem; padding: 0.5rem 1rem; border-radius: 4px; display: inline-block; background: #e8d4c4; color: #5d4037;">English</a>
-        <a href="index-es.html" style="color: #795548; text-decoration: none; font-weight: 500; margin: 0 0.5rem; padding: 0.5rem 1rem; border-radius: 4px; display: inline-block;">Español</a>
-    </div>
-
-    <button class="back-button" onclick="showHome()">← Back to Home</button>
-    
-    <div id="home" class="home-view">
+    <div class="container">
         <header>
-            <h1>Kenna's recipes</h1>
-            <p class="subtitle">These are the recipes I use</p>
+            <h1>🥘 Kenna's Recipes</h1>
+            <p class="subtitle">A collection of delicious homemade recipes</p>
+            
+            <div class="language-switcher">
+                <a href="index.html" class="active">English</a>
+                <a href="index-es.html">Español</a>
+            </div>
         </header>
+
         <main id="recipe-directory">
-            <div class="category-section">
-                <h2 class="category-header">Main Course</h2>
-                <ul class="recipe-list">
-                    <li><a onclick="showRecipe('duck')">Duck with Orange and Capsicum</a></li>
-                    <li><a onclick="showRecipe('risotto')">Mushroom Risotto</a></li>
+            <!-- SOUPS CATEGORY -->
+            <div class="recipe-category">
+                <h2>🥣 Soups</h2>
+                <ul class="recipes-list">
+                    <li class="recipe-item">
+                        <a href="gazpacho.html">Easy Gazpacho Recipe</a>
+                    </li>
                 </ul>
             </div>
-            <div class="category-section">
-                <h2 class="category-header">Desserts</h2>
-                <ul class="recipe-list">
-                    <li><a onclick="showRecipe('lemon')">Classic Lemon Meringue Pie</a></li>
-                    <li><a href="sally-lemon-meringue.html" target="_blank">Classic Lemon Meringue Pie (Sally's Version) ↗</a></li>
-                </ul>
+
+            <!-- EMPTY STATE - Show when no recipes in any category -->
+            <div class="empty-state" id="empty-state" style="display: none;">
+                <h2>No recipes yet</h2>
+                <p>Check back soon! 🥘</p>
             </div>
         </main>
+
+        <footer>
+            <p>Made with ❤️ for Kenna</p>
+        </footer>
     </div>
-
-    <!-- Duck Recipe -->
-    <div id="duck-recipe" class="recipe-card">
-        <h2>Duck with Orange and Capsicum</h2>
-        <p class="recipe-meta">Category: Main Course</p>
-        
-        <h3>Ingredients</h3>
-        <div class="ingredient-group">
-            <h4>For 6 People:</h4>
-            <ul class="recipe-list-styled">
-                <li>1 duck</li>
-                <li>5 oranges</li>
-                <li>200g granulated sugar</li>
-                <li>3 tablespoons vinegar</li>
-                <li>Salt and pepper</li>
-            </ul>
-        </div>
-
-        <h3>Instructions</h3>
-        <ol class="instruction-list">
-            <li><strong>Prepare the gastrique:</strong> Create a caramel with 200g of granulated sugar and three tablespoons of wine vinegar.</li>
-            <li><strong>Add citrus:</strong> Once the mixture has caramelized, stir in the juice of two oranges.</li>
-            <li><strong>Prepare the pan:</strong> Line an oven-proof dish with orange slices and place the duck on top.</li>
-            <li><strong>Roast:</strong> Drizzle the caramelized mixture over the duck, season lightly with salt and pepper, and place in the oven at 180°C (350°F), basting regularly.</li>
-            <li><strong>Finish:</strong> The duck should take on a dark red hue by the end of the cooking process.</li>
-            <li><strong>Note:</strong> Be careful not to let the oranges over-caramelize.</li>
-        </ol>
-
-        <h3>Cooking Time</h3>
-        <p>3-4 hours</p>
-    </div>
-
-    <!-- Risotto Recipe -->
-    <div id="risotto-recipe" class="recipe-card">
-        <h2>Mushroom Risotto</h2>
-        <p class="recipe-meta">Category: Main Course</p>
-        
-        <h3>Ingredients</h3>
-        <div class="ingredient-group">
-            <h4>For 4 People:</h4>
-            <ul class="recipe-list-styled">
-                <li>50g dried porcini mushrooms</li>
-                <li>1 vegetable stock cube</li>
-                <li>2 tbsp olive oil</li>
-                <li>1 onion, finely chopped</li>
-                <li>2 garlic cloves, finely chopped</li>
-                <li>250g pack chestnut mushrooms, chopped</li>
-                <li>300g risotto rice, such as arborio</li>
-                <li>1 x 175ml glass white wine</li>
-                <li>25g butter</li>
-            </ul>
-        </div>
-
-        <h3>Instructions</h3>
-        <p><em>To complete this recipe, please provide the step-by-step cooking instructions.</em></p>
-    </div>
-
-    <!-- Lemon Meringue Pie Recipe -->
-    <div id="lemon-recipe" class="recipe-card">
-        <h2>Classic Lemon Meringue Pie</h2>
-        <p class="recipe-meta">Category: Desserts</p>
-        
-        <h3>Ingredients</h3>
-        <div class="ingredient-group">
-            <h4>For the Pie Crust:</h4>
-            <ul class="recipe-list-styled">
-                <li>2 1/4 cup all purpose flour</li>
-                <li>1 teaspoon salt</li>
-                <li>3/4 cup unsalted butter, cut into ¼" cubes and chilled</li>
-                <li>¼ cup ice water</li>
-            </ul>
-        </div>
-        <div class="ingredient-group">
-            <h4>For the Lemon Curd:</h4>
-            <ul class="recipe-list-styled">
-                <li>8 large egg yolks</li>
-                <li>1 cup sugar</li>
-                <li>¼ teaspoon kosher salt</li>
-                <li>⅓ cup cornstarch</li>
-                <li>3 tablespoons fresh lemon zest</li>
-                <li>1 cup freshly squeezed lemon juice (from about 6 lemons)</li>
-                <li>3 tablespoons unsalted butter, room temperature</li>
-            </ul>
-        </div>
-        <div class="ingredient-group">
-            <h4>For the Swiss Meringue:</h4>
-            <ul class="recipe-list-styled">
-                <li>4 1⁄2 cups confectioners' sugar</li>
-                <li>8 large egg whites</li>
-            </ul>
-        </div>
-
-        <h3>Instructions</h3>
-        <ol class="instruction-list">
-            <li><strong>Make the pie crust:</strong> In the bowl of stand mixer fitted with a paddle attachment, combine the flour and salt on low speed. Slowly add the butter and continue to mix until the butter forms pea-size lumps, about 2 minutes. Drizzle in the ice cold water until the dough comes together—you may not need all the water. Continue mixing until dough is supple, about 30 seconds. Transfer dough to a lightly floured work surface. Use the heel of your hand to flatten the dough and form it into a disk. Wrap with plastic and chill in the refrigerator for at least 2 hours and up to 3 days.</li>
-            <li><strong>Shape the pie crust:</strong> Remove pie crust from the refrigerator. Lightly oil a 9-inch pie dish with cooking spray or butter. When the dough is warm enough to manipulate, lightly flour a work surface and roll crust out into an ⅛ inch-thick circle. Fold the circle over the rolling pin and transfer to the prepared pie dish. Gently press crust into the pie plate. Crimp as desired. Transfer to freezer and chill for at least 1 hour.</li>
-            <li><strong>Blind bake the pie crust:</strong> Heat the oven to 375°F. Remove the crust from the freezer and line the inside of the crust with parchment paper. Fill with pie weights or dried beans and bake until crust is golden, about 25–30 minutes. Remove the pie weights and parchment and bake uncovered until the bottom of the crust is golden, about 10 more minutes. Cool on a wire rack.</li>
-            <li><strong>Make the lemon curd:</strong> In a medium bowl, beat egg yolks together. In a medium saucepan over medium heat, whisk together sugar, salt, cornstarch, lemon zest, lemon juice, and 2 cups water. Cook over medium-low heat, whisking, until hot (135°F). Increase heat to medium and cook until the custard is thick, about 3 more minutes. Reduce heat to low. Temper the egg yolks by slowly streaming a few spoonfuls of the hot curd into the yolks. Slowly add the egg yolk mixture to the saucepan. Increase heat to medium and cook until thickened. When the curd begins to bubble, whisk continuously for 2 minutes. Remove curd from heat and whisk in the butter. Strain curd through a fine mesh strainer. Use a rubber spatula to push as much of the custard through the strainer as possible.</li>
-            <li><strong>Make the Swiss meringue:</strong> Fill a medium pot with about 3 inches of water and bring to a simmer. In a medium heat-proof bowl (or the metal bowl of a stand mixer), stir together the confectioners' sugar and egg whites. Place the bowl on top of the pot of simmering water. The bowl should sit on the rim of the pot, well above the water. Whisk the egg white mixture constantly as it warms. When it reaches 113°F and the sugar is fully dissolved, remove the bowl from the pot. Using a stand mixer fitted with a whisk attachment, or a hand mixer, beat egg whites on high speed. As they whip, the egg whites will double in volume, thicken, and cool. When stiff peaks form, the meringue is finished—it should be very fluffy with a consistency similar to shaving foam. This should take about 5 minutes, depending on your mixer.</li>
-            <li><strong>Assemble the pie:</strong> Spread lemon curd into the prebaked pie crust in an even layer and cool until it forms a skin, about 30 minutes. Heat oven to 400°F. Top pie with meringue, using a rubber spatula to pile the meringue high. Bake until meringue peaks are light golden brown, with some darker spots, about 8 minutes.</li>
-        </ol>
-    </div>
-
-    <script>
-        function showRecipe(recipeName) {
-            // Hide home view
-            document.getElementById('home').style.display = 'none';
-            
-            // Hide all recipe cards
-            const cards = document.querySelectorAll('.recipe-card');
-            cards.forEach(card => card.classList.remove('active'));
-            
-            // Show selected recipe
-            const recipeMap = {
-                'duck': 'duck-recipe',
-                'risotto': 'risotto-recipe',
-                'lemon': 'lemon-recipe'
-            };
-            
-            const recipeId = recipeMap[recipeName];
-            if (recipeId) {
-                document.getElementById(recipeId).classList.add('active');
-                document.querySelector('.back-button').classList.add('active');
-                window.scrollTo(0, 0);
-            }
-        }
-        
-        function showHome() {
-            // Show home view
-            document.getElementById('home').style.display = 'block';
-            
-            // Hide all recipe cards
-            const cards = document.querySelectorAll('.recipe-card');
-            cards.forEach(card => card.classList.remove('active'));
-            
-            // Hide back button
-            document.querySelector('.back-button').classList.remove('active');
-            window.scrollTo(0, 0);
-        }
-    </script>
 </body>
 </html>

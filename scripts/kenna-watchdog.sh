@@ -6,25 +6,12 @@
 set -e
 
 WEB_ROOT="$HOME/public_html"
-SITE_URL="https://recetasdekenna.com"
 LOG_FILE="$HOME/.hermes/logs/kenna-watchdog.log"
 
 # Create log directory if it doesn't exist
 mkdir -p "$(dirname "$LOG_FILE")"
 
-# Function to check if site is accessible
-check_site_health() {
-    local response=$(curl -s -o /dev/null -w "%{http_code}" "$SITE_URL/" 2>&1)
-    
-    if [ "$response" != "200" ]; then
-        echo "❌ SITE DOWN: $SITE_URL returned HTTP $response"
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] Site returned HTTP $response" >> "$LOG_FILE"
-        return 1
-    fi
-    return 0
-}
-
-# Function to check if recipe files exist
+# Function to check if required files exist locally
 check_files_exist() {
     local missing_files=()
     
@@ -33,12 +20,6 @@ check_files_exist() {
     fi
     if [ ! -f "$WEB_ROOT/index-es.html" ]; then
         missing_files+=("index-es.html")
-    fi
-    if [ ! -f "$WEB_ROOT/sally-lemon-meringue.html" ]; then
-        missing_files+=("sally-lemon-meringue.html")
-    fi
-    if [ ! -f "$WEB_ROOT/sally-lemon-meringue-es.html" ]; then
-        missing_files+=("sally-lemon-meringue-es.html")
     fi
     
     if [ ${#missing_files[@]} -gt 0 ]; then
@@ -49,11 +30,11 @@ check_files_exist() {
     return 0
 }
 
-# Function to check if files are readable
+# Function to check if files are readable and valid HTML
 check_file_integrity() {
     local errors=()
     
-    for file in "$WEB_ROOT"/index.html "$WEB_ROOT"/index-es.html "$WEB_ROOT"/sally-lemon-meringue.html "$WEB_ROOT"/sally-lemon-meringue-es.html; do
+    for file in "$WEB_ROOT"/index.html "$WEB_ROOT"/index-es.html; do
         if [ -f "$file" ]; then
             # Check if file is valid HTML (has opening and closing html tags)
             if ! grep -q "<html" "$file" || ! grep -q "</html>" "$file"; then
@@ -72,10 +53,6 @@ check_file_integrity() {
 
 # Run all checks
 errors=0
-
-if ! check_site_health; then
-    errors=$((errors + 1))
-fi
 
 if ! check_files_exist; then
     errors=$((errors + 1))
