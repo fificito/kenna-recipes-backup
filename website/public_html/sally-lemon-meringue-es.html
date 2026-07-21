@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarta Clásica de Merengue de Limón - Versión Sally</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.ingredient-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredient-list li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.ingredient-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="sally-lemon-meringue.html">English</a>
+        <a href="sally-lemon-meringue-es.html" class="active">Español</a>
+    </div>
+
+    <button class="back-button" onclick="showHome()">← Volver al Inicio</button>
+    
+    <header>
+        <h1>Tarta Clásica de Merengue de Limón</h1>
+        <p class="subtitle">Receta de Sally's Baking Addiction</p>
+        <div class="category-badge">Postres</div>
+        <div class="category-badge">Intermedio</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Tiempo de Preparación</span>
+            <span class="meta-value">6 horas</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo de Cocción</span>
+            <span class="meta-value">1 hora 10 min</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">7 horas 10 min</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Rendimiento</span>
+            <span class="meta-value">Una tarta de 9 pulgadas</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Para la Masa de Tarta</h3>
+        <ul class="ingredient-list">
+            <li>Masa de Tarta Casera*</li>
+        </ul>
+        <p style="font-size: 0.9rem; color: #999; margin-top: 1rem;">*Consulta la receta de Masa de Tarta Casera de Sally</p>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Para el Relleno de Limón</h3>
+        <ul class="ingredient-list">
+            <li>5 yemas de huevo grandes (usa las claras en el merengue de abajo)</li>
+            <li>1 1/3 tazas (320ml) de agua</li>
+            <li>1 taza (200g) de azúcar granulado</li>
+            <li>1/3 taza (38g) de almidón de maíz</li>
+            <li>1/4 cucharadita de sal</li>
+            <li>1/2 taza (120ml) de jugo de limón fresco</li>
+            <li>1 cucharada de ralladura de limón</li>
+            <li>2 cucharadas (28g) de mantequilla sin sal, ablandada a temperatura ambiente</li>
+        </ul>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Para el Merengue Suizo</h3>
+        <ul class="ingredient-list">
+            <li>5 claras de huevo grandes, a temperatura ambiente</li>
+            <li>1/2 cucharadita de tártaro</li>
+            <li>1/2 taza (100g) de azúcar granulado</li>
+            <li>1/8 cucharadita de sal</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Preparar la Masa</h4>
+            <div class="instruction-text">
+                Asegúrate de que tu masa de tarta esté preparada antes de comenzar. Es mejor preparar la masa de tarta la noche anterior porque necesita refrigerarse en el refrigerador durante al menos 2 horas antes de estirar y hornear a ciegas.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Hornear a Ciegas la Masa</h4>
+            <div class="instruction-text">
+                Precalienta el horno a 375°F (190°C) y ajusta tu rejilla del horno a la posición más baja. Hornea parcialmente a ciegas la masa de tarta en un molde de tarta de 9 pulgadas. Asegúrate de ondular o hacer una puntilla en los bordes de la masa de tarta. <strong>Consejo:</strong> Puedes comenzar con los pasos del relleno de merengue de limón mientras tu masa se hornea a ciegas. Pero hacer el relleno es sensible al tiempo porque templarás las yemas de huevo, así que si la multitarea no es lo tuyo, simplemente espera hasta que tu masa esté lista antes de comenzar el relleno.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Reducir la Temperatura</h4>
+            <div class="instruction-text">
+                Reduce la temperatura del horno a 350°F (177°C).
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Hacer el Relleno de Limón</h4>
+            <div class="instruction-text">
+                Bate las yemas de huevo juntas en un tazón mediano o una taza medidora de líquidos. Deja aparte. Bate el agua, el azúcar granulado, el almidón de maíz, la sal, el jugo de limón y la ralladura de limón juntos en una cacerola mediana a fuego medio. La mezcla será delgada y turbia, luego eventualmente comenzará a espesarse y a burbujear después de aproximadamente 6 minutos. Una vez espesada, bate y reduce el fuego a bajo.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Templar las Yemas de Huevo</h4>
+            <div class="instruction-text">
+                Vierte muy lentamente algunas cucharadas grandes de la mezcla tibia de limón en las yemas de huevo batidas. Luego, también en un chorro muy lento, bate la mezcla de yemas en la cacerola. Aumenta el fuego a medio. Cocina hasta que la mezcla esté espesa y comiencen a aparecer burbujas grandes en la superficie. Retira la cacerola del fuego y bate la mantequilla. Esparce el relleno en la masa parcialmente horneada. Deja aparte mientras preparas el merengue. <br><br><strong>Importante:</strong> No dejes que el relleno se enfríe demasiado ya que quieres un relleno caliente cuando cubras con el merengue. El relleno caliente ayuda a sellar las dos capas juntas, previniendo la separación.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Hacer el Merengue</h4>
+            <div class="instruction-text">
+                Con una batidora de mano o una batidora de pie equipada con un accesorio de varilla, bate las claras de huevo y el tártaro juntos a velocidad media durante 1 minuto, luego aumenta a velocidad alta hasta que se formen picos blandos, aproximadamente 4 minutos más. Añade el azúcar y la sal, luego continúa batiendo a alta velocidad hasta que se formen picos firmes y brillantes, aproximadamente 2 minutos más. Esparce el merengue sobre el relleno. Me gusta hacer picos decorativos con el dorso de una cuchara grande. Asegúrate de esparcir el merengue hasta los bordes para que toque la masa. Esto ayuda a prevenir que el merengue se desmorone.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">7</span>Hornear la Tarta</h4>
+            <div class="instruction-text">
+                Hornea la tarta en la rejilla más baja del horno durante 20-25 minutos. Si el merengue se está dorando demasiado rápido, cubre con un pedazo de papel de aluminio lo mejor que puedas sin que el papel toque el merengue. Cuando la tarta esté lista, retírala del horno, coloca en una rejilla de enfriamiento y deja enfriar a temperatura ambiente durante 1 hora antes de colocar en el refrigerador para enfriar. Enfría durante 4 horas antes de cortar y servir.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">8</span>Almacenamiento</h4>
+            <div class="instruction-text">
+                Cubre los sobrantes y almacena en el refrigerador. La tarta de merengue de limón sabe mejor el día 1 porque no se conserva muy bien. El merengue se desmoronará y se separará con el tiempo, ¡así que disfruta inmediatamente!
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Notas del Panadero</h3>
+        <ul>
+            <li><strong>Masa de Tarta:</strong> Usa la receta de Masa de Tarta Casera de Sally para obtener los mejores resultados</li>
+            <li><strong>Limones Frescos:</strong> Usa jugo de limón fresco y ralladura para obtener el máximo sabor</li>
+            <li><strong>Temperatura del Huevo:</strong> Los huevos a temperatura ambiente se mezclan mejor y crean un merengue estable</li>
+            <li><strong>Consejos de Merengue:</strong> Asegúrate de que el merengue toque los bordes de la masa para evitar que se desmorone y se separe</li>
+            <li><strong>Enfriar Completamente:</strong> Deja que la tarta se enfríe y se enfríe completamente antes de servir para cortes limpios</li>
+            <li><strong>Preparar con Anticipación:</strong> Prepara la masa de tarta la noche anterior para obtener los mejores resultados</li>
+        </ul>
+    </div>
+
+    <script>
+        function showHome() {
+            window.location.href = 'index-es.html';
+        }
+    </script>
+</body>
+</html>

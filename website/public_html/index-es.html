@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Las Recetas de Kenna</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.2rem;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.category-section {
+    margin-bottom: 2rem;
+}
+
+.category-header {
+    color: #795548;
+    border-left: 4px solid #795548;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.recipe-list {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list li {
+    margin: 0.5rem 0;
+}
+
+.recipe-list a {
+    color: #388e3c;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.recipe-list a:hover {
+    text-decoration: underline;
+}
+
+.recipe-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e0dcd0;
+    margin-top: 2rem;
+    display: none;
+}
+
+.recipe-card.active {
+    display: block;
+}
+
+.recipe-card h2 {
+    color: #5d4037;
+    border-bottom: 2px solid #fdfbf7;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.ingredient-group {
+    margin-bottom: 1.5rem;
+}
+
+.ingredient-group h3 {
+    font-size: 1.1rem;
+    color: #795548;
+    margin-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.recipe-list-styled li:last-child {
+    border-bottom: none;
+}
+
+.instruction-list {
+    padding-left: 1.2rem;
+}
+
+.instruction-list li {
+    margin-bottom: 1rem;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: none;
+    margin-bottom: 2rem;
+}
+
+.back-button.active {
+    display: inline-block;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="index.html">English</a>
+        <a href="index-es.html" class="active">Español</a>
+    </div>
+
+    <button class="back-button" onclick="showHome()">← Volver al Inicio</button>
+    
+    <div id="home" class="home-view">
+        <header>
+            <h1>Las Recetas de Kenna</h1>
+            <p class="subtitle">Estas son las recetas que uso</p>
+        </header>
+        <main id="recipe-directory">
+            <div class="category-section">
+                <h2 class="category-header">Platos Principales</h2>
+                <ul class="recipe-list">
+                    <li><a onclick="showRecipe('duck')">Pato con Naranja y Capsicum</a></li>
+                    <li><a onclick="showRecipe('risotto')">Risotto de Hongos</a></li>
+                </ul>
+            </div>
+            <div class="category-section">
+                <h2 class="category-header">Postres</h2>
+                <ul class="recipe-list">
+                    <li><a onclick="showRecipe('lemon')">Tarta Clásica de Merengue de Limón</a></li>
+                    <li><a href="sally-lemon-meringue-es.html" target="_blank">Tarta de Merengue de Limón (Versión Sally) ↗</a></li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <!-- Receta de Pato -->
+    <div id="duck-recipe" class="recipe-card">
+        <h2>Pato con Naranja y Capsicum</h2>
+        <p class="recipe-meta">Categoría: Platos Principales</p>
+        
+        <h3>Ingredientes</h3>
+        <div class="ingredient-group">
+            <h4>Para 6 Personas:</h4>
+            <ul class="recipe-list-styled">
+                <li>1 pato</li>
+                <li>5 naranjas</li>
+                <li>200g de azúcar granulado</li>
+                <li>3 cucharadas de vinagre</li>
+                <li>Sal y pimienta</li>
+            </ul>
+        </div>
+
+        <h3>Instrucciones</h3>
+        <ol class="instruction-list">
+            <li><strong>Preparar la gastrique:</strong> Crear un caramelo con 200g de azúcar granulado y tres cucharadas de vinagre de vino.</li>
+            <li><strong>Agregar cítricos:</strong> Una vez que la mezcla se haya caramelizado, añadir el jugo de dos naranjas.</li>
+            <li><strong>Preparar la bandeja:</strong> Forrar una bandeja apta para horno con rodajas de naranja y colocar el pato encima.</li>
+            <li><strong>Asar:</strong> Rociar la mezcla caramelizada sobre el pato, sazonar ligeramente con sal y pimienta, y colocar en el horno a 180°C (350°F), rociando regularmente.</li>
+            <li><strong>Finalizar:</strong> El pato debe adquirir un tono rojo oscuro al final de la cocción.</li>
+            <li><strong>Nota:</strong> Tener cuidado de no dejar que las naranjas se quemen demasiado.</li>
+        </ol>
+
+        <h3>Tiempo de Cocción</h3>
+        <p>3-4 horas</p>
+    </div>
+
+    <!-- Receta de Risotto -->
+    <div id="risotto-recipe" class="recipe-card">
+        <h2>Risotto de Hongos</h2>
+        <p class="recipe-meta">Categoría: Platos Principales</p>
+        
+        <h3>Ingredientes</h3>
+        <div class="ingredient-group">
+            <h4>Para 4 Personas:</h4>
+            <ul class="recipe-list-styled">
+                <li>50g de hongos porcini secos</li>
+                <li>1 cubo de caldo de verduras</li>
+                <li>2 cucharadas de aceite de oliva</li>
+                <li>1 cebolla, picada finamente</li>
+                <li>2 dientes de ajo, picados finamente</li>
+                <li>250g de hongos cremini, picados</li>
+                <li>300g de arroz para risotto, como arborio</li>
+                <li>1 vaso de 175ml de vino blanco</li>
+                <li>25g de mantequilla</li>
+            </ul>
+        </div>
+
+        <h3>Instrucciones</h3>
+        <p><em>Por favor, proporciona las instrucciones paso a paso de cocción para completar esta receta.</em></p>
+    </div>
+
+    <!-- Receta de Tarta de Merengue de Limón -->
+    <div id="lemon-recipe" class="recipe-card">
+        <h2>Tarta Clásica de Merengue de Limón</h2>
+        <p class="recipe-meta">Categoría: Postres</p>
+        
+        <h3>Ingredientes</h3>
+        <div class="ingredient-group">
+            <h4>Para la Masa de Tarta:</h4>
+            <ul class="recipe-list-styled">
+                <li>2 1/4 tazas de harina para todo propósito</li>
+                <li>1 cucharadita de sal</li>
+                <li>3/4 taza de mantequilla sin sal, cortada en cubos de 1/4" y refrigerada</li>
+                <li>1/4 taza de agua helada</li>
+            </ul>
+        </div>
+        <div class="ingredient-group">
+            <h4>Para la Crema de Limón:</h4>
+            <ul class="recipe-list-styled">
+                <li>8 yemas de huevo grandes</li>
+                <li>1 taza de azúcar</li>
+                <li>1/4 cucharadita de sal kosher</li>
+                <li>1/3 taza de almidón de maíz</li>
+                <li>3 cucharadas de ralladura de limón fresco</li>
+                <li>1 taza de jugo de limón fresco exprimido (de aproximadamente 6 limones)</li>
+                <li>3 cucharadas de mantequilla sin sal, a temperatura ambiente</li>
+            </ul>
+        </div>
+        <div class="ingredient-group">
+            <h4>Para el Merengue Suizo:</h4>
+            <ul class="recipe-list-styled">
+                <li>4 1⁄2 tazas de azúcar glas</li>
+                <li>8 claras de huevo grandes</li>
+            </ul>
+        </div>
+
+        <h3>Instrucciones</h3>
+        <ol class="instruction-list">
+            <li><strong>Hacer la masa de tarta:</strong> En el tazón de una batidora de pie equipada con un accesorio de paleta, combinar la harina y la sal a velocidad baja. Lentamente añadir la mantequilla y continuar mezclando hasta que la mantequilla forme grumos del tamaño de un guisante, aproximadamente 2 minutos. Verter lentamente agua helada hasta que la masa se unan—es posible que no necesites toda el agua. Continuar mezclando hasta que la masa esté flexible, aproximadamente 30 segundos. Transferir la masa a una superficie de trabajo ligeramente enharinada. Usar el talón de tu mano para aplanar la masa y formar un disco. Envolver con plástico y refrigerar en el refrigerador durante al menos 2 horas y hasta 3 días.</li>
+            <li><strong>Dar forma a la masa de tarta:</strong> Sacar la masa del refrigerador. Engrasar ligeramente un molde de tarta de 9 pulgadas con spray de cocina o mantequilla. Cuando la masa esté lo suficientemente cálida para manipular, enharinar ligeramente una superficie de trabajo y estirar la masa en un círculo de 1/8 de pulgada de grosor. Doblar el círculo sobre el rodillo y transferir al molde de tarta preparado. Presionar suavemente la masa en el molde. Ondular los bordes como se desee. Transferir al congelador y refrigerar durante al menos 1 hora.</li>
+            <li><strong>Hornear a ciegas la masa de tarta:</strong> Precalentar el horno a 375°F. Sacar la masa del congelador y forrar el interior con papel pergamino. Llenar con pesas de tarta o frijoles secos y hornear hasta que la masa esté dorada, aproximadamente 25–30 minutos. Sacar las pesas y el papel pergamino y hornear sin cubrir hasta que el fondo esté dorado, aproximadamente 10 minutos más. Enfriar en una rejilla de enfriamiento.</li>
+            <li><strong>Hacer la crema de limón:</strong> En un tazón mediano, batir las yemas de huevo juntas. En una cacerola mediana a fuego medio, batir el azúcar, la sal, el almidón de maíz, la ralladura de limón, el jugo de limón y 2 tazas de agua. Cocinar a fuego medio-bajo, batiendo, hasta que esté caliente (135°F). Aumentar el fuego a medio y cocinar hasta que la crema esté espesa, aproximadamente 3 minutos más. Reducir el fuego a bajo. Templar las yemas de huevo vertiendo lentamente algunas cucharadas de la mezcla caliente de limón en las yemas. Lentamente añadir la mezcla de yemas al sartén. Aumentar el fuego a medio y cocinar hasta que esté espeso. Cuando la crema comience a burbujear, batir continuamente durante 2 minutos. Sacar del calor y batir en la mantequilla. Colar la crema a través de un colador de malla fina. Usar una espátula de goma para empujar tanta crema como sea posible a través del colador.</li>
+            <li><strong>Hacer el merengue suizo:</strong> Llenar una olla mediana con aproximadamente 3 pulgadas de agua y llevar a un hervor suave. En un tazón resistente al calor mediano (o el tazón de metal de una batidora de pie), mezclar el azúcar glas y las claras de huevo. Colocar el tazón en la parte superior de la olla de agua hirviendo. El tazón debe sentarse en el borde de la olla, bien por encima del agua. Batir la mezcla de claras constantemente mientras se calienta. Cuando alcance 113°F y el azúcar se disuelva completamente, sacar el tazón de la olla. Usando una batidora de pie equipada con un accesorio de varilla, o una batidora de mano, batir las claras a alta velocidad. A medida que se baten, las claras se duplicarán en volumen, se espesarán y enfriarán. Cuando se formen picos firmes y brillantes, el merengue está terminado—debe ser muy esponjoso con una consistencia similar a la espuma de afeitar. Esto debería tomar aproximadamente 5 minutos, dependiendo de tu batidora.</li>
+            <li><strong>Montar la tarta:</strong> Esparcir la crema de limón en la masa de tarta parcialmente horneada en una capa uniforme y enfriar hasta que se forme una capa, aproximadamente 30 minutos. Precalentar el horno a 400°F. Cubrir la tarta con merengue, usando una espátula de goma para hacer picos decorativos. Hornear hasta que los picos de merengue estén de color marrón dorado claro, con algunos puntos más oscuros, aproximadamente 8 minutos.</li>
+        </ol>
+    </div>
+
+    <script>
+        function showRecipe(recipeName) {
+            // Ocultar vista del inicio
+            document.getElementById('home').style.display = 'none';
+            
+            // Ocultar todas las tarjetas de recetas
+            const cards = document.querySelectorAll('.recipe-card');
+            cards.forEach(card => card.classList.remove('active'));
+            
+            // Mostrar receta seleccionada
+            const recipeMap = {
+                'duck': 'duck-recipe',
+                'risotto': 'risotto-recipe',
+                'lemon': 'lemon-recipe'
+            };
+            
+            const recipeId = recipeMap[recipeName];
+            if (recipeId) {
+                document.getElementById(recipeId).classList.add('active');
+                document.querySelector('.back-button').classList.add('active');
+                window.scrollTo(0, 0);
+            }
+        }
+        
+        function showHome() {
+            // Mostrar vista del inicio
+            document.getElementById('home').style.display = 'block';
+            
+            // Ocultar todas las tarjetas de recetas
+            const cards = document.querySelectorAll('.recipe-card');
+            cards.forEach(card => card.classList.remove('active'));
+            
+            // Ocultar botón de volver
+            document.querySelector('.back-button').classList.remove('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>

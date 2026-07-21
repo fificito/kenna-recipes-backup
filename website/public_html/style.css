@@ -1,0 +1,143 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.2rem;
+}
+
+.category-section {
+    margin-bottom: 2rem;
+}
+
+.category-header {
+    color: #795548;
+    border-left: 4px solid #795548;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.recipe-list {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list li {
+    margin: 0.5rem 0;
+}
+
+.recipe-list a {
+    color: #388e3c;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.recipe-list a:hover {
+    text-decoration: underline;
+}
+
+.placeholder {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    margin-top: 3rem;
+}
+
+/* Recipe Page Styles */
+.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: #795548;
+    text-decoration: none;
+}
+
+.recipe-meta {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.source-link {
+    display: block;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #8d6e63;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.source-link:hover {
+    text-decoration: underline;
+}
+
+.recipe-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e0dcd0;
+}
+
+.recipe-section {
+    margin-bottom: 2rem;
+}
+
+.recipe-section h2 {
+    color: #5d4037;
+    border-bottom: 2px solid #fdfbf7;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.ingredient-group {
+    margin-bottom: 1.5rem;
+}
+
+.ingredient-group h3 {
+    font-size: 1.1rem;
+    color: #795548;
+    margin-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.recipe-list-styled li:last-child {
+    border-bottom: none;
+}
+
+.instruction-list {
+    padding-left: 1.2rem;
+}
+
+.instruction-list li {
+    margin-bottom: 1rem;
+}

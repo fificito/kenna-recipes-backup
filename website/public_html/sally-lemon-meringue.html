@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Lemon Meringue Pie - Sally's Version</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.ingredient-list {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredient-list li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.ingredient-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="sally-lemon-meringue.html" style="color: #795548; text-decoration: none; font-weight: 500; margin: 0 0.5rem; padding: 0.5rem 1rem; border-radius: 4px; display: inline-block; background: #e8d4c4; color: #5d4037;">English</a>
+        <a href="sally-lemon-meringue-es.html" style="color: #795548; text-decoration: none; font-weight: 500; margin: 0 0.5rem; padding: 0.5rem 1rem; border-radius: 4px; display: inline-block;">Español</a>
+    </div>
+
+    <button class="back-button" onclick="showHome()">← Back to Home</button>
+    
+    <header>
+        <h1>Classic Lemon Meringue Pie</h1>
+        <p class="subtitle">Sally's Baking Addiction Recipe</p>
+        <div class="category-badge">Desserts</div>
+        <div class="category-badge">Intermediate</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep Time</span>
+            <span class="meta-value">6 hours</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cook Time</span>
+            <span class="meta-value">1 hour 10 min</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Total Time</span>
+            <span class="meta-value">7 hours 10 min</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Yield</span>
+            <span class="meta-value">One 9-inch pie</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>For the Pie Crust</h3>
+        <ul class="ingredient-list">
+            <li>Homemade Pie Crust*</li>
+        </ul>
+        <p style="font-size: 0.9rem; color: #999; margin-top: 1rem;">*See Sally's Homemade Pie Crust recipe</p>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>For the Lemon Filling</h3>
+        <ul class="ingredient-list">
+            <li>5 large egg yolks (use the whites in the meringue below)</li>
+            <li>1 and 1/3 cups (320ml) water</li>
+            <li>1 cup (200g) granulated sugar</li>
+            <li>1/3 cup (38g) cornstarch</li>
+            <li>1/4 teaspoon salt</li>
+            <li>1/2 cup (120ml) fresh lemon juice</li>
+            <li>1 Tablespoon lemon zest</li>
+            <li>2 Tablespoons (28g) unsalted butter, softened to room temperature</li>
+        </ul>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>For the Swiss Meringue</h3>
+        <ul class="ingredient-list">
+            <li>5 large egg whites, at room temperature</li>
+            <li>1/2 teaspoon cream of tartar</li>
+            <li>1/2 cup (100g) granulated sugar</li>
+            <li>1/8 teaspoon salt</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instructions</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Prepare Pie Dough</h4>
+            <div class="instruction-text">
+                Make sure your pie dough is prepared before you begin. It's best to make pie dough the night before because it needs to chill in the refrigerator for at least 2 hours before rolling out and blind baking.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Blind Bake the Crust</h4>
+            <div class="instruction-text">
+                Preheat oven to 375°F (190°C) and adjust your oven rack to the lowest position. Partially blind bake pie crust in a 9-inch pie dish. Be sure to crimp or flute the pie crust edges. <strong>Tip:</strong> You can get started on the lemon meringue pie filling steps while your crust is blind baking. But making the filling is time sensitive because you will temper the egg yolks, so if multi-tasking isn't your thing, just wait until your crust is done blind baking before beginning the filling.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Reduce Temperature</h4>
+            <div class="instruction-text">
+                Reduce oven temperature to 350°F (177°C).
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Make the Lemon Filling</h4>
+            <div class="instruction-text">
+                Whisk the egg yolks together in a medium bowl or liquid measuring cup. Set aside. Whisk the water, granulated sugar, cornstarch, salt, lemon juice, and lemon zest together in a medium saucepan over medium heat. The mixture will be thin and cloudy, then eventually begin thickening and bubbling after about 6 minutes. Once thickened, give it a whisk and reduce heat to low.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Temper the Egg Yolks</h4>
+            <div class="instruction-text">
+                Very slowly stream a few large spoonfuls of warm lemon mixture into the beaten egg yolks. Then, also in a very slow stream, whisk the egg yolk mixture into the saucepan. Turn heat back up to medium. Cook until the mixture is thick and big bubbles begin bursting at the surface. Remove the pan from heat and whisk in the butter. Spread filling into the warm partially baked crust. Set aside as you prepare the meringue. <br><br><strong>Important:</strong> Don't let the filling cool down too much as you want a warm filling when you top with the meringue. The warm filling helps seal the two layers together, preventing separation.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Make the Meringue</h4>
+            <div class="instruction-text">
+                With a handheld mixer or a stand mixer fitted with a whisk attachment, beat the egg whites and cream of tartar together on medium speed for 1 minute, then increase to high speed until soft peaks form, about 4 more minutes. Add the sugar and salt, then continue beating on high speed until glossy stiff peaks form, about 2 more minutes. Spread meringue on top of filling. I like to make decorative peaks with the back of a large spoon. Make sure you spread the meringue all the way to the edges so that it touches the crust. This helps prevent the meringue from weeping.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">7</span>Bake the Pie</h4>
+            <div class="instruction-text">
+                Bake pie on the lowest oven rack for 20-25 minutes. If the meringue is browning too quickly, tent a piece of foil over it as best you can without the foil touching the meringue. When pie is done, remove from the oven, place on a wire rack, and allow to cool at room temperature for 1 hour before placing in the refrigerator to chill. Chill for 4 hours before slicing and serving.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">8</span>Storage</h4>
+            <div class="instruction-text">
+                Cover any leftovers and store in the refrigerator. Lemon meringue pie tastes best on day 1 because it doesn't keep very well. The meringue will wilt and separate over time, so enjoy right away!
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Baker's Notes</h3>
+        <ul>
+            <li><strong>Pie Crust:</strong> Use Sally's Homemade Pie Crust recipe for the best results</li>
+            <li><strong>Fresh Lemons:</strong> Use fresh lemon juice and zest for maximum flavor</li>
+            <li><strong>Egg Temperature:</strong> Room temperature eggs mix better and create a stable meringue</li>
+            <li><strong>Meringue Tips:</strong> Make sure the meringue touches the crust edges to prevent weeping and separation</li>
+            <li><strong>Cool Completely:</strong> Allow pie to cool and chill fully before serving for clean slices</li>
+            <li><strong>Make Ahead:</strong> Prepare pie dough the night before for best results</li>
+        </ul>
+    </div>
+
+    <script>
+        function showHome() {
+            window.location.href = '#home';
+            // Or replace with actual home URL if needed
+            if (typeof showHome_parent === 'function') {
+                showHome_parent();
+            }
+        }
+    </script>
+</body>
+</html>

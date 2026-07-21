@@ -1,0 +1,39 @@
+# Ignore credentials and sensitive files
+*.env
+*.env.local
+*.key
+.git-credentials
+.ssh/
+.gitconfig
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Ignore IDE
+.vscode/
+.idea/
+*.sublime-project
+
+# Ignore backups
+*.bak
+*.backup
+*.tmp
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore node modules
+node_modules/
+package-lock.json
+
+# Ignore Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
