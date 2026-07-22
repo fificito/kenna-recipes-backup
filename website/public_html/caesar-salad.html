@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Salad Recipe</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="caesar-salad.html" class="active">English</a>
+        <a href="caesar-salad-es.html">Español</a>
+    </div>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+    
+    <header>
+        <h1>Classic Caesar Salad</h1>
+        <p class="subtitle"><a href="https://natashaskitchen.com/caesar-salad-recipe/" target="_blank">Natasha's Kitchen Recipe →</a></p>
+        <div class="category-badge">Salad</div>
+        <div class="category-badge">Classic</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep Time</span>
+            <span class="meta-value">15 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cook Time</span>
+            <span class="meta-value">0 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Total Time</span>
+            <span class="meta-value">15 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Servings</span>
+            <span class="meta-value">4</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>For the Dressing</h3>
+        <ul class="recipe-list-styled">
+            <li>3/4 cup mayonnaise</li>
+            <li>3 tablespoons fresh lemon juice</li>
+            <li>2 tablespoons olive oil</li>
+            <li>2 teaspoons Dijon mustard</li>
+            <li>4 cloves garlic, minced</li>
+            <li>6 anchovy fillets, finely minced (or 1 tablespoon anchovy paste)</li>
+            <li>1 teaspoon Worcestershire sauce</li>
+            <li>1/2 teaspoon salt</li>
+            <li>1/4 teaspoon black pepper</li>
+            <li>1/4 cup grated Parmesan cheese</li>
+        </ul>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>For the Salad</h3>
+        <ul class="recipe-list-styled">
+            <li>2 heads romaine lettuce, washed and chopped</li>
+            <li>1/2 cup grated Parmesan cheese</li>
+            <li>1 cup croutons (homemade or store-bought)</li>
+            <li>Extra Parmesan shavings for garnish (optional)</li>
+            <li>Fresh black pepper to taste</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instructions</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Make the Dressing</h4>
+            <div class="instruction-text">
+                In a medium bowl, whisk together the mayonnaise, lemon juice, olive oil, and Dijon mustard. Add the minced garlic, anchovy fillets (or paste), and Worcestershire sauce. Whisk until smooth and well combined. Season with salt and pepper to taste. Stir in the grated Parmesan cheese. The dressing can be made ahead and stored in the refrigerator for up to 3 days.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Prepare the Lettuce</h4>
+            <div class="instruction-text">
+                Wash the romaine lettuce and pat dry with paper towels. Chop or tear the lettuce into bite-sized pieces. Place in a large salad bowl. Make sure the lettuce is dry, as excess water will dilute the dressing.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Assemble the Salad</h4>
+            <div class="instruction-text">
+                Pour the Caesar dressing over the chopped romaine lettuce. Toss gently but thoroughly, making sure all the lettuce is coated with the dressing. Add the croutons and grated Parmesan cheese. Toss again lightly to combine.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Garnish and Serve</h4>
+            <div class="instruction-text">
+                Transfer the salad to serving plates or a large serving platter. Top with additional Parmesan shavings and fresh black pepper if desired. Serve immediately while the croutons are still crispy. This classic salad is perfect as a light lunch or as a side dish for grilled meats and seafood.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Chef's Tips for Perfect Caesar Salad</h3>
+        <ul>
+            <li><strong>Anchovy Fillets:</strong> Don't be intimidated by anchovies! They dissolve into the dressing and add umami depth. If you must avoid anchovies, use an extra teaspoon of Worcestershire sauce.</li>
+            <li><strong>Fresh Lemon Juice:</strong> Always use fresh-squeezed lemon juice, not bottled. The flavor difference is dramatic and essential to this salad.</li>
+            <li><strong>Dry Lettuce:</strong> Pat the lettuce completely dry before assembling. Water is the enemy of a good Caesar salad dressing.</li>
+            <li><strong>Parmesan Quality:</strong> Use freshly grated Parmigiano-Reggiano cheese for the best flavor. Pre-grated cheese contains anti-caking agents that affect texture.</li>
+            <li><strong>Homemade Croutons:</strong> Make croutons by cubing bread, tossing with olive oil and garlic, then baking at 375°F for 10-12 minutes until golden.</li>
+            <li><strong>Dressing Consistency:</strong> If the dressing is too thick, thin it with a tablespoon of water or lemon juice. If too thin, add more Parmesan cheese.</li>
+            <li><strong>Make Ahead:</strong> Prepare the dressing up to 3 days ahead. Assemble the salad just before serving to keep croutons crispy.</li>
+            <li><strong>Add Protein:</strong> Top with grilled chicken, shrimp, or crumbled bacon for a hearty main course salad.</li>
+            <li><strong>Variations:</strong> Add crispy bacon bits, sun-dried tomatoes, or avocado slices for your own twist on this classic.</li>
+        </ul>
+    </div>
+</body>
+</html>

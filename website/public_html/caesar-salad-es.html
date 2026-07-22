@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Ensalada César</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="caesar-salad.html">English</a>
+        <a href="caesar-salad-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Ensalada César Clásica</h1>
+        <p class="subtitle"><a href="https://natashaskitchen.com/caesar-salad-recipe/" target="_blank">Receta de Natasha's Kitchen →</a></p>
+        <div class="category-badge">Ensalada</div>
+        <div class="category-badge">Clásica</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep</span>
+            <span class="meta-value">15 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cocción</span>
+            <span class="meta-value">0 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">15 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">4</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Para el Aderezo</h3>
+        <ul class="recipe-list-styled">
+            <li>180 ml de mayonesa</li>
+            <li>3 cucharadas de jugo de limón fresco</li>
+            <li>2 cucharadas de aceite de oliva</li>
+            <li>2 cucharaditas de mostaza Dijon</li>
+            <li>4 dientes de ajo, picados</li>
+            <li>6 filetes de anchoa, finamente picados (o 1 cucharada de pasta de anchoa)</li>
+            <li>1 cucharadita de salsa Worcestershire</li>
+            <li>1/2 cucharadita de sal</li>
+            <li>1/4 cucharadita de pimienta negra</li>
+            <li>60 ml de queso Parmesano rallado</li>
+        </ul>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Para la Ensalada</h3>
+        <ul class="recipe-list-styled">
+            <li>2 cabezas de lechuga romana, lavada y picada</li>
+            <li>120 ml de queso Parmesano rallado</li>
+            <li>240 ml de crutones (caseros o comprados)</li>
+            <li>Lascas de Parmesano extra para adornar (opcional)</li>
+            <li>Pimienta negra fresca al gusto</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Hacer el Aderezo</h4>
+            <div class="instruction-text">
+                En un tazón mediano, bate juntos la mayonesa, jugo de limón, aceite de oliva y mostaza Dijon. Añade el ajo picado, los filetes de anchoa (o pasta) y la salsa Worcestershire. Bate hasta que esté suave y bien combinado. Condimenta con sal y pimienta al gusto. Incorpora el queso Parmesano rallado. El aderezo se puede preparar con anticipación y almacenar en el refrigerador hasta 3 días.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Preparar la Lechuga</h4>
+            <div class="instruction-text">
+                Lava la lechuga romana y sécala con toallas de papel. Pica o desgarra la lechuga en trozos pequeños. Coloca en un tazón grande para ensaladas. Asegúrate de que la lechuga esté seca, ya que el agua en exceso diluirá el aderezo.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Armar la Ensalada</h4>
+            <div class="instruction-text">
+                Vierte el aderezo César sobre la lechuga romana picada. Mezcla suavemente pero completamente, asegurándote de que toda la lechuga esté cubierta con el aderezo. Añade los crutones y el queso Parmesano rallado. Mezcla nuevamente ligeramente para combinar.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Adornar y Servir</h4>
+            <div class="instruction-text">
+                Transfiere la ensalada a platos de servir o a una fuente grande. Cubre con lascas adicionales de Parmesano y pimienta negra fresca si lo deseas. Sirve inmediatamente mientras los crutones estén crujientes. Esta ensalada clásica es perfecta como almuerzo ligero o como acompañamiento para carnes y mariscos a la parrilla.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef para Ensalada César Perfecta</h3>
+        <ul>
+            <li><strong>Filetes de Anchoa:</strong> ¡No te intimidez de las anchoas! Se disuelven en el aderezo y añaden profundidad umami. Si debes evitar las anchoas, usa una cucharadita adicional de salsa Worcestershire.</li>
+            <li><strong>Jugo de Limón Fresco:</strong> Siempre usa jugo de limón recién exprimido, no embotellado. La diferencia de sabor es dramática y esencial para esta ensalada.</li>
+            <li><strong>Lechuga Seca:</strong> Seca la lechuga completamente antes de armar. El agua es el enemigo de un buen aderezo de ensalada César.</li>
+            <li><strong>Calidad del Parmesano:</strong> Usa queso Parmigiano-Reggiano recién rallado para el mejor sabor. El queso pre-rallado contiene agentes anti-aglutinantes que afectan la textura.</li>
+            <li><strong>Crutones Caseros:</strong> Haz crutones cortando pan en cubos, mezcla con aceite de oliva y ajo, luego hornea a 190°C durante 10-12 minutos hasta que estén dorados.</li>
+            <li><strong>Consistencia del Aderezo:</strong> Si el aderezo es demasiado espeso, dilúyelo con una cucharada de agua o jugo de limón. Si es demasiado fino, añade más queso Parmesano.</li>
+            <li><strong>Preparación Anticipada:</strong> Prepara el aderezo hasta 3 días antes. Arma la ensalada justo antes de servir para mantener los crutones crujientes.</li>
+            <li><strong>Añadir Proteína:</strong> Cubre con pollo a la parrilla, camarones o trozos de tocino crujientes para una ensalada principal abundante.</li>
+            <li><strong>Variaciones:</strong> Añade trozos de tocino crujiente, tomates secados al sol o rodajas de aguacate para tu propio giro en este clásico.</li>
+        </ul>
+    </div>
+</body>
+</html>
