@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Steak Tartare</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="steak-tartare.html">English</a>
+        <a href="steak-tartare-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Steak Tartare</h1>
+        <p class="subtitle"><a href="https://www.masterclass.com/articles/steak-tartare-recipe" target="_blank">Receta de MasterClass →</a></p>
+        <div class="category-badge">Entrada</div>
+        <div class="category-badge">Francesa</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep</span>
+            <span class="meta-value">30 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo de Frío</span>
+            <span class="meta-value">30 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">1 hora</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">4</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredientes</h3>
+        <ul class="recipe-list-styled">
+            <li>400g de filete de res de la mejor calidad, finamente picado</li>
+            <li>2 yemas de huevo (de huevos muy frescos)</li>
+            <li>2 cucharadas de alcaparras, finamente picadas</li>
+            <li>1 cebolla roja, finamente picada</li>
+            <li>1 cucharada de mostaza Dijon</li>
+            <li>2 cucharaditas de jugo de limón fresco</li>
+            <li>2 cucharaditas de salsa Worcestershire</li>
+            <li>1 cucharadita de salsa picante (Tabasco o similar)</li>
+            <li>6-8 filetes de anchoa, finamente picados</li>
+            <li>2 cucharadas de perejil fresco, finamente picado</li>
+            <li>1 cucharada de estragón fresco, finamente picado (opcional)</li>
+            <li>Sal y pimienta negra recién molida, al gusto</li>
+            <li>Pan tostado o galletas, para servir</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Seleccionar Carne Premium</h4>
+            <div class="instruction-text">
+                La calidad es primordial en el steak tartare. Usa el mejor filete de res que puedas encontrar, idealmente de un carnicero de confianza que practique la seguridad alimentaria adecuada. La carne debe estar finamente picada, no molida. Algunos prefieren hacer esto ellos mismos con un cuchillo afilado para mejor control y textura.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Preparar la Base</h4>
+            <div class="instruction-text">
+                Coloca la carne picada en un tazón frío. Crea un pequeño pozo en el centro y coloca cuidadosamente ambas yemas de huevo (sin romperlas). Rodea las yemas con las alcaparras, cebolla roja y filetes de anchoa. Esta presentación permite a los comensales mezclar a su gusto, o puedes doblar todo suavemente.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Añadir los Condimentos</h4>
+            <div class="instruction-text">
+                En un tazón pequeño, combina la mostaza Dijon, jugo de limón, salsa Worcestershire y salsa picante. Mezcla hasta que esté suave. Vierte esto sobre la mezcla de carne. Espolvorea con el perejil fresco y estragón si lo usas.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Mezclar Cuidadosamente</h4>
+            <div class="instruction-text">
+                Usando un tenedor o tus manos (manos limpias y frías funcionan mejor), dobla todo suavemente pero completamente. La mezcla debe estar bien combinada pero no sobretrabajada: quieres textura, no pasta. Condimenta con sal y pimienta al gusto. Evita usar demasiada sal ya que sacará humedad.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Enfriar y Servir</h4>
+            <div class="instruction-text">
+                Cubre el tazón con plástico y refrigera durante al menos 30 minutos para permitir que los sabores se mezclen y la mezcla se enfríe. Sirve en platos fríos con pan tostado o galletas al lado. Una presentación en quenelle (forma de cuchara ovalada) es clásica y elegante. Sirve inmediatamente mientras aún esté frío.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef Críticos para Steak Tartare Perfecto</h3>
+        <ul>
+            <li><strong>Seguridad Alimentaria Primero:</strong> Usa solo carne de la más alta calidad de una fuente de confianza. La carne debe estar picada fresca, idealmente el mismo día. Mantén todo bien frío durante la preparación.</li>
+            <li><strong>Yemas de Huevo:</strong> Usa huevos de una fuente en la que confíes. La yema actúa como aglutinante y añade riqueza. Algunos restaurantes usan huevos pasteurizados para seguridad extra.</li>
+            <li><strong>Textura de la Carne:</strong> Pica, no muelas. Usa un cuchillo afilado para picar la carne finamente a mano si es posible. Esto preserva la textura e impide que la carne se vuelva harinosa.</li>
+            <li><strong>La Temperatura Importa:</strong> Mantén todo frío. Usa tazones fríos, platos fríos, y trabaja rápidamente. Las manos o tazones cálidos pueden arruinar el plato.</li>
+            <li><strong>Balance de Sabor:</strong> El steak tartare debe ser audaz y complejo. La acidez del limón y Worcestershire es esencial; no subestimes estos ingredientes.</li>
+            <li><strong>Magia de las Anchoas:</strong> Las anchoas pueden parecer fuertes, pero se disuelven en la mezcla y añaden profundidad salada. ¡No las saltes!</li>
+            <li><strong>No Sobretrabajado:</strong> Mezcla suavemente y detente antes de que pienses que está listo. El sobretrabajo hace la textura harinosa y menos atractiva.</li>
+            <li><strong>Variaciones:</strong> Algunos añaden cornichones (pepinillos pequeños) o bayas de alcaparra. También puedes añadir un toque de aceite de trufa para lujo.</li>
+            <li><strong>Estilo de Servir:</strong> La presentación tradicional incluye la yema de huevo en la parte superior, entera o mezclada. Sirve con tostadas crujientes, nunca pan suave que se empappe.</li>
+            <li><strong>Timing:</strong> Come lo más cerca posible de la preparación. El steak tartare es mejor comido fresco y frío, dentro de 30 minutos de mezclar.</li>
+        </ul>
+    </div>
+</body>
+</html>
