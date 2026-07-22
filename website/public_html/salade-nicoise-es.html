@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Salade Niçoise</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="salade-nicoise.html">English</a>
+        <a href="salade-nicoise-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Salade Niçoise</h1>
+        <p class="subtitle"><a href="https://www.bbcgoodfood.com/recipes/salade-nicoise" target="_blank">Receta de BBC Good Food →</a></p>
+        <div class="category-badge">Ensalada</div>
+        <div class="category-badge">Francesa</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep</span>
+            <span class="meta-value">20 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cocción</span>
+            <span class="meta-value">15 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">35 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">2-4</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Para el Aderezo</h3>
+        <ul class="recipe-list-styled">
+            <li>3 cucharadas de aceite de oliva virgen extra</li>
+            <li>1 cucharada de vinagre de vino tinto</li>
+            <li>1 cucharadita de mostaza Dijon</li>
+            <li>1 diente de ajo, aplastado</li>
+            <li>Sal y pimienta negra recién molida, al gusto</li>
+        </ul>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Para la Ensalada</h3>
+        <ul class="recipe-list-styled">
+            <li>2 huevos duros</li>
+            <li>200g de papas nuevas</li>
+            <li>150g de judías verdes, limpias</li>
+            <li>2 latas (aproximadamente 320g) de atún en agua o aceite de oliva, escurrido</li>
+            <li>1 lechuga romana, lavada y picada</li>
+            <li>200g de tomates cherry, cortados por la mitad</li>
+            <li>1 cebolla roja, finamente rebanada</li>
+            <li>200g de aceitunas (negras o mixtas)</li>
+            <li>1 filete de anchoa por persona (opcional)</li>
+            <li>Hojas de albahaca fresca para adornar</li>
+            <li>Sal marina en copos y pimienta negra molida</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Hacer el Aderezo</h4>
+            <div class="instruction-text">
+                En un tazón pequeño, bate juntos el aceite de oliva, vinagre de vino tinto, mostaza Dijon y ajo aplastado. Condimenta con sal y pimienta al gusto. Reserva. Este vinagreta simple es el corazón de la ensalada.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Preparar los Vegetales</h4>
+            <div class="instruction-text">
+                Hierve las papas nuevas hasta que estén tiernas, aproximadamente 10-15 minutos según el tamaño. Hierve las judías verdes por separado durante aproximadamente 5-7 minutos hasta que estén tiernas pero crujientes. Escurre ambas y enfría ligeramente. Hierve los huevos si no están ya cocidos, luego pela y cuartifalos.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Armar la Base</h4>
+            <div class="instruction-text">
+                Coloca la lechuga romana picada en una fuente grande o en platos individuales. Coloca en capas con las papas cocidas, judías verdes, tomates cherry, cebolla roja y atún. La clave para una hermosa Salade Niçoise es el arreglo: organiza los ingredientes en secciones para un atractivo visual.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Cubrir y Aderezar</h4>
+            <div class="instruction-text">
+                Cubre la ensalada con los cuartos de huevo duro y aceitunas esparcidas. Si usas anchoas, arreglálas en un patrón cruzado en la parte superior (¡muy tradicional!). Vierte el vinagreta sobre todo justo antes de servir, o sírvelo aparte para que los comensales puedan aderezar a su gusto.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Adornar y Servir</h4>
+            <div class="instruction-text">
+                Esparce hojas de albahaca fresca en la parte superior. Condimenta con sal marina en copos y pimienta negra molida. Sirve inmediatamente mientras las papas y judías verdes aún estén ligeramente calientes. Esta es una comida ligera perfecta o cena en un día cálido.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef para Salade Niçoise Perfecta</h3>
+        <ul>
+            <li><strong>Ingredientes Tradicionales:</strong> La verdadera Salade Niçoise es de Niza, Francia, e incluye ingredientes específicos. No dudes en hacer sustituciones si es necesario, pero intenta honrar el espíritu de la ensalada.</li>
+            <li><strong>Calidad del Atún:</strong> Usa atún enlatado de buena calidad en agua o aceite de oliva. El atún fresco es maravilloso pero el enlatado es tradicional y auténtico.</li>
+            <li><strong>Yemas de Huevo:</strong> La yema ligeramente tibia del huevo duro puede ayudar a vincular el aderezo ligeramente cuando se mezcla, ¡un bonus!</li>
+            <li><strong>Temperatura de las Judías:</strong> Algunos prefieren las judías verdes ligeramente calientes, otros frías. Ambas son tradicionales; elige lo que prefieras.</li>
+            <li><strong>Selección de Papas:</strong> Las papas nuevas son más pequeñas y cerosas, lo que las hace ideales para ensaladas. Mantienen mejor su forma que las papas harinosas.</li>
+            <li><strong>Debate de Anchoas:</strong> Las anchoas son tradicionales pero opcionales. Para la experiencia completa, pruébalas: agregan profundidad auténtica a esta ensalada clásica.</li>
+            <li><strong>Balance del Aderezo:</strong> La proporción debe ser aproximadamente 3:1 aceite de oliva a vinagre, ajustado a tu gusto. No aderecés demasiado: esta es una ensalada delicada.</li>
+            <li><strong>Preparación Anticipada:</strong> Prepara los vegetales con anticipación, pero no aderecés ni armes completamente hasta justo antes de servir para mantener las texturas intactas.</li>
+            <li><strong>Variaciones Estacionales:</strong> En verano usa tomates frescos; en invierno, los pimientos asados añaden un sabor maravilloso.</li>
+        </ul>
+    </div>
+</body>
+</html>

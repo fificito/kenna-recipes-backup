@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salade Niçoise Recipe</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="salade-nicoise.html" class="active">English</a>
+        <a href="salade-nicoise-es.html">Español</a>
+    </div>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+    
+    <header>
+        <h1>Salade Niçoise</h1>
+        <p class="subtitle"><a href="https://www.bbcgoodfood.com/recipes/salade-nicoise" target="_blank">BBC Good Food Recipe →</a></p>
+        <div class="category-badge">Salad</div>
+        <div class="category-badge">French</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep Time</span>
+            <span class="meta-value">20 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cook Time</span>
+            <span class="meta-value">15 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Total Time</span>
+            <span class="meta-value">35 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Servings</span>
+            <span class="meta-value">2-4</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>For the Dressing</h3>
+        <ul class="recipe-list-styled">
+            <li>3 tablespoons extra-virgin olive oil</li>
+            <li>1 tablespoon red wine vinegar</li>
+            <li>1 teaspoon Dijon mustard</li>
+            <li>1 clove garlic, crushed</li>
+            <li>Salt and freshly ground black pepper, to taste</li>
+        </ul>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>For the Salad</h3>
+        <ul class="recipe-list-styled">
+            <li>2 hard-boiled eggs</li>
+            <li>200g new potatoes</li>
+            <li>150g green beans, trimmed</li>
+            <li>2 cans (about 320g) tuna in spring water or olive oil, drained</li>
+            <li>1 romaine lettuce, washed and chopped</li>
+            <li>200g cherry tomatoes, halved</li>
+            <li>1 red onion, finely sliced</li>
+            <li>200g olives (black or mixed)</li>
+            <li>1 anchovy fillet per person (optional)</li>
+            <li>Fresh basil leaves for garnish</li>
+            <li>Sea salt flakes and cracked black pepper</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instructions</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Make the Dressing</h4>
+            <div class="instruction-text">
+                In a small bowl, whisk together the olive oil, red wine vinegar, Dijon mustard, and crushed garlic. Season with salt and pepper to taste. Set aside. This simple vinaigrette is the heart of the salad.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Prepare the Vegetables</h4>
+            <div class="instruction-text">
+                Boil the new potatoes until just tender, about 10-15 minutes depending on size. Boil the green beans separately for about 5-7 minutes until tender-crisp. Drain both and cool slightly. Hard-boil the eggs if not already done, then peel and quarter them.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Assemble the Base</h4>
+            <div class="instruction-text">
+                Arrange the chopped romaine lettuce on a large platter or individual plates. Layer with the cooked potatoes, green beans, cherry tomatoes, red onion, and tuna. The key to a beautiful Salade Niçoise is the arrangement—arrange ingredients in sections for visual appeal.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Top and Dress</h4>
+            <div class="instruction-text">
+                Top the salad with the hard-boiled egg quarters and scattered olives. If using anchovies, arrange them in a cross pattern on top (very traditional!). Drizzle the vinaigrette over everything just before serving, or serve it on the side so guests can dress to preference.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Garnish and Serve</h4>
+            <div class="instruction-text">
+                Scatter fresh basil leaves over the top. Season with sea salt flakes and cracked black pepper. Serve immediately while the potatoes and green beans are still slightly warm. This is a perfect light lunch or dinner on a warm day.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Chef's Tips for Perfect Salade Niçoise</h3>
+        <ul>
+            <li><strong>Traditional Ingredients:</strong> True Salade Niçoise is from Nice, France, and includes specific ingredients. Don't be shy about substitutions if needed, but try to honor the spirit of the salad.</li>
+            <li><strong>Tuna Quality:</strong> Use good quality canned tuna in spring water or olive oil. Fresh tuna is wonderful but canned is traditional and authentic.</li>
+            <li><strong>Egg Yolks:</strong> The slightly warm egg yolk from the hard-boiled egg can help bind the dressing slightly when mixed—a bonus!</li>
+            <li><strong>Bean Temperature:</strong> Some prefer the green beans slightly warm, others chilled. Both are traditional; choose what you prefer.</li>
+            <li><strong>Potato Selection:</strong> New potatoes are smaller and waxy, making them ideal for salads. They hold their shape better than starchy potatoes.</li>
+            <li><strong>Anchovy Debate:</strong> Anchovies are traditional but optional. For the full experience, try them—they add authentic depth to this classic salad.</li>
+            <li><strong>Dressing Balance:</strong> The ratio should be about 3:1 olive oil to vinegar, adjusted to your taste. Don't dress too heavily—this is a delicate salad.</li>
+            <li><strong>Make Ahead:</strong> Prepare vegetables ahead, but don't dress or fully assemble until just before serving to keep textures intact.</li>
+            <li><strong>Seasonal Variations:</strong> In summer use fresh tomatoes; in winter, roasted bell peppers add wonderful flavor.</li>
+        </ul>
+    </div>
+</body>
+</html>
