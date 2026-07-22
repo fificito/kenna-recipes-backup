@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bananas Flambé Recipe</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="bananas-flambe.html" class="active">English</a>
+        <a href="bananas-flambe-es.html">Español</a>
+    </div>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+    
+    <header>
+        <h1>Bananas Flambé</h1>
+        <p class="subtitle"><a href="https://www.allrecipes.com/recipe/285111/bananas-flambe/" target="_blank">All Recipes Recipe →</a></p>
+        <div class="category-badge">Dessert</div>
+        <div class="category-badge">Elegant</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep Time</span>
+            <span class="meta-value">10 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cook Time</span>
+            <span class="meta-value">5 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Total Time</span>
+            <span class="meta-value">15 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Servings</span>
+            <span class="meta-value">4</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredients</h3>
+        <ul class="recipe-list-styled">
+            <li>4 firm but ripe bananas, peeled and halved lengthwise</li>
+            <li>4 tablespoons butter</li>
+            <li>1/4 cup brown sugar</li>
+            <li>1/4 teaspoon ground cinnamon</li>
+            <li>1/4 teaspoon nutmeg</li>
+            <li>Pinch of salt</li>
+            <li>1/4 cup dark rum or brandy (or banana liqueur)</li>
+            <li>Vanilla ice cream for serving</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instructions</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Prepare Your Setup</h4>
+            <div class="instruction-text">
+                Have all your ingredients measured and ready before you start. Flambéing happens very quickly, so mise en place (everything in its place) is essential. Also have vanilla ice cream ready to serve, as the warm bananas will melt it perfectly. Ensure you're using a heavy-bottomed skillet or pan that can handle high heat.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Melt the Butter</h4>
+            <div class="instruction-text">
+                Melt the butter in a large skillet over medium heat. Once the butter is foaming and fragrant (about 1-2 minutes), you're ready to proceed. Don't let the butter brown—we want it golden and nutty, not burned. The butter should smell rich and aromatic.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Add the Sugar and Spices</h4>
+            <div class="instruction-text">
+                Add the brown sugar, cinnamon, nutmeg, and salt to the melted butter. Stir well until the sugar dissolves and creates a caramel-like sauce, about 1-2 minutes. The mixture should smell wonderful—warm, sweet, and spiced. This becomes the base of your flambé sauce.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Add the Bananas</h4>
+            <div class="instruction-text">
+                Carefully place the banana halves into the hot caramel sauce, cut-side down. Cook for about 1-2 minutes until they're lightly caramelized and heated through. You'll see the sauce bubbling around the bananas. Don't overcook them—they should be warm and slightly softened but not mushy. Gently turn them to coat with the sauce.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Flambé!</h4>
+            <div class="instruction-text">
+                Remove the pan from the heat briefly. Pour the rum or brandy into the pan (away from you to avoid splashing). Return the pan to the heat for just a moment, then carefully tilt the pan toward the flame (if you have a gas stove) or use a long lighter to carefully ignite the rum. The flames will be impressive but brief—don't be alarmed! The alcohol will burn off in seconds. If using an electric stove, you can ignite the rum carefully with a long lighter before pouring it in, or skip this step and simply stir the liquor in off heat.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Serve Immediately</h4>
+            <div class="instruction-text">
+                Once the flames die down (usually within 30 seconds), immediately serve the bananas over a scoop of vanilla ice cream in individual dishes. Pour the warm caramel sauce generously over the ice cream. The contrast of warm, spiced bananas with cold, creamy vanilla ice cream is absolutely magical. Serve immediately while everything is at the perfect temperature.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Chef's Tips for Perfect Bananas Flambé</h3>
+        <ul>
+            <li><strong>Safety First:</strong> Flambéing involves fire, so take precautions. Tie back long hair, roll up loose sleeves, and keep the pan away from curtains or anything flammable. Have a small lid or baking sheet nearby to smother flames if needed (though they should go out on their own).</li>
+            <li><strong>Banana Ripeness:</strong> Use bananas that are ripe but still firm. If they're too green, they won't be sweet enough. If they're too soft, they'll fall apart. The ideal banana has a few brown spots but is still mostly yellow.</li>
+            <li><strong>Alcohol Options:</strong> Dark rum is traditional, but brandy, cognac, or even banana liqueur work beautifully. The alcohol cooks off completely, leaving just the flavor and drama of the flambé.</li>
+            <li><strong>The Flambé:</strong> The flambé is both for flavor and theater. It caramelizes the alcohol and creates a dramatic presentation. If you're uncomfortable with fire, you can skip the flambé step and simply stir the rum into the sauce off heat—it will still be delicious.</li>
+            <li><strong>Timing is Everything:</strong> Have your ice cream scooped and ready before you start cooking. The entire cooking process takes only 5 minutes, and the dish is best served immediately while the bananas are warm.</li>
+            <li><strong>Pan Choice:</strong> Use a heavy skillet or sauté pan. Thin pans heat unevenly and can scorch the sugar. Stainless steel or cast iron work well.</li>
+            <li><strong>Sugar Consistency:</strong> The brown sugar creates a caramel sauce with the butter. Don't let it get too dark or it will be bitter. It should smell sweet and spiced, not burned.</li>
+            <li><strong>Spice Balance:</strong> Cinnamon and nutmeg are traditional, but you can adjust quantities to taste. A pinch of salt enhances the sweetness and adds complexity.</li>
+            <li><strong>Serve Solo or with Cake:</strong> Bananas flambé is typically served over ice cream, but you can also serve it alongside a slice of pound cake or sponge cake for an extra-elegant dessert.</li>
+            <li><strong>Make it Your Own:</strong> Some variations add a splash of orange liqueur (Grand Marnier or Cointreau) along with the rum, or include a bit of honey or maple syrup in the sauce for depth.</li>
+        </ul>
+    </div>
+</body>
+</html>

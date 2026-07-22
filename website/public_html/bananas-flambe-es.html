@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Plátanos Flambé</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="bananas-flambe.html">English</a>
+        <a href="bananas-flambe-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Plátanos Flambé</h1>
+        <p class="subtitle"><a href="https://www.allrecipes.com/recipe/285111/bananas-flambe/" target="_blank">Receta de All Recipes →</a></p>
+        <div class="category-badge">Postre</div>
+        <div class="category-badge">Elegante</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep</span>
+            <span class="meta-value">10 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cocción</span>
+            <span class="meta-value">5 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">15 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">4</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredientes</h3>
+        <ul class="recipe-list-styled">
+            <li>4 plátanos firmes pero maduros, pelados y cortados por la mitad a lo largo</li>
+            <li>4 cucharadas de mantequilla</li>
+            <li>1/4 taza de azúcar moreno</li>
+            <li>1/4 cucharadita de canela molida</li>
+            <li>1/4 cucharadita de nuez moscada</li>
+            <li>Pizca de sal</li>
+            <li>1/4 taza de ron oscuro o coñac (o licor de plátano)</li>
+            <li>Helado de vainilla para servir</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Preparar Tu Configuración</h4>
+            <div class="instruction-text">
+                Ten todos tus ingredientes medidos y listos antes de empezar. El flambé ocurre muy rápidamente, así que "mise en place" (todo en su lugar) es esencial. También ten el helado de vainilla listo para servir, ya que los plátanos calientes lo derretirán perfectamente. Asegúrate de estar usando una sartén o pan con fondo pesado que pueda manejar calor alto.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Derrite la Mantequilla</h4>
+            <div class="instruction-text">
+                Derrite la mantequilla en una sartén grande a fuego medio. Una vez que la mantequilla está haciendo espuma y aromática (aproximadamente 1-2 minutos), estás listo para proceder. No dejes que la mantequilla se dore: la queremos dorada y a nuez, no quemada. La mantequilla debe oler rica y aromática.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Añade el Azúcar y las Especias</h4>
+            <div class="instruction-text">
+                Añade el azúcar moreno, canela, nuez moscada y sal a la mantequilla derretida. Revuelve bien hasta que el azúcar se disuelva y cree una salsa parecida a caramelo, aproximadamente 1-2 minutos. La mezcla debe oler maravillosa: cálida, dulce y especiada. Esto se convierte en la base de tu salsa flambé.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Añade los Plátanos</h4>
+            <div class="instruction-text">
+                Coloca cuidadosamente las mitades de plátano en la salsa de caramelo caliente, lado cortado hacia abajo. Cocina durante aproximadamente 1-2 minutos hasta que estén ligeramente caramelizados y calientes. Verás la salsa burbujeando alrededor de los plátanos. No cocines demasiado: deberían estar calientes y ligeramente suavizados pero no pringosos. Gíralos suavemente para cubrirlos con la salsa.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>¡Flambé!</h4>
+            <div class="instruction-text">
+                Retira la sartén del fuego brevemente. Vierte el ron o coñac en la sartén (lejos de ti para evitar salpicaduras). Devuelve la sartén al fuego por solo un momento, luego inclina cuidadosamente la sartén hacia la llama (si tienes una estufa de gas) o usa un encendedor largo para encender cuidadosamente el ron. ¡Las llamas serán impresionantes pero breves! El alcohol se quemará en segundos. Si usas una estufa eléctrica, puedes encender el ron cuidadosamente con un encendedor largo antes de vertarlo, u omitir este paso y simplemente revolver el alcohol fuera del fuego.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Sirve Inmediatamente</h4>
+            <div class="instruction-text">
+                Una vez que las llamas se apaguen (generalmente dentro de 30 segundos), sirve inmediatamente los plátanos sobre una bola de helado de vainilla en platos individuales. Vierte la salsa de caramelo caliente generosamente sobre el helado. El contraste de plátanos cálidos y especiados con helado frío y cremoso de vainilla es absolutamente mágico. Sirve inmediatamente mientras todo está en la temperatura perfecta.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef para Plátanos Flambé Perfectos</h3>
+        <ul>
+            <li><strong>Seguridad Primero:</strong> Flambear implica fuego, así que toma precauciones. Ata el cabello largo, sube las mangas sueltas y mantén la sartén lejos de cortinas o cualquier cosa inflamable. Ten a mano una tapa pequeña o bandeja de horneado para sofocar las llamas si es necesario (aunque deberían apagarse por sí solas).</li>
+            <li><strong>Madurez del Plátano:</strong> Usa plátanos que están maduros pero aún firmes. Si están demasiado verdes, no serán lo suficientemente dulces. Si son demasiado suave, se desmoronarán. El plátano ideal tiene algunos puntos marrones pero es mayormente amarillo.</li>
+            <li><strong>Opciones de Alcohol:</strong> El ron oscuro es tradicional, pero el coñac, cognac, o incluso licor de plátano funcionan hermosamente. El alcohol se cocina completamente, dejando solo el sabor y el drama del flambé.</li>
+            <li><strong>El Flambé:</strong> El flambé es tanto para sabor como para teatro. Carameliza el alcohol y crea una presentación dramática. Si no te sientes cómodo con el fuego, puedes omitir el paso flambé e simplemente revolver el ron en la salsa fuera del fuego: seguirá siendo delicioso.</li>
+            <li><strong>La Sincronización es Todo:</strong> Ten tu helado servido y listo antes de empezar a cocinar. Todo el proceso de cocción toma solo 5 minutos, y el plato se sirve mejor inmediatamente mientras los plátanos están calientes.</li>
+            <li><strong>Elección de Sartén:</strong> Usa una sartén pesada o pan de saltear. Los panes delgados se calientan de manera desigual y pueden quemar el azúcar. El acero inoxidable o el hierro fundido funcionan bien.</li>
+            <li><strong>Consistencia del Azúcar:</strong> El azúcar moreno crea una salsa de caramelo con la mantequilla. No dejes que se oscurezca demasiado o será amargo. Debe oler dulce y especiado, no quemado.</li>
+            <li><strong>Balance de Especias:</strong> La canela y la nuez moscada son tradicionales, pero puedes ajustar cantidades al gusto. Una pizca de sal realza la dulzura y añade complejidad.</li>
+            <li><strong>Sirve Solo o con Pastel:</strong> Los plátanos flambé generalmente se sirven sobre helado, pero también puedes servir junto a una rebanada de pastel libra o pastel esponja para un postre extra elegante.</li>
+            <li><strong>Hazlo Tuyo:</strong> Algunas variaciones añaden un poco de licor de naranja (Grand Marnier o Cointreau) junto con el ron, o incluyen un poco de miel o jarabe de arce en la salsa para profundidad.</li>
+        </ul>
+    </div>
+</body>
+</html>
