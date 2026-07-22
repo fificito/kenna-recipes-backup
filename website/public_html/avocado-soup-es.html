@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Sopa de Aguacate</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="avocado-soup.html">English</a>
+        <a href="avocado-soup-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Sopa de Aguacate</h1>
+        <p class="subtitle"><a href="https://www.giangiskitchen.com/avocado-soup/" target="_blank">Receta de Giangi's Kitchen →</a></p>
+        <div class="category-badge">Sopa</div>
+        <div class="category-badge">Cremosa</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep</span>
+            <span class="meta-value">15 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cocción</span>
+            <span class="meta-value">20 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">35 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">4</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredientes</h3>
+        <ul class="recipe-list-styled">
+            <li>2 cucharadas de aceite de oliva o mantequilla</li>
+            <li>1 cebolla mediana, picada</li>
+            <li>2 dientes de ajo, picados</li>
+            <li>4 tazas de caldo de vegetales o pollo</li>
+            <li>3 aguacates maduros, deshuesados y pelados</li>
+            <li>1/2 taza de crema pesada o crema agria</li>
+            <li>Jugo de 1 lima</li>
+            <li>Sal y pimienta blanca al gusto</li>
+            <li>1/4 cucharadita de pimienta de cayena (opcional)</li>
+            <li>Cilantro fresco para adornar</li>
+            <li>Tiras de tortilla crujientes para adornar (opcional)</li>
+            <li>Cebolla roja, finamente rebanada para adornar (opcional)</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Saltear Aromáticos</h4>
+            <div class="instruction-text">
+                Calienta el aceite de oliva o la mantequilla en una olla grande a fuego medio. Añade la cebolla picada y cocina durante 3-4 minutos hasta que esté suave. Añade el ajo picado y cocina por otro minuto hasta que sea aromático. No dejes que el ajo se dore: mantén el fuego moderado.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Añadir Caldo</h4>
+            <div class="instruction-text">
+                Vierte el caldo de vegetales o pollo. Lleva a un suave hervor y cocina durante 5 minutos para permitir que los sabores se desarrollen. El caldo debe estar humeando pero no hirviendo vigorosamente.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Añadir Aguacates</h4>
+            <div class="instruction-text">
+                Retira la olla del fuego y déjala enfriar ligeramente. Corta los aguacates en trozos y añádelos a la olla junto con el jugo de lima. El enfriamiento ligero previene que los aguacates se vuelvan amargos por el calor alto, lo que puede suceder si se cocinan demasiado tiempo a temperaturas altas.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Licuar Hasta que Sea Suave</h4>
+            <div class="instruction-text">
+                Usando una licuadora de inmersión, licúa la sopa hasta que sea completamente suave y cremosa. Trabaja en lotes con una licuadora regular si es necesario, teniendo cuidado con el líquido caliente. La textura debe ser sedosa y aterciopelada. Licúa durante un minuto o dos para lograr el resultado más cremoso.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Añadir Crema y Condimentar</h4>
+            <div class="instruction-text">
+                Incorpora la crema pesada o crema agria. Añade sal, pimienta blanca y pimienta de cayena si la usas. Prueba y ajusta los condimentos a tu preferencia. La sopa debe estar equilibrada entre cremosa, fresca y ligeramente picante.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Servir</h4>
+            <div class="instruction-text">
+                Vierte la sopa tibia en tazones. Adorna con cilantro fresco, tiras de tortilla crujientes y cebolla roja finamente rebanada si lo deseas. El contraste de los adornos añade textura y atractivo visual. Sirve inmediatamente mientras esté tibia, aunque esta sopa también puede enfriarse y servirse fría en días calurosos.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef para Sopa de Aguacate Perfecta</h3>
+        <ul>
+            <li><strong>Madurez del Aguacate:</strong> Usa aguacates maduros pero no demasiado maduros. Deben ceder ligeramente a la presión. Los aguacates demasiado maduros pueden tener sabor harinoso y ligeramente amargo. Si los aguacates están duros, déjalos madurar a temperatura ambiente durante un día o dos.</li>
+            <li><strong>El Jugo de Lima es Clave:</strong> El jugo de lima no solo añade sabor sino que también previene que el aguacate se oxide y se vuelva marrón. Esto es esencial para la presentación y el sabor.</li>
+            <li><strong>No Sobrecalientes:</strong> Mantén los aguacates lejos del calor alto. Añádelos después de retirar la olla del fuego o al final. El calor alto puede hacer que tengan sabor amargo y arruine el sabor delicado.</li>
+            <li><strong>Textura Suave:</strong> Licúa completamente hasta que sea completamente suave. Cualquier grumo detraerá de esta sopa elegante. Usa una licuadora de inmersión para mejores resultados y control.</li>
+            <li><strong>Opciones de Crema:</strong> La crema pesada la hace más rica; la crema agria añade acidez. También puedes usar yogur griego para una versión más ligera con buen sabor.</li>
+            <li><strong>Flexibilidad de Temperatura:</strong> Esta sopa es deliciosa tibia o enfriada. Para una versión fría, prepara como se indica y refrigera antes de servir. Se mantiene bien durante 2-3 días en la nevera.</li>
+            <li><strong>Los Adornos Importan:</strong> Cilantro fresco, tiras de tortilla crujientes, un chorrito de crema de lima, o cebolla roja rebanada todos mejoran la presentación y el sabor. ¡No saltes los adornos!</li>
+            <li><strong>Haz al Momento:</strong> Aunque esta sopa se puede hacer con anticipación, el aguacate puede oxidarse y volverse marrón con el tiempo. Para mejor color y sabor, licúa el aguacate no más de 2-3 horas antes de servir.</li>
+            <li><strong>Calidad del Caldo:</strong> Usa caldo de buena calidad: casero o marcas premium sabe significativamente mejor y marca una diferencia en el resultado final.</li>
+            <li><strong>Nivel de Picante:</strong> La cayena es opcional pero añade una buena complejidad. Ajusta al gusto: esta sopa es cremosa y suave, así que un poco de picante funciona bien.</li>
+        </ul>
+    </div>
+</body>
+</html>
