@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Papas al Gratén</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="potatoes-au-gratin.html">English</a>
+        <a href="potatoes-au-gratin-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Papas al Gratén</h1>
+        <p class="subtitle"><a href="https://www.recipetineats.com/potatoes-au-gratin/" target="_blank">Receta de RecipeTin Eats →</a></p>
+        <div class="category-badge">Guarnición</div>
+        <div class="category-badge">Vegetariano</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep</span>
+            <span class="meta-value">15 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cocción</span>
+            <span class="meta-value">50 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">65 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">6</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredientes</h3>
+        <ul class="recipe-list-styled">
+            <li>2 libras (900g) de papas, peladas y cortadas en rebanadas finas</li>
+            <li>2 tazas (480ml) de crema pesada o crème fraîche</li>
+            <li>1/2 taza (120ml) de leche entera</li>
+            <li>4 dientes de ajo, picados</li>
+            <li>1 cebolla pequeña, cortada en rebanadas finas (opcional)</li>
+            <li>1 1/2 cucharaditas de sal (ajusta al gusto)</li>
+            <li>1/4 cucharadita de pimienta blanca</li>
+            <li>1/4 cucharadita de nuez moscada, recién rallada (opcional pero recomendada)</li>
+            <li>2 cucharadas de mantequilla, suavizada</li>
+            <li>1/2 taza (60g) de queso Gruyère rallado (o queso suizo)</li>
+            <li>2 cucharadas de queso Parmesano, rallado</li>
+            <li>Tomillo fresco para adornar (opcional)</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Preparar la Cacerola</h4>
+            <div class="instruction-text">
+                Precalienta tu horno a 350°F (175°C). Frota la mantequilla suavizada alrededor del interior de una cacerola de 9x13 pulgadas (23x33 cm) o una cacerola de gratén de tamaño similar. Esto previene que se pegue y añade sabor rico. También puedes usar una cacerola de gratén redonda si lo prefieres.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Hacer la Salsa de Crema</h4>
+            <div class="instruction-text">
+                En una cacerola, calienta la crema pesada y la leche juntas a fuego medio hasta que apenas comiencen a humearse (no hiervas). Añade el ajo picado y revuelve bien. Condimenta con sal, pimienta blanca y nuez moscada si la usas. Prueba y ajusta el sabor según sea necesario. Retira del fuego y déjalo enfriar ligeramente durante unos 2 minutos.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Capa de Papas</h4>
+            <div class="instruction-text">
+                Coloca una capa de papas rebanadas en el fondo de la cacerola preparada, superponiéndolas ligeramente como tejas. Si usas cebolla, esparce algunas rebanadas finas sobre las papas. Condimenta ligeramente con sal y pimienta. Vierte aproximadamente 1/3 de la mezcla de crema caliente sobre esta capa, asegurándote de que fluya entre las rebanadas de papa.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Continúa Capas</h4>
+            <div class="instruction-text">
+                Crea una segunda capa de papas de la misma manera, añadiendo más cebollas si la usas. Vierte otro 1/3 de la mezcla de crema sobre esta capa. Crea una capa final con las papas restantes, cebollas y la mezcla de crema restante. La crema debe subir aproximadamente 3/4 del camino hacia arriba en las papas: no las sumerjas completamente.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Añadir la Cobertura de Queso</h4>
+            <div class="instruction-text">
+                Combina el queso Gruyère rallado y el queso Parmesano en un tazón pequeño. Esparce esta mezcla de manera uniforme sobre la parte superior del gratén. La combinación de estos dos quesos proporciona excelente sabor: el Gruyère se derrite hermosamente mientras que el Parmesano añade agudeza y ayuda a crear una costra dorada.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Hornea</h4>
+            <div class="instruction-text">
+                Hornea en el horno precalentado a 350°F durante 45-50 minutos, hasta que las papas estén tiernas cuando se perforen con un cuchillo y la parte superior esté dorada y burbujeante. Si la parte superior comienza a dorarse demasiado rápido antes de que las papas estén cocidas, cubre ligeramente con papel de aluminio durante los últimos 15-20 minutos de cocción.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">7</span>Reposo y Servicio</h4>
+            <div class="instruction-text">
+                Retira del horno y deja reposar durante 5-10 minutos antes de servir. Esto permite que el plato se asiente ligeramente y facilita sacarlo de la cacerola. Adorna con tomillo fresco si lo deseas. Sirve caliente como guarnición junto con carnes asadas, pollo o pescado. Las papas cremosas y tiernas con su costra de queso dorado son absolutamente deliciosas.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef para Papas al Gratén Perfectas</h3>
+        <ul>
+            <li><strong>Selección de Papas:</strong> Usa papas cerosas como Yukon Gold o papas rojas en lugar de papas harinosas. Mantienen su forma mejor y no se desmoronan durante la cocción. Córtalas de manera uniforme (aproximadamente 1/8 de pulgada de espesor) para cocción uniforme.</li>
+            <li><strong>Consejo de Corte:</strong> Un cortador de mandolina hace que cortar de manera uniforme sea fácil y rápido. ¡Solo ten cuidado con tus dedos! Alternativamente, usa un cuchillo afilado y corta cuidadosamente.</li>
+            <li><strong>Calidad de la Crema:</strong> Usa crema pesada de grasa completa o crème fraîche para el mejor sabor y textura. Half-and-half puede usarse pero la salsa puede ser más delgada.</li>
+            <li><strong>Infusión de Ajo:</strong> Picar el ajo fino asegura que se distribuya por toda la crema. Algunas recetas cocinan dientes de ajo enteros y los retiran, pero el ajo picado añade más sabor.</li>
+            <li><strong>Opciones de Queso:</strong> El Gruyère es tradicional y se derrite hermosamente. El suizo, Emmental, o incluso cheddar envejecido pueden funcionar, pero el Gruyère es superior. Evita el queso pre-rallado con agentes anti-apelmazamiento cuando sea posible.</li>
+            <li><strong>Magia de Nuez Moscada:</strong> Una pizca diminuta de nuez moscada recién rallada (no previamente molida) eleva el plato completo. Es opcional pero altamente recomendado.</li>
+            <li><strong>No Mezcles Demasiado:</strong> Cuando hagas capas, no revuelvas ni perturbes las papas. Mantenlas arregladas en capas ordenadas para que se cocinan uniformemente y se ven hermosas.</li>
+            <li><strong>Nivel de Crema:</strong> La crema debe subir aproximadamente 3/4 del camino hacia arriba en las papas, no cubrirlas completamente. A medida que las papas se cocinan, liberan humedad que se combina con la crema.</li>
+            <li><strong>Control de Temperatura:</strong> 350°F es el punto dulce. Temperaturas más altas doran la parte superior demasiado rápido. Temperaturas más bajas toman más tiempo pero aseguran interiores cremosos.</li>
+            <li><strong>Preparación Anticipada:</strong> Puedes montar este plato varias horas antes, cubrir con envoltura plástica y refrigerar. Añade 10-15 minutos al tiempo de horneado si horneas desde frío.</li>
+            <li><strong>Sobras:</strong> Las papas al gratén se mantienen bien en el refrigerador durante 3-4 días. Calienta suavemente en un horno a 325°F cubierto con papel de aluminio para evitar secar.</li>
+        </ul>
+    </div>
+</body>
+</html>
