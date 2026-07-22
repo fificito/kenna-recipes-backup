@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Sopa de Lentejas con Plátano</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="lentil-plantain-soup.html">English</a>
+        <a href="lentil-plantain-soup-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Sopa de Lentejas con Plátano</h1>
+        <p class="subtitle"><a href="https://www.directoalpaladar.com.mx/verduras-y-legumbres/receta-sopa-lentejas-platano-macho-6-ingredientes-muy-economica" target="_blank">Receta de Directo al Paladar →</a></p>
+        <div class="category-badge">Sopa</div>
+        <div class="category-badge">Mexicana</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep</span>
+            <span class="meta-value">15 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cocción</span>
+            <span class="meta-value">40 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">55 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">6</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredientes</h3>
+        <ul class="recipe-list-styled">
+            <li>2 tazas (400g) de lentejas secas, enjuagadas</li>
+            <li>1 plátano macho grande, pelado y cortado en cubos</li>
+            <li>1 cebolla blanca mediana, picada</li>
+            <li>4 dientes de ajo, picados</li>
+            <li>8 tazas (2 litros) de caldo de verdura o pollo</li>
+            <li>2 cucharadas de aceite vegetal</li>
+            <li>Sal y pimienta al gusto</li>
+            <li>Opcional: 1 jalapeño, rebanado</li>
+            <li>Opcional: Cilantro fresco para adornar</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Preparar la Base</h4>
+            <div class="instruction-text">
+                Calienta el aceite vegetal en una olla grande a fuego medio. Añade la cebolla picada y cocina hasta que esté suave y translúcida, aproximadamente 3-4 minutos. Añade el ajo picado y cocina otro minuto más hasta que sea aromático. Si usas jalapeño, añádelo ahora para un toque un poco picante. Revuelve bien para combinar todos los aromáticos.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Añadir el Caldo y las Lentejas</h4>
+            <div class="instruction-text">
+                Vierte el caldo de verdura o pollo en la olla. Lleva a hervir a fuego alto. Añade las lentejas enjuagadas y revuelve bien. Una vez que la mezcla vuelva a hervir, reduce el fuego a medio-bajo y deja simmer sin tapar durante aproximadamente 20 minutos, revolviendo ocasionalmente. Las lentejas deben comenzar a suavizarse pero aún mantener su forma.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Añadir el Plátano</h4>
+            <div class="instruction-text">
+                Añade el plátano macho cortado en cubos a la olla después de que las lentejas hayan estado cocinando durante aproximadamente 20 minutos. Revuelve bien para distribuir el plátano por toda la sopa. El plátano añade un toque dulce y almidonado sutil que equilibra las lentejas terrosas hermosamente. Continúa con el hervor bajo durante otros 15-20 minutos hasta que tanto las lentejas como el plátano estén tiernos.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Condimentar al Gusto</h4>
+            <div class="instruction-text">
+                Prueba la sopa y condimenta generosamente con sal y pimienta. La cantidad de sal necesaria depende de cuán salado sea tu caldo, así que comienza conservadoramente y ajusta según sea necesario. Recuerda que siempre puedes añadir más sal, pero no puedes quitarla. La sopa debe tener un sabor salado bien equilibrado.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Servir</h4>
+            <div class="instruction-text">
+                Sirve la sopa caliente en cuencos. Adorna con cilantro fresco si lo deseas. También puedes servir con tortillas calientes al lado, o añadir un poco de jugo de limón fresco para brillo. Esta es una sopa mexicana humilde, económica y profundamente satisfactoria que es perfecta para una cena rápida entre semana o un almuerzo reconfortante.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef para Sopa de Lentejas con Plátano</h3>
+        <ul>
+            <li><strong>Selección de Lentejas:</strong> Las lentejas marrones o verdes funcionan mejor ya que mantienen su forma durante la cocción. Las lentejas rojas tienden a descomponerse y crean una textura más blanda. Busca lentejas que sean uniformes en color y tamaño para una cocción uniforme.</li>
+            <li><strong>Preparación del Plátano:</strong> Usa plátanos machos verdes (sin madurar), no los amarillos o negros. Los plátanos machos verdes son almidonosos y mantienen su forma al cocinar. Tienen un sabor suave que complementa las lentejas. Pela cortando los extremos e haciendo cortes longitudinales, luego pela la piel gruesa.</li>
+            <li><strong>Calidad del Caldo:</strong> Un caldo de buena calidad hace la diferencia. El caldo casero es ideal, pero un caldo de buena calidad comprado en tienda funciona bien también. El caldo bajo en sodio te da mejor control sobre el nivel de sal final.</li>
+            <li><strong>Selección de Aceite:</strong> Cualquier aceite vegetal neutro funciona. Algunos cocineros prefieren un poco de aceite de oliva para sabor adicional, pero la cocina mexicana tradicional a menudo usa aceite vegetal.</li>
+            <li><strong>Tiempo de Cocción:</strong> El tiempo exacto de cocción depende de tus lentejas y plátano. Las lentejas más viejas toman más tiempo para cocinar. Verifica la ternura probando: ambos deben estar suaves pero no desmoronándose.</li>
+            <li><strong>Consistencia:</strong> Esta es una sopa con caldo, no un guiso espeso. Si prefieres más espesa, puedes aplastar parcialmente algunas lentejas contra el lado de la olla, o dejar simmer sin tapar más tiempo para reducir el líquido.</li>
+            <li><strong>Preparación Anticipada:</strong> Esta sopa en realidad sabe mejor al día siguiente ya que los sabores se mezclan. Enfría completamente, refrigera hasta 4 días, o congela hasta 3 meses. Calienta suavemente en la estufa.</li>
+            <li><strong>Variaciones:</strong> Puedes añadir otras verduras como zanahorias, apio o calabaza. Algunas regiones añaden un poco de chorizo para sabor extra. Un poco de jugo de limón al servir añade brillo.</li>
+            <li><strong>Ingredientes Económicos:</strong> Fiel a su nombre, esta es una receta increíblemente presupuestaria usando solo 6 ingredientes básicos. Las lentejas y plátanos son alimentos básicos asequibles en la cocina mexicana y latinoamericana.</li>
+            <li><strong>Sugerencias de Servicio:</strong> Sirve con tortillas de harina o maíz calientes, cuñas de limón y salsa caliente al lado. Una ensalada simple o cebollas encurtidas complementan esta sopa sustanciosa hermosamente.</li>
+        </ul>
+    </div>
+</body>
+</html>
