@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Filet Mignon Recipe</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="filet-mignon.html" class="active">English</a>
+        <a href="filet-mignon-es.html">Español</a>
+    </div>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+    
+    <header>
+        <h1>Perfect Filet Mignon</h1>
+        <p class="subtitle"><a href="https://www.masterclass.com/articles/how-to-cook-perfect-filet-mignon-easy-filet-mignon-recipe" target="_blank">MasterClass Recipe →</a></p>
+        <div class="category-badge">Main Course</div>
+        <div class="category-badge">Fine Dining</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep Time</span>
+            <span class="meta-value">15 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cook Time</span>
+            <span class="meta-value">15-20 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Total Time</span>
+            <span class="meta-value">30-35 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Servings</span>
+            <span class="meta-value">2</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredients</h3>
+        <ul class="recipe-list-styled">
+            <li>2 filet mignon steaks (6-8 oz each, 1½ to 2 inches thick)</li>
+            <li>3 tablespoons unsalted butter</li>
+            <li>3 cloves garlic, smashed</li>
+            <li>2 sprigs fresh rosemary</li>
+            <li>2 sprigs fresh thyme</li>
+            <li>Kosher salt, to taste</li>
+            <li>Fresh cracked black pepper, to taste</li>
+            <li>2 tablespoons high-heat cooking oil (vegetable or avocado)</li>
+            <li>Optional: Fleur de sel for finishing</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instructions</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Prepare the Steaks</h4>
+            <div class="instruction-text">
+                Remove the filet mignon steaks from the refrigerator 30-40 minutes before cooking. Pat them completely dry with paper towels. This step is crucial for achieving a good crust. Season generously with kosher salt and fresh cracked black pepper on both sides.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Heat the Pan</h4>
+            <div class="instruction-text">
+                Heat a heavy-bottomed skillet (cast iron or stainless steel) over high heat until it's smoking hot. This creates the perfect sear. Add the high-heat cooking oil and let it heat until it shimmers, about 1-2 minutes.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Sear the Steaks</h4>
+            <div class="instruction-text">
+                Place the steaks in the hot skillet and sear for 3-4 minutes on the first side without moving them. This creates a golden crust. Flip once and sear the other side for another 3-4 minutes for medium-rare (130-135°F internal temperature).
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Add Aromatics and Finish</h4>
+            <div class="instruction-text">
+                Reduce heat to medium. Add the butter, smashed garlic, rosemary, and thyme to the pan. Tilt the pan and baste the steaks with the foaming butter for 2-3 minutes. This adds incredible flavor and helps cook the steaks to your desired doneness.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Rest and Serve</h4>
+            <div class="instruction-text">
+                Remove steaks from the pan and transfer to a warm plate. Rest for 5-10 minutes before serving (this allows the juices to redistribute). Spoon some of the herb butter over the top. Season with fleur de sel if desired. Serve immediately.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Chef's Tips for Perfect Filet Mignon</h3>
+        <ul>
+            <li><strong>Temperature is Key:</strong> Use a meat thermometer for accuracy. Filet mignon is best served medium-rare (130-135°F).</li>
+            <li><strong>Room Temperature:</strong> Always bring steaks to room temperature before cooking. This ensures even cooking throughout.</li>
+            <li><strong>Dry Surface:</strong> Moisture prevents browning. Pat steaks dry with paper towels before seasoning.</li>
+            <li><strong>Don't Move the Steaks:</strong> Resist the urge to move them around. Let them sit undisturbed for a proper crust.</li>
+            <li><strong>Quality Matters:</strong> Filet mignon is an elegant cut; invest in high-quality beef from a trusted butcher.</li>
+            <li><strong>Herb Butter Basting:</strong> This is what elevates the dish. Don't skip this step.</li>
+            <li><strong>Resting Period:</strong> Never skip the rest. It makes a huge difference in tenderness and juiciness.</li>
+            <li><strong>Thickness Matters:</strong> 1½ to 2 inches is ideal for achieving a perfect crust and tender interior.</li>
+            <li><strong>High Heat is Essential:</strong> This is not the time for gentle cooking. You need a screaming hot pan.</li>
+        </ul>
+    </div>
+</body>
+</html>
