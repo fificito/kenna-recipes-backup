@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Quiche Lorraine</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="quiche-lorraine.html">English</a>
+        <a href="quiche-lorraine-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Quiche Lorraine</h1>
+        <p class="subtitle"><a href="https://everydaypie.com/quiche-lorraine/" target="_blank">Receta de Everyday Pie →</a></p>
+        <div class="category-badge">Plato Principal</div>
+        <div class="category-badge">Francesa</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep</span>
+            <span class="meta-value">20 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cocción</span>
+            <span class="meta-value">35 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">55 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">6-8</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Para la Masa</h3>
+        <ul class="recipe-list-styled">
+            <li>1 masa de tarta lista para usar (o 1 taza de harina, 1/4 taza de mantequilla fría, 1/4 cucharadita de sal, 3 cucharadas de agua helada)</li>
+        </ul>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Para el Relleno</h3>
+        <ul class="recipe-list-styled">
+            <li>6 rodajas de tocino, cortadas en cubos</li>
+            <li>1 cebolla mediana, cortada en cubos</li>
+            <li>4 huevos</li>
+            <li>1 taza de crema pesada o crème fraîche</li>
+            <li>1/2 taza de leche entera</li>
+            <li>1/2 cucharadita de sal</li>
+            <li>1/4 cucharadita de pimienta blanca</li>
+            <li>1/4 cucharadita de nuez moscada</li>
+            <li>2 cucharadas de perejil fresco, picado (opcional)</li>
+            <li>1/2 taza de queso Gruyère o Emmental rallado (opcional pero tradicional)</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Preparar la Masa</h4>
+            <div class="instruction-text">
+                Si usas una masa lista, precalienta el horno a 190°C (375°F) y forra un molde de 23 cm con la masa. Pincha el fondo con un tenedor para evitar que se infle. Si la haces desde cero, mezcla la harina y sal, incorpora la mantequilla fría hasta que tenga consistencia de migas de pan, añade agua helada y refrigera 30 minutos antes de usar.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Cocinar el Tocino y las Cebollas</h4>
+            <div class="instruction-text">
+                En una sartén grande a fuego medio, cocina el tocino cortado hasta que esté crujiente, aproximadamente 5-7 minutos. Retira con una cuchara perforada y escurre en toallas de papel. En la misma sartén con la grasa de tocino, saltea la cebolla cortada hasta que esté suave y ligeramente dorada, aproximadamente 5 minutos. Devuelve el tocino a la sartén y deja enfriar ligeramente.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Hacer el Relleno de Crema</h4>
+            <div class="instruction-text">
+                En un tazón grande, bate juntos los huevos, crema pesada y leche hasta que esté suave. Condimenta con sal, pimienta blanca y nuez moscada. La nuez moscada es sutil pero esencial para el quiche lorraine auténtico. Incorpora la mezcla de tocino y cebolla enfriada. Si usas queso, mézclalo ahora también.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Armar y Hornear</h4>
+            <div class="instruction-text">
+                Vierte el relleno en la masa de tarta preparada. El relleno debe llegar justo por debajo del borde. Si usas queso, puedes esparcir un poco más en la parte superior para un acabado dorado. Coloca la tarta en una bandeja de horno (para atrapar derrames) y hornea a 190°C (375°F) durante 35-40 minutos, hasta que el relleno esté cuajado pero todavía ligeramente tambaléante en el centro. La parte superior debe estar ligeramente dorada.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Reposar y Servir</h4>
+            <div class="instruction-text">
+                Retira la quiche del horno y deja que repose 10 minutos antes de cortar. Esto permite que el relleno se cuaje completamente sin estar tan caliente que sea difícil de servir. La quiche lorraine se puede servir caliente o a temperatura ambiente, lo que la hace perfecta para brunch, almuerzo o una cena ligera. Adorna con perejil fresco si lo deseas.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef para Quiche Lorraine Perfecta</h3>
+        <ul>
+            <li><strong>Lorraine Tradicional:</strong> El quiche lorraine original de la región de Lorania en Francia contiene solo tocino, huevos, crema y masa, sin queso ni vegetales. Las versiones modernas a menudo añaden queso Gruyère; ¡ambas son deliciosas!</li>
+            <li><strong>Calidad de la Crema:</strong> Usa crema pesada real o crème fraîche, no leche evaporada o mitad y mitad. La riqueza es esencial para el carácter del plato.</li>
+            <li><strong>Magia de la Nuez Moscada:</strong> La pimienta blanca y una pizca de nuez moscada son condimentos tradicionales. No saltes la nuez moscada: añade un calor sutil al relleno.</li>
+            <li><strong>Elección del Tocino:</strong> Usa tocino grueso si puedes encontrarlo. El tocino delgado puede volverse demasiado crujiente; quieres piezas tiernas y sabrosas.</li>
+            <li><strong>Precalentar la Masa:</strong> Para extra crujencia, precalienta tu masa por 5-10 minutos a 190°C antes de añadir el relleno.</li>
+            <li><strong>Nivel de Relleno:</strong> No llenes demasiado la quiche. La crema se expande ligeramente mientras se hornea. Llena hasta justo por debajo del borde de la masa.</li>
+            <li><strong>Prueba de Cocción:</strong> El centro debe tambalearse ligeramente cuando agites la bandeja suavemente. Continuará cociéndose ligeramente mientras se enfría. El horneado excesivo la hace gomosa.</li>
+            <li><strong>Temperatura Ambiente vs. Caliente:</strong> ¡La quiche es deliciosa de cualquier forma! Sirve caliente del horno o a temperatura ambiente en un picnic.</li>
+            <li><strong>Preparación Anticipada:</strong> Arma la quiche sin hornear hasta 4 horas antes, cubre y refrigera. Hornea cuando esté listo, añadiendo unos minutos si comienzas frío.</li>
+            <li><strong>Magia de Sobras:</strong> Corta en rebanadas y recalienta suavemente en horno a 150°C hasta que esté caliente. La quiche se conserva bien refrigerada durante 3-4 días.</li>
+        </ul>
+    </div>
+</body>
+</html>

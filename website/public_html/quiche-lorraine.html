@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiche Lorraine Recipe</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="quiche-lorraine.html" class="active">English</a>
+        <a href="quiche-lorraine-es.html">Español</a>
+    </div>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+    
+    <header>
+        <h1>Quiche Lorraine</h1>
+        <p class="subtitle"><a href="https://everydaypie.com/quiche-lorraine/" target="_blank">Everyday Pie Recipe →</a></p>
+        <div class="category-badge">Main Course</div>
+        <div class="category-badge">French</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep Time</span>
+            <span class="meta-value">20 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cook Time</span>
+            <span class="meta-value">35 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Total Time</span>
+            <span class="meta-value">55 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Servings</span>
+            <span class="meta-value">6-8</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>For the Crust</h3>
+        <ul class="recipe-list-styled">
+            <li>1 pre-made pie crust (or 1 cup all-purpose flour, 1/4 cup cold butter, 1/4 teaspoon salt, 3 tablespoons ice water)</li>
+        </ul>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>For the Filling</h3>
+        <ul class="recipe-list-styled">
+            <li>6 slices bacon, diced</li>
+            <li>1 medium onion, diced</li>
+            <li>4 eggs</li>
+            <li>1 cup heavy cream or crème fraîche</li>
+            <li>1/2 cup whole milk</li>
+            <li>1/2 teaspoon salt</li>
+            <li>1/4 teaspoon white pepper</li>
+            <li>1/4 teaspoon nutmeg</li>
+            <li>2 tablespoons fresh parsley, chopped (optional)</li>
+            <li>1/2 cup grated Gruyère or Emmental cheese (optional but traditional)</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instructions</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Prepare the Crust</h4>
+            <div class="instruction-text">
+                If using a pre-made crust, preheat your oven to 375°F (190°C) and line a 9-inch pie dish with the crust. Prick the bottom with a fork to prevent puffing. If making from scratch, mix flour and salt, cut in cold butter until breadcrumb-like, add ice water, and refrigerate 30 minutes before using.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Cook the Bacon and Onions</h4>
+            <div class="instruction-text">
+                In a large skillet over medium heat, cook the diced bacon until crispy, about 5-7 minutes. Remove with a slotted spoon and drain on paper towels. In the same skillet with the bacon fat, sauté the diced onion until softened and lightly golden, about 5 minutes. Return the bacon to the skillet and set aside to cool slightly.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Make the Custard Filling</h4>
+            <div class="instruction-text">
+                In a large bowl, whisk together the eggs, heavy cream, and milk until smooth. Season with salt, white pepper, and nutmeg. The nutmeg is subtle but essential to authentic quiche lorraine. Stir in the cooled bacon and onion mixture. If using cheese, stir that in now as well.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Assemble and Bake</h4>
+            <div class="instruction-text">
+                Pour the filling into the prepared pie crust. The filling should come just below the rim. If using cheese, you can sprinkle a bit more on top for a golden finish. Place the pie on a baking sheet (to catch any drips) and bake at 375°F (190°C) for 35-40 minutes, until the filling is set but still slightly jiggly in the very center. The top should be lightly golden.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Rest and Serve</h4>
+            <div class="instruction-text">
+                Remove the quiche from the oven and let it cool for 10 minutes before slicing. This allows the filling to set completely without being so hot that it's difficult to serve. Quiche lorraine can be served warm or at room temperature, making it perfect for brunch, lunch, or a light dinner. Garnish with fresh parsley if desired.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Chef's Tips for Perfect Quiche Lorraine</h3>
+        <ul>
+            <li><strong>Traditional Lorraine:</strong> The original quiche lorraine from the Lorraine region of France contains only bacon, eggs, cream, and crust—no cheese or vegetables. Modern versions often add Gruyère cheese; both are delicious!</li>
+            <li><strong>Cream Quality:</strong> Use real heavy cream or crème fraîche, not evaporated milk or half-and-half. The richness is essential to the dish's character.</li>
+            <li><strong>Nutmeg Magic:</strong> White pepper and a tiny pinch of nutmeg are traditional seasonings. Don't skip the nutmeg—it adds subtle warmth to the filling.</li>
+            <li><strong>Bacon Choice:</strong> Use thick-cut bacon if you can find it. Thin bacon can become too crispy; you want tender, flavorful pieces.</li>
+            <li><strong>Pre-Bake Crust:</strong> For extra crispness, pre-bake your crust for 5-10 minutes at 375°F before adding the filling.</li>
+            <li><strong>Filling Level:</strong> Don't overfill the quiche. The custard expands slightly as it bakes. Fill to just below the crust rim.</li>
+            <li><strong>Doneness Test:</strong> The center should jiggle slightly when you shake the pan gently. It will continue to cook slightly as it cools. Overbaking makes it rubbery.</li>
+            <li><strong>Room Temperature vs. Warm:</strong> Quiche is delicious either way! Serve warm from the oven or at room temperature on a picnic.</li>
+            <li><strong>Make Ahead:</strong> Assemble the unbaked quiche up to 4 hours ahead, cover, and refrigerate. Bake when ready, adding a few minutes if starting cold.</li>
+            <li><strong>Leftover Magic:</strong> Slice and reheat gently in a 300°F oven until warmed through. Quiche keeps well refrigerated for 3-4 days.</li>
+        </ul>
+    </div>
+</body>
+</html>
