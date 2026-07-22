@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Tostadas Francesas Esponjosas</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="french-toast.html">English</a>
+        <a href="french-toast-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Tostadas Francesas Esponjosas</h1>
+        <p class="subtitle"><a href="https://www.allrecipes.com/recipe/16895/fluffy-french-toast/" target="_blank">Receta de All Recipes →</a></p>
+        <div class="category-badge">Desayuno</div>
+        <div class="category-badge">Brunch</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep</span>
+            <span class="meta-value">10 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cocción</span>
+            <span class="meta-value">20 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">30 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">4</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredientes</h3>
+        <ul class="recipe-list-styled">
+            <li>1 huevo</li>
+            <li>1/4 taza de leche entera</li>
+            <li>1/2 cucharadita de extracto de vainilla</li>
+            <li>1/4 cucharadita de canela molida</li>
+            <li>Pizca de nuez moscada molida</li>
+            <li>Pizca de sal</li>
+            <li>4 rebanadas de pan (de un día anterior o ligeramente viejo funciona mejor)</li>
+            <li>2 cucharadas de mantequilla o aceite para cocinar</li>
+            <li>Azúcar en polvo para espolvorear</li>
+            <li>Sirope de arce para servir</li>
+            <li>Bayas frescas para servir (opcional)</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Preparar la Mezcla de Natillas</h4>
+            <div class="instruction-text">
+                En un tazón o plato poco profundo, bate el huevo, la leche, el extracto de vainilla, la canela, la nuez moscada y la sal hasta que estén bien combinados. La mezcla debe ser suave y homogénea. Pruébalo para asegurar que las especias estén equilibradas: deseas que la canela y la nuez moscada sean notables pero no abrumadoras.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Elige Tu Pan</h4>
+            <div class="instruction-text">
+                El pan de un día anterior o ligeramente viejo funciona mejor para las tostadas francesas. El pan fresco suave absorbe demasiada natilla y se vuelve empapado. Si tu pan es fresco, puedes dejarlo durante unas pocas horas o tostar ligeramente las rebanadas antes de sumergir. El pan cortado grueso (aproximadamente 3/4 de pulgada de espesor) es ideal para un interior esponjoso con bordes crujientes.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Calienta la Sartén y la Mantequilla</h4>
+            <div class="instruction-text">
+                Calienta una sartén o plancha grande a fuego medio. Añade 1 cucharada de mantequilla y déjala derretir y hacer espuma. La mantequilla debe estar lo suficientemente caliente para que una gota de agua chisporrotee al contacto, pero no tan caliente que se dore inmediatamente. El fuego medio es clave: demasiado alto quemará el exterior antes de cocinar el interior.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Sumerge y Cubre el Pan</h4>
+            <div class="instruction-text">
+                Toma una rebanada de pan e sumerja rápidamente ambos lados en la mezcla de natillas, cubriendo completamente pero sin empapar (aproximadamente 1 segundo por lado es ideal). El pan debe estar mojado pero no goteando. Trabaja rápidamente para que el pan no se vuelva empapado. Colócalo inmediatamente en la sartén caliente con mantequilla.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Cocina Hasta que Esté Dorado</h4>
+            <div class="instruction-text">
+                Cocina durante 2-3 minutos en el primer lado hasta que esté dorado y ligeramente crujiente. Voltea suavemente y cocina el otro lado durante otros 2-3 minutos hasta que también esté dorado. El interior debe ser como una natilla y estar cocido, mientras que el exterior es crujiente. Si el exterior se dora demasiado rápido, reduce el fuego ligeramente.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Mantén Caliente y Sirve</h4>
+            <div class="instruction-text">
+                Transfiere las tostadas francesas cocidas a un plato caliente. Repite con las rebanadas de pan restantes, añadiendo más mantequilla a la sartén según sea necesario. Puedes mantener las rebanadas terminadas calientes en un horno a 200°F mientras cocinas el resto. Espolvorea con azúcar en polvo, sirve con sirope de arce caliente y cubre con bayas frescas o crema batida si lo deseas.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef para Tostadas Francesas Perfectas</h3>
+        <ul>
+            <li><strong>Selección de Pan:</strong> El pan de un día anterior es esencial. El pan fresco absorbe la natilla demasiado rápido y se vuelve empapado en lugar de esponjoso. Si solo tienes pan fresco, déjalo reposar durante unas pocas horas o tóstalo ligeramente primero.</li>
+            <li><strong>Balance de Natilla:</strong> La proporción de huevo a leche es crucial. Demasiado huevo lo hace gomoso; demasiada leche lo hace empapado. La proporción 1:1 (por volumen) crea el equilibrio perfecto para un interior de natilla.</li>
+            <li><strong>Las Especias Importan:</strong> La canela y la nuez moscada son tradicionales y esenciales para las tostadas francesas excelentes. No saltes estas especias. La vainilla añade profundidad y calidez al perfil de sabor.</li>
+            <li><strong>Técnica de Inmersión:</strong> Los sumergimientos rápidos son clave. Deseas el pan cubierto pero no empapado de agua. Trabaja rápido y no dejes que el pan repose en la mezcla de natillas.</li>
+            <li><strong>Control de Temperatura:</strong> El fuego medio es ideal. Demasiado caliente quema el exterior; demasiado frío lo hace grasiento. El pan debe chisporrotear cuando golpea la sartén pero no violentamente.</li>
+            <li><strong>La Mantequilla es Innegociable:</strong> Usa mantequilla real, no aceite o spray de cocina. La mantequilla añade sabor y crea la mejor costra. Déjala hacer espuma antes de añadir el pan.</li>
+            <li><strong>El Grosor Importa:</strong> Corta el pan de 3/4 de pulgada de espesor para la mejor textura: las rebanadas delgadas se vuelven demasiado crujientes, las rebanadas gruesas no se cocinan adecuadamente.</li>
+            <li><strong>No Voltees Demasiado:</strong> Voltea solo una vez. Múltiples volteos previenen el dorado adecuado y la formación de exterior crujiente.</li>
+            <li><strong>Mantenlas Calientes:</strong> Si haces un lote, mantén las rebanadas cocidas en un horno caliente (200°F) para evitar que se enfríen. Apílalas sueltas con papel pergamino entre rebanadas.</li>
+            <li><strong>Sugerencias de Servicio:</strong> El sirope de arce es tradicional, pero también puedes servir con miel, azúcar de canela, frutas frescas, crema batida o Nutella para variaciones.</li>
+        </ul>
+    </div>
+</body>
+</html>

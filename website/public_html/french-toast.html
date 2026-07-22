@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluffy French Toast Recipe</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="french-toast.html" class="active">English</a>
+        <a href="french-toast-es.html">Español</a>
+    </div>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+    
+    <header>
+        <h1>Fluffy French Toast</h1>
+        <p class="subtitle"><a href="https://www.allrecipes.com/recipe/16895/fluffy-french-toast/" target="_blank">All Recipes Recipe →</a></p>
+        <div class="category-badge">Breakfast</div>
+        <div class="category-badge">Brunch</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep Time</span>
+            <span class="meta-value">10 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cook Time</span>
+            <span class="meta-value">20 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Total Time</span>
+            <span class="meta-value">30 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Servings</span>
+            <span class="meta-value">4</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredients</h3>
+        <ul class="recipe-list-styled">
+            <li>1 egg</li>
+            <li>1/4 cup whole milk</li>
+            <li>1/2 teaspoon vanilla extract</li>
+            <li>1/4 teaspoon ground cinnamon</li>
+            <li>Pinch of ground nutmeg</li>
+            <li>Pinch of salt</li>
+            <li>4 slices bread (day-old or slightly stale works best)</li>
+            <li>2 tablespoons butter or oil for cooking</li>
+            <li>Powdered sugar for dusting</li>
+            <li>Maple syrup for serving</li>
+            <li>Fresh berries for serving (optional)</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instructions</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Prepare the Custard Mixture</h4>
+            <div class="instruction-text">
+                In a shallow bowl or dish, whisk together the egg, milk, vanilla extract, cinnamon, nutmeg, and salt until well combined. The mixture should be smooth and homogeneous. Taste it to ensure the spices are balanced—you want the cinnamon and nutmeg to be noticeable but not overpowering.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Choose Your Bread</h4>
+            <div class="instruction-text">
+                Day-old or slightly stale bread works best for French toast. Fresh soft bread absorbs too much custard and becomes soggy. If your bread is fresh, you can leave it out for a few hours or lightly toast the slices before dipping. Thick-cut bread (about 3/4-inch thick) is ideal for a fluffy interior with crispy edges.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Heat the Pan and Butter</h4>
+            <div class="instruction-text">
+                Heat a large skillet or griddle over medium heat. Add 1 tablespoon of butter and let it melt and foam. The butter should be hot enough that a drop of water sizzles on contact, but not so hot that it browns immediately. Medium heat is key—too high will burn the outside before cooking the inside.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Dip and Coat the Bread</h4>
+            <div class="instruction-text">
+                Take one slice of bread and quickly dip both sides into the custard mixture, coating thoroughly but not oversaturating (about 1 second per side is ideal). The bread should be wet but not dripping wet. Work quickly so the bread doesn't become soggy. Place immediately onto the hot buttered skillet.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Cook Until Golden Brown</h4>
+            <div class="instruction-text">
+                Cook for 2-3 minutes on the first side until golden brown and slightly crispy. Flip gently and cook the other side for another 2-3 minutes until it's also golden brown. The interior should be custard-like and cooked through, while the exterior is crispy. If the outside browns too quickly, reduce heat slightly.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Keep Warm and Serve</h4>
+            <div class="instruction-text">
+                Transfer cooked French toast to a warm plate. Repeat with remaining bread slices, adding more butter to the pan as needed. You can keep finished slices warm in a 200°F oven while you cook the rest. Dust with powdered sugar, serve with warm maple syrup, and top with fresh berries or whipped cream if desired.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Chef's Tips for Perfect French Toast</h3>
+        <ul>
+            <li><strong>Bread Selection:</strong> Day-old bread is essential. Fresh bread absorbs the custard too quickly and becomes soggy rather than fluffy. If you only have fresh bread, let it sit out for a few hours or lightly toast it first.</li>
+            <li><strong>Custard Balance:</strong> The ratio of egg to milk is crucial. Too much egg makes it rubbery; too much milk makes it soggy. The 1:1 ratio (by volume) creates the perfect balance for a custardy interior.</li>
+            <li><strong>Spice Matters:</strong> Cinnamon and nutmeg are traditional and essential to great French toast. Don't skip these spices. Vanilla adds depth and warmth to the flavor profile.</li>
+            <li><strong>Dipping Technique:</strong> Quick dips are key. You want the bread coated but not waterlogged. Work fast and don't let bread sit in the custard mixture.</li>
+            <li><strong>Temperature Control:</strong> Medium heat is ideal. Too hot burns the outside; too cool makes it greasy. The bread should sizzle when it hits the pan but not violently.</li>
+            <li><strong>Butter is Non-Negotiable:</strong> Use real butter, not oil or cooking spray. Butter adds flavor and creates the best crust. Let it foam before adding the bread.</li>
+            <li><strong>Thickness Matters:</strong> Cut bread 3/4-inch thick for the best texture—thin slices get too crispy, thick slices don't cook through properly.</li>
+            <li><strong>Don't Flip Too Often:</strong> Flip only once. Multiple flips prevent proper browning and crispy exterior formation.</li>
+            <li><strong>Keep Them Warm:</strong> If making a batch, keep cooked slices in a warm oven (200°F) to prevent them from cooling. Stack them loosely with parchment paper between slices.</li>
+            <li><strong>Serving Suggestions:</strong> Maple syrup is traditional, but you can also serve with honey, cinnamon sugar, fresh fruit, whipped cream, or Nutella for variations.</li>
+        </ul>
+    </div>
+</body>
+</html>
