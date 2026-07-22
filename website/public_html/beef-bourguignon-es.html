@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Beef Bourguignon</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="beef-bourguignon.html">English</a>
+        <a href="beef-bourguignon-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Beef Bourguignon</h1>
+        <p class="subtitle"><a href="https://cafedelites.com/beef-bourguignon/" target="_blank">Receta de Café Delites →</a></p>
+        <div class="category-badge">Plato Principal</div>
+        <div class="category-badge">Francesa</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep</span>
+            <span class="meta-value">30 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cocción</span>
+            <span class="meta-value">2.5-3 horas</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">3-3.5 horas</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">4-6</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredientes</h3>
+        <ul class="recipe-list-styled">
+            <li>3 cucharadas de aceite de oliva</li>
+            <li>900 gramos de carne de res (chuck), cortada en cubos de 5 cm</li>
+            <li>Sal y pimienta negra recién molida, al gusto</li>
+            <li>1 cebolla grande, cortada en trozos grandes</li>
+            <li>3 dientes de ajo, picados</li>
+            <li>2 cucharadas de pasta de tomate</li>
+            <li>500 ml de vino tinto seco (se prefiere Borgogna)</li>
+            <li>500 ml de caldo de res</li>
+            <li>2 hojas de laurel</li>
+            <li>3-4 ramas de tomillo fresco (o 1 cucharadita de seco)</li>
+            <li>1 cucharadita de mostaza Dijon</li>
+            <li>225 gramos de cebollitas pequeñas, peladas</li>
+            <li>225 gramos de champiñones, cortados por la mitad</li>
+            <li>3 zanahorias medianas, cortadas en trozos</li>
+            <li>2 cucharadas de mantequilla</li>
+            <li>2 cucharadas de harina (para espesar)</li>
+            <li>Perejil fresco para adornar</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Dorar la Carne</h4>
+            <div class="instruction-text">
+                Calienta el aceite de oliva en una cazuela grande y pesada o en una olla holandesa a fuego medio-alto. Seca los cubos de carne y condimenta generosamente con sal y pimienta. Trabajando en tandas para evitar amontonamiento, dora la carne en todos los lados, aproximadamente 3-4 minutos por lado. Transfiere a un plato.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Construir la Base</h4>
+            <div class="instruction-text">
+                En la misma cazuela, añade la cebolla picada y cocina hasta que esté suave, aproximadamente 5 minutos. Añade el ajo picado y cocina durante 1 minuto. Añade la pasta de tomate y cocina durante otros 2 minutos, revolviendo frecuentemente. Esto crea una base de sabor rica.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Deglacé y Sazona</h4>
+            <div class="instruction-text">
+                Vierte el vino tinto en la cazuela, raspando el fondo para deglasear. Añade el caldo de res, hojas de laurel, ramas de tomillo y mostaza Dijon. Revuelve bien. Devuelve la carne dorada a la cazuela, asegurándote de que esté cubierta con líquido. Trae a un hervor suave.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Brasar a Fuego Lento</h4>
+            <div class="instruction-text">
+                Cubre la cazuela y reduce el fuego a bajo. Cocina a fuego lento durante 1.5 a 2 horas, hasta que la carne esté muy tierna. Aproximadamente 30 minutos antes de que la carne esté lista, añade las zanahorias, las cebollitas y los champiñones. Continúa cocinando hasta que la carne esté tierna.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Espesar la Salsa</h4>
+            <div class="instruction-text">
+                En un tazón pequeño, mezcla la mantequilla y la harina en una pasta (beurre manié). Revuelve pequeñas cucharadas en la salsa hirviendo suave hasta que alcance el espesor deseado. La salsa debe recubrir el dorso de una cuchara. Prueba y ajusta el sazón con sal y pimienta.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Terminar y Servir</h4>
+            <div class="instruction-text">
+                Retira del fuego. Retira las hojas de laurel y las ramas de tomillo. Prueba y ajusta los sabores. Transfiere a una fuente de servicio y adorna con perejil fresco. Sirve caliente con pan tostado, fideos de huevo o puré de papas. ¡Este clásico francés es perfecto para recibir!
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef para Beef Bourguignon Perfecto</h3>
+        <ul>
+            <li><strong>Carne de Calidad:</strong> Usa carne de res tipo chuck u otro corte bien marmoleado que se ablande con cocción lenta. Evita cortes magros.</li>
+            <li><strong>Vino Tinto:</strong> Un buen Borgogna o Côtes du Rhône hace la diferencia. El vino se reduce y se convierte en parte de la salsa, así que usa algo que beberías.</li>
+            <li><strong>Dorar la Carne Correctamente:</strong> No te apresures en este paso. Un dorado adecuado crea una corteza sabrosa y construye la profundidad de la salsa.</li>
+            <li><strong>Lento y Bajo:</strong> Este es un braseado, no una ebullición. Mantén un hervor suave para carne tierna, no dura.</li>
+            <li><strong>Tiempo de Vegetales:</strong> Añade vegetales más resistentes (zanahorias) antes de los más suaves (champiñones) para que todo termine al mismo tiempo.</li>
+            <li><strong>Preparación Anticipada:</strong> Este plato mejora cuando se hace uno o dos días antes. Los sabores se desarrollan y se profundizan. Recalienta suavemente antes de servir.</li>
+            <li><strong>Congelación:</strong> Se congela hermosamente hasta 3 meses. Descongela durante la noche en el refrigerador antes de recalentar.</li>
+            <li><strong>Variaciones de Vino:</strong> Aunque Borgogna es tradicional, Burdeos o incluso un buen Pinot Noir funciona bien.</li>
+            <li><strong>Cebollitas Pequeñas:</strong> Para pelar fácilmente cebollitas pequeñas, remójalas en agua caliente durante algunos minutos; las pieles se deslizan fácilmente.</li>
+        </ul>
+    </div>
+</body>
+</html>
