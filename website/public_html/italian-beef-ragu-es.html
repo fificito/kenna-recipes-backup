@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Ragu de Res Italiano</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="italian-beef-ragu.html">English</a>
+        <a href="italian-beef-ragu-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Ragu de Res Italiano</h1>
+        <p class="subtitle"><a href="https://www.insidetherustickitchen.com/italian-beef-ragu-classic-recipe/" target="_blank">Receta de Inside the Rustic Kitchen →</a></p>
+        <div class="category-badge">Salsa</div>
+        <div class="category-badge">Italiana</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep</span>
+            <span class="meta-value">15 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cocción</span>
+            <span class="meta-value">3-4 horas</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">3.5-4.5 horas</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">6-8</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredientes</h3>
+        <ul class="recipe-list-styled">
+            <li>3 cucharadas de aceite de oliva virgen extra</li>
+            <li>1 cebolla mediana, picada finamente</li>
+            <li>2 zanahorias medianas, picadas finamente</li>
+            <li>2 tallos de apio, picados finamente</li>
+            <li>4 dientes de ajo, picados</li>
+            <li>680 gramos de carne de res molida</li>
+            <li>115 gramos de panceta o tocino, picado finamente</li>
+            <li>1 cucharada de pasta de tomate</li>
+            <li>120 ml de leche entera (ingrediente tradicional)</li>
+            <li>120 ml de vino blanco seco</li>
+            <li>1 lata (800g) de tomates San Marzano triturados</li>
+            <li>2 cucharadas de puré de tomate</li>
+            <li>1 cucharadita de azúcar</li>
+            <li>2 hojas de laurel</li>
+            <li>Sal y pimienta negra recién molida, al gusto</li>
+            <li>Pizca de nuez moscada</li>
+            <li>Perejil fresco para adornar</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Saltear el Soffritto</h4>
+            <div class="instruction-text">
+                Calienta el aceite de oliva en una olla grande y pesada a fuego medio. Añade la cebolla, zanahoria y apio picados (la base italiana del soffritto). Cocina, revolviendo ocasionalmente, hasta que los vegetales estén suaves y ligeramente dorados, aproximadamente 8-10 minutos. Añade el ajo picado y cocina durante otro minuto hasta que esté fragante.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Dorar la Carne</h4>
+            <div class="instruction-text">
+                Aumenta el fuego a medio-alto. Añade la panceta y cocina durante 2-3 minutos. Añade la carne de res molida, rompiéndola con una cuchara de madera mientras se cocina. Continúa cocinando hasta que la carne esté dorada y sin color rosa, aproximadamente 8-10 minutos. Escurre la grasa en exceso si es necesario.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Construir la Base de Sabor</h4>
+            <div class="instruction-text">
+                Incorpora la pasta de tomate y cocina durante 2 minutos, revolviendo frecuentemente. Vierte el vino blanco, raspando el fondo de la olla para deglasear. Deja que el vino se reduzca a la mitad, aproximadamente 3-4 minutos. Esto concentra los sabores y quema el alcohol.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Añadir los Tomates</h4>
+            <div class="instruction-text">
+                Añade los tomates San Marzano triturados y el puré de tomate. Incorpora el azúcar y condimenta con sal y pimienta. Añade las hojas de laurel y una pizca de nuez moscada. Trae a un hervor suave, luego reduce el fuego a bajo. Esta es la clave del ragu auténtico: un hervor suave y lento.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Simmer y Añadir Leche</h4>
+            <div class="instruction-text">
+                Deja que la salsa hierva suavemente, sin cubrir, durante 2.5 a 3 horas, revolviendo ocasionalmente. La salsa debe reducirse y espesarse significativamente. Aproximadamente 30 minutos antes de servir, añade la leche. La leche suaviza la acidez y añade riqueza a la salsa. Continúa hirviendo hasta que la salsa alcance la consistencia deseada.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Terminar y Servir</h4>
+            <div class="instruction-text">
+                Retira del fuego. Retira las hojas de laurel. Prueba y ajusta el sazón con sal y pimienta. El ragu debe ser espeso, rico y profundamente sabroso. Sirve sobre pasta fresca o seca, polenta o arroz. Adorna con perejil fresco y queso parmesano rallado. ¡Esta salsa italiana clásica vale la pena esperar!
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef para Ragu de Res Italiano Auténtico</h3>
+        <ul>
+            <li><strong>Tomates San Marzano:</strong> Estos tomates italianos son más dulces y menos ácidos que otras variedades. Hacen una verdadera diferencia en el sabor final.</li>
+            <li><strong>El Soffritto:</strong> No saltes este paso. El soffritto (cebolla, zanahoria, apio) es la base aromática de la cocina italiana y construye una profundidad increíble.</li>
+            <li><strong>Hervor Lento:</strong> El ragu auténtico se hace a fuego bajo y lento. Esto permite que los sabores se desarrollen y se mezclen. No apresures con fuego alto.</li>
+            <li><strong>La Leche:</strong> El ragu tradicional incluye leche, lo que parece extraño pero es esencial. Suaviza la acidez y añade una textura lujosa.</li>
+            <li><strong>Panceta o Tocino:</strong> Esto añade profundidad sabrosa. Si usas tocino, usa una buena calidad, no demasiado ahumada.</li>
+            <li><strong>Preparación Anticipada:</strong> Esta salsa mejora cuando se hace uno o dos días antes. Los sabores se profundizan e intensifican. Recalienta suavemente antes de servir.</li>
+            <li><strong>Congelación:</strong> Se congela hermosamente hasta 3 meses. Porción y congela en recipientes herméticos para comidas fáciles entre semana.</li>
+            <li><strong>Combinaciones de Pasta:</strong> Sirve sobre pappardelle, tagliatelle u otra pasta de cinta. Estas formas sostienen la salsa espesa hermosamente.</li>
+            <li><strong>Sobras:</strong> Usa el ragu sobrante en lasaña, ziti al horno o como relleno para conchas de pasta.</li>
+        </ul>
+    </div>
+</body>
+</html>

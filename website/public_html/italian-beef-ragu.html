@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italian Beef Ragu Recipe</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="italian-beef-ragu.html" class="active">English</a>
+        <a href="italian-beef-ragu-es.html">Español</a>
+    </div>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+    
+    <header>
+        <h1>Italian Beef Ragu</h1>
+        <p class="subtitle"><a href="https://www.insidetherustickitchen.com/italian-beef-ragu-classic-recipe/" target="_blank">Inside the Rustic Kitchen Recipe →</a></p>
+        <div class="category-badge">Sauce</div>
+        <div class="category-badge">Italian</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep Time</span>
+            <span class="meta-value">15 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cook Time</span>
+            <span class="meta-value">3-4 hours</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Total Time</span>
+            <span class="meta-value">3.5-4.5 hours</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Servings</span>
+            <span class="meta-value">6-8</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredients</h3>
+        <ul class="recipe-list-styled">
+            <li>3 tablespoons extra-virgin olive oil</li>
+            <li>1 medium onion, finely diced</li>
+            <li>2 medium carrots, finely diced</li>
+            <li>2 celery stalks, finely diced</li>
+            <li>4 cloves garlic, minced</li>
+            <li>1.5 pounds ground beef</li>
+            <li>4 ounces pancetta or bacon, finely diced</li>
+            <li>1 tablespoon tomato paste</li>
+            <li>1/2 cup whole milk (traditional ingredient)</li>
+            <li>1/2 cup dry white wine</li>
+            <li>1 can (28 ounces) crushed San Marzano tomatoes</li>
+            <li>2 tablespoons tomato puree</li>
+            <li>1 teaspoon sugar</li>
+            <li>2 bay leaves</li>
+            <li>Salt and freshly ground black pepper, to taste</li>
+            <li>Pinch of nutmeg</li>
+            <li>Fresh parsley for garnish</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instructions</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Sauté the Soffritto</h4>
+            <div class="instruction-text">
+                Heat olive oil in a large, heavy-bottomed pot over medium heat. Add the diced onion, carrot, and celery (the Italian soffritto base). Cook, stirring occasionally, until vegetables are softened and lightly golden, about 8-10 minutes. Add the minced garlic and cook for another minute until fragrant.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Brown the Meat</h4>
+            <div class="instruction-text">
+                Increase heat to medium-high. Add the pancetta and cook for 2-3 minutes. Add the ground beef, breaking it up with a wooden spoon as it cooks. Continue cooking until the meat is browned and no longer pink, about 8-10 minutes. Drain excess fat if needed.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Build the Flavor Base</h4>
+            <div class="instruction-text">
+                Stir in the tomato paste and cook for 2 minutes, stirring frequently. Pour in the white wine, scraping the bottom of the pot to deglaze. Let the wine reduce by half, about 3-4 minutes. This concentrates the flavors and burns off the alcohol.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Add the Tomatoes</h4>
+            <div class="instruction-text">
+                Add the crushed San Marzano tomatoes and tomato puree. Stir in the sugar and season with salt and pepper. Add the bay leaves and a pinch of nutmeg. Bring to a simmer, then reduce heat to low. This is the key to authentic ragu—a slow, gentle simmer.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Simmer and Add Milk</h4>
+            <div class="instruction-text">
+                Let the sauce simmer gently, uncovered, for 2.5 to 3 hours, stirring occasionally. The sauce should reduce and thicken significantly. About 30 minutes before serving, add the milk. The milk mellows the acidity and adds richness to the sauce. Continue simmering until the sauce reaches desired consistency.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Finish and Serve</h4>
+            <div class="instruction-text">
+                Remove from heat. Remove the bay leaves. Taste and adjust seasoning with salt and pepper. The ragu should be thick, rich, and deeply flavorful. Serve over fresh or dried pasta, polenta, or rice. Garnish with fresh parsley and grated Parmigiano-Reggiano cheese. This classic Italian sauce is worth the wait!
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Chef's Tips for Authentic Italian Beef Ragu</h3>
+        <ul>
+            <li><strong>San Marzano Tomatoes:</strong> These Italian tomatoes are sweeter and less acidic than other varieties. They make a real difference in the final flavor.</li>
+            <li><strong>The Soffritto:</strong> Don't skip this step. The soffritto (onion, carrot, celery) is the aromatic foundation of Italian cooking and builds incredible depth.</li>
+            <li><strong>Slow Simmer:</strong> Authentic ragu is made at a low, slow simmer. This allows flavors to develop and marry. Don't rush with high heat.</li>
+            <li><strong>The Milk:</strong> Traditional ragu includes milk, which seems odd but is essential. It tones down acidity and adds a luxurious mouthfeel.</li>
+            <li><strong>Pancetta or Bacon:</strong> This adds savory depth. If using bacon, use a good quality, not overly smoky variety.</li>
+            <li><strong>Make Ahead:</strong> This sauce improves when made a day or two ahead. Flavors deepen and intensify. Reheat gently before serving.</li>
+            <li><strong>Freezing:</strong> Freezes beautifully for up to 3 months. Portion and freeze in airtight containers for easy weeknight meals.</li>
+            <li><strong>Pasta Pairings:</strong> Serve over pappardelle, tagliatelle, or other ribbon pasta. These shapes hold the thick sauce beautifully.</li>
+            <li><strong>Leftovers:</strong> Use leftover ragu in lasagna, baked ziti, or as a filling for pasta shells.</li>
+        </ul>
+    </div>
+</body>
+</html>
