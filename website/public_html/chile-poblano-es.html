@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Chile Poblano al Horno con Frijoles, Crema y Queso</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="chile-poblano.html">English</a>
+        <a href="chile-poblano-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Chile Poblano al Horno con Frijoles, Crema y Queso</h1>
+        <p class="subtitle"><a href="https://cookpad.com/mx/recetas/15295752" target="_blank">Receta de Cookpad →</a></p>
+        <div class="category-badge">Plato Principal</div>
+        <div class="category-badge">Mexicano</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep</span>
+            <span class="meta-value">20 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cocción</span>
+            <span class="meta-value">35 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">55 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">4</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Para el Chile Poblano</h3>
+        <ul class="recipe-list-styled">
+            <li>4 chiles poblanos grandes</li>
+            <li>2 tazas de frijoles refritos cocidos (o frijoles enteros)</li>
+            <li>2 tazas de queso Oaxaca deshebrado o mozzarella</li>
+            <li>1 taza de crema mexicana o crema agria</li>
+            <li>1/2 taza de leche entera</li>
+            <li>3 dientes de ajo, picados</li>
+            <li>1/2 cebolla blanca, finamente picada</li>
+            <li>Sal y pimienta blanca al gusto</li>
+            <li>2 cucharadas de mantequilla o aceite</li>
+            <li>1/4 cucharadita de comino molido</li>
+        </ul>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Para la Salsa de Crema</h3>
+        <ul class="recipe-list-styled">
+            <li>1 taza de crema mexicana o crema agria</li>
+            <li>1/2 taza de leche entera</li>
+            <li>2 cucharadas de mantequilla</li>
+            <li>3 dientes de ajo, picados</li>
+            <li>Sal y pimienta blanca al gusto</li>
+            <li>Opcional: 1 chile jalapeño, finamente rebanado</li>
+        </ul>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Para Servir</h3>
+        <ul class="recipe-list-styled">
+            <li>Cilantro fresco, picado</li>
+            <li>Queso fresco desmenuzado</li>
+            <li>Queso Oaxaca deshebrado adicional</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Preparar los Chiles Poblanos</h4>
+            <div class="instruction-text">
+                Precalienta el horno a 400°F (200°C). Asa los chiles poblanos en una bandeja de horno durante 8-10 minutos hasta que la piel esté chamuscada y ampollada. Retira y coloca en una bolsa de plástico durante 5 minutos para que se calienten, lo que facilita el pelado. Una vez enfriados, cuidadosamente pela la piel ennegrecida. Haz una abertura vertical y suavemente retira las semillas y las venas, manteniendo el chile intacto.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Hacer el Relleno</h4>
+            <div class="instruction-text">
+                Calienta 2 cucharadas de mantequilla o aceite en una sartén a fuego medio. Saltea la cebolla picada y el ajo picado hasta que estén suave y aromático, alrededor de 2 minutos. Añade los frijoles cocidos y machaca ligeramente para crear una textura cremosa mientras mantienes algunos frijoles enteros. Añade el comino molido, sal y pimienta blanca. Cocina durante 2-3 minutos hasta que esté bien combinado y caliente. Retira del fuego.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Rellenar los Chiles</h4>
+            <div class="instruction-text">
+                Cucharea la mezcla de frijoles en cada chile poblano asado, rellenándolos generosamente. Cubre cada uno con queso Oaxaca deshebrado (aproximadamente 1/2 taza por chile). Coloca los chiles rellenos en una bandeja de horno untada con mantequilla, con la abertura hacia arriba.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Preparar la Salsa de Crema</h4>
+            <div class="instruction-text">
+                En una cacerola pequeña, derrite 2 cucharadas de mantequilla a fuego medio. Añade el ajo picado y cocina durante 1 minuto hasta que sea aromático. Vierte la crema y la leche, batiendo para combinar. Condimenta con sal y pimienta blanca. Si usas jalapeño, añádelo ahora. Hierve a fuego lento durante 2-3 minutos hasta que la salsa esté caliente y ligeramente espesada. No dejes que hierva.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Armado y Horneado</h4>
+            <div class="instruction-text">
+                Vierte la salsa de crema caliente uniformemente sobre los chiles poblanos rellenos. Puedes esparcir queso Oaxaca deshebrado adicional en la parte superior si lo deseas. Baja la temperatura del horno a 350°F (175°C) y hornea durante 15-20 minutos hasta que los chiles estén calientes y el queso esté derretido y comenzando a dorarse. La salsa debe burbujear suavemente alrededor de los bordes.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Servir</h4>
+            <div class="instruction-text">
+                Retira del horno y deja reposar durante 2 minutos. Adorna generosamente con cilantro fresco y queso fresco desmenuzado. Sirve caliente con tortillas calientes al lado. La combinación de frijoles cremosos, queso derretido y salsa de crema sedosa es quintaesencial comida confortante mexicana.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef para Chile Poblano Perfecto</h3>
+        <ul>
+            <li><strong>Elegir Chiles Poblanos:</strong> Busca poblanos grandes y oscuros con paredes gruesas. Son más suaves que los jalapeños pero tienen gran sabor. Siempre prueba un pequeño trozo antes de comprometerte a cocinar si eres sensible al picante.</li>
+            <li><strong>Asar y Pelar:</strong> La clave para eliminar fácilmente la piel es calentarla en una bolsa de plástico después de asar. Este paso es esencial: no lo saltes. Algunos cocineros usan una toalla mojada en su lugar si no tienen bolsa de plástico.</li>
+            <li><strong>Mantener Chiles Intactos:</strong> Maneja los chiles asados suavemente al pelarlos y retirar las semillas. Una abertura vertical facilita mantenerlos enteros para rellenar.</li>
+            <li><strong>Relleno de Frijoles:</strong> Una mezcla de frijoles refritos y enteros crea mejor textura que solo refritos. Si tus frijoles son demasiado espesos, adelgaza con un poco de caldo.</li>
+            <li><strong>Opciones de Queso:</strong> El queso Oaxaca es tradicional y se estira hermosamente cuando se derrite. Si no está disponible, usa mozzarella fresca o un queso mexicano suave como quesillo. Evita usar solo queso cheddar maduro ya que puede dominar el plato.</li>
+            <li><strong>La Crema es Esencial:</strong> La crema mexicana es más rica y menos ácida que la crema agria. Si usas crema agria, es posible que desees añadir una cucharada de mayonesa o usar mitad crema agria y mitad crema pesada para mejor sabor.</li>
+            <li><strong>Control de Temperatura:</strong> No dejes que la salsa de crema hierva: solo caliéntala suavemente. El calor alto puede hacer que se separe o cortada.</li>
+            <li><strong>Preparación Anticipada:</strong> Puedes preparar los chiles rellenos hasta 4 horas antes, cubrir con envoltura plástica y refrigerar. Añade 5-10 minutos al tiempo de horneado si horneas desde frío.</li>
+            <li><strong>Servir con Acompañamientos:</strong> Las tortillas de harina o maíz calientes son esenciales. También puedes servir con arroz mexicano o una ensalada simple al lado.</li>
+            <li><strong>Almacenamiento de Sobras:</strong> Las sobras se mantienen bien en el refrigerador hasta 3 días. Calienta suavemente en un horno a 325°F para evitar secar los chiles.</li>
+        </ul>
+    </div>
+</body>
+</html>
