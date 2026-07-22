@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Sopa de Cebolla Francesa Clásica</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="french-onion-soup.html">English</a>
+        <a href="french-onion-soup-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Sopa de Cebolla Francesa Clásica</h1>
+        <p class="subtitle"><a href="https://www.gimmesomeoven.com/classic-french-onion-soup/" target="_blank">Receta de Gimme Some Oven →</a></p>
+        <div class="category-badge">Sopa</div>
+        <div class="category-badge">Francesa</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep</span>
+            <span class="meta-value">15 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cocción</span>
+            <span class="meta-value">1 hora 15 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">1 hora 30 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">4</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredientes</h3>
+        <ul class="recipe-list-styled">
+            <li>3 cucharadas de mantequilla</li>
+            <li>2 cucharadas de aceite de oliva</li>
+            <li>1.5 kg de cebollas amarillas (aproximadamente 6-7 grandes), cortadas en medias lunas finas</li>
+            <li>1 cucharadita de sal</li>
+            <li>1/2 cucharadita de pimienta negra</li>
+            <li>1/4 cucharadita de pimienta de cayena (opcional)</li>
+            <li>1 cucharada de tomillo fresco (o 1 cucharadita de seco)</li>
+            <li>2 hojas de laurel</li>
+            <li>2 cucharadas de pasta de tomate</li>
+            <li>2 cucharadas de vinagre balsámico</li>
+            <li>1 litro de caldo de res</li>
+            <li>240 ml de vino blanco seco o más caldo</li>
+            <li>Sal y pimienta negra, al gusto</li>
+            <li>Baguette o pan francés, rebanado y tostado</li>
+            <li>500 ml de queso Gruyère o Suizo rallado</li>
+            <li>Tomillo fresco y perejil para adornar</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Caramelizar las Cebollas</h4>
+            <div class="instruction-text">
+                Calienta la mantequilla y el aceite de oliva en una olla grande y pesada u olla holandesa a fuego medio. Añade las cebollas rebanadas, sal y pimienta. Cocina lentamente, revolviendo ocasionalmente, durante 45-60 minutos. Las cebollas deben volverse marrón profundo y caramelizado. Este es el paso más importante: ¡la paciencia es clave! Evita el fuego alto, que dorará las cebollas demasiado rápido sin la dulzura adecuada.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Añadir Aromáticos y Tomate</h4>
+            <div class="instruction-text">
+                Una vez que las cebollas estén caramelizadas, añade el tomillo fresco, hojas de laurel y pasta de tomate. Mezcla bien y cocina durante 2-3 minutos para liberar los sabores. La pasta de tomate añade profundidad y una ligera dulzura que equilibra hermosamente las cebollas caramelizadas.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Deglasear con Vino</h4>
+            <div class="instruction-text">
+                Añade el vinagre balsámico y el vino blanco, raspando cualquier parte quemada del fondo de la olla. El vinagre añade un toque sutil y complejidad. Hierve a fuego lento durante 2-3 minutos para reducir ligeramente y cocinar el alcohol. Esto construye una increíble profundidad de sabor.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Añadir Caldo y Cocinar a Fuego Lento</h4>
+            <div class="instruction-text">
+                Vierte el caldo de res. Lleva a ebullición, luego reduce el fuego a bajo y hierve a fuego lento durante 15-20 minutos. Esto permite que todos los sabores se mezclen. Condimenta con sal y pimienta adicional al gusto. Retira las hojas de laurel antes de servir.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Tostar Pan y Armar</h4>
+            <div class="instruction-text">
+                Mientras la sopa hierve, rebana la baguette en diagonal y tuesta las rebanadas hasta que estén doradas y crujientes. Para servir, vierte la sopa caliente en tazones resistentes al horno. Cubre cada tazón con una rebanada de pan tostado, luego generosamente con queso Gruyère rallado. Coloca los tazones en una bandeja de horno.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Derretir Final y Servir</h4>
+            <div class="instruction-text">
+                Asa bajo el grill los tazones de sopa en el horno durante 2-3 minutos a fuego alto, hasta que el queso esté derretido, burbujeante y ligeramente dorado. Observa cuidadosamente para evitar quemar. ¡Retira con cuidado: los tazones estarán muy calientes! Adorna con tomillo fresco y perejil. Sirve inmediatamente mientras el queso está en su punto más glorioso y elástico.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef para Sopa de Cebolla Francesa Perfecta</h3>
+        <ul>
+            <li><strong>El Tiempo es Esencial:</strong> El caramelizado largo de las cebollas es lo que hace especial esta sopa. No la apresures. Cuanto más lentamente caramelice, más dulce y profundo será el sabor.</li>
+            <li><strong>Selección de Cebolla:</strong> Las cebollas amarillas son tradicionales y producen la mejor dulzura. Las cebollas Vidalia son aún más dulces si puedes encontrarlas.</li>
+            <li><strong>Calidad del Caldo de Res:</strong> Usa el mejor caldo de res que puedas encontrar. Un caldo casero o premium marca una diferencia dramática en el resultado final.</li>
+            <li><strong>Elección de Vino:</strong> Un vino blanco seco (Pinot Grigio, Sauvignon Blanc) funciona bien. Si prefieres no usar alcohol, sustituye con más caldo de res.</li>
+            <li><strong>Opciones de Queso:</strong> Gruyère es tradicional y delicioso. Emmental, Suizo, o una mezcla de quesos también funcionan hermosamente.</li>
+            <li><strong>El Pan Importa:</strong> Pan francés auténtico o una buena baguette es esencial. Debe ser crujiente por fuera, tierno por dentro, y lo suficientemente resistente para sostener el queso.</li>
+            <li><strong>Tazones Resistentes al Horno:</strong> Usa tazones de sopa de cerámica o hierro fundido adecuados que puedan resistir el calor del grill. ¡Ten cuidado: se ponen muy calientes!</li>
+            <li><strong>Preparación Anticipada:</strong> La base de la sopa (sin pan ni queso) se puede hacer hasta 2 días antes y recalentar. Arma los tazones finales justo antes de servir.</li>
+            <li><strong>Innovación de Pasta de Tomate:</strong> La pequeña cantidad de pasta de tomate añade umami y profundidad sin hacer que la sopa sepa a tomate. Es un ingrediente sutil pero crucial.</li>
+            <li><strong>Variaciones:</strong> Algunos añaden un toque de coñac o jerez además del vino. Una pizca de salsa Worcestershire también puede mejorar las notas saladas.</li>
+        </ul>
+    </div>
+</body>
+</html>

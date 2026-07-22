@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic French Onion Soup Recipe</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="french-onion-soup.html" class="active">English</a>
+        <a href="french-onion-soup-es.html">Español</a>
+    </div>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+    
+    <header>
+        <h1>Classic French Onion Soup</h1>
+        <p class="subtitle"><a href="https://www.gimmesomeoven.com/classic-french-onion-soup/" target="_blank">Gimme Some Oven Recipe →</a></p>
+        <div class="category-badge">Soup</div>
+        <div class="category-badge">French</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep Time</span>
+            <span class="meta-value">15 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cook Time</span>
+            <span class="meta-value">1 hour 15 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Total Time</span>
+            <span class="meta-value">1 hour 30 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Servings</span>
+            <span class="meta-value">4</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredients</h3>
+        <ul class="recipe-list-styled">
+            <li>3 tablespoons butter</li>
+            <li>2 tablespoons olive oil</li>
+            <li>3 pounds yellow onions (about 6-7 large), sliced into thin half-moons</li>
+            <li>1 teaspoon salt</li>
+            <li>1/2 teaspoon black pepper</li>
+            <li>1/4 teaspoon cayenne pepper (optional)</li>
+            <li>1 tablespoon fresh thyme (or 1 teaspoon dried)</li>
+            <li>2 bay leaves</li>
+            <li>2 tablespoons tomato paste</li>
+            <li>2 tablespoons balsamic vinegar</li>
+            <li>4 cups beef broth</li>
+            <li>1 cup dry white wine or additional broth</li>
+            <li>Salt and black pepper, to taste</li>
+            <li>Baguette or French bread, sliced and toasted</li>
+            <li>2 cups grated Gruyère or Swiss cheese</li>
+            <li>Fresh thyme and parsley for garnish</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instructions</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Caramelize the Onions</h4>
+            <div class="instruction-text">
+                Heat butter and olive oil in a large, heavy-bottomed pot or Dutch oven over medium heat. Add the sliced onions, salt, and pepper. Cook slowly, stirring occasionally, for 45-60 minutes. The onions should turn deep golden brown and become sweet and caramelized. This is the most important step—patience is key! Avoid high heat, which will brown the onions too quickly without the proper sweetness.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Add Aromatics and Tomato</h4>
+            <div class="instruction-text">
+                Once onions are caramelized, add the fresh thyme, bay leaves, and tomato paste. Stir well and cook for 2-3 minutes to release the flavors. The tomato paste adds depth and a slight sweetness that balances the caramelized onions beautifully.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Deglaze with Wine</h4>
+            <div class="instruction-text">
+                Add the balsamic vinegar and white wine, scraping up any browned bits from the bottom of the pot. The vinegar adds a subtle tang and complexity. Simmer for 2-3 minutes to reduce slightly and cook off the alcohol. This builds incredible depth of flavor.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Add Broth and Simmer</h4>
+            <div class="instruction-text">
+                Pour in the beef broth. Bring to a boil, then reduce heat to low and simmer for 15-20 minutes. This allows all the flavors to meld together. Season with additional salt and pepper to taste. Remove bay leaves before serving.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Toast Bread and Assemble</h4>
+            <div class="instruction-text">
+                While the soup simmers, slice the baguette on a diagonal and toast the slices until golden and crispy. To serve, ladle the hot soup into oven-safe bowls. Top each bowl with a slice of toasted bread, then generously cover with grated Gruyère cheese. Place the bowls on a baking sheet.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Final Melt and Serve</h4>
+            <div class="instruction-text">
+                Broil the soup bowls in the oven for 2-3 minutes at high heat, until the cheese is melted, bubbly, and lightly golden. Watch carefully to avoid burning. Remove carefully—the bowls will be very hot! Garnish with fresh thyme and parsley. Serve immediately while the cheese is at its most glorious and stretchy!
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Chef's Tips for Perfect French Onion Soup</h3>
+        <ul>
+            <li><strong>Time is Essential:</strong> The long caramelization of onions is what makes this soup special. Don't rush it. The slower the caramelize, the sweeter and deeper the flavor becomes.</li>
+            <li><strong>Onion Selection:</strong> Yellow onions are traditional and yield the best sweetness. Vidalia onions are even sweeter if you can find them.</li>
+            <li><strong>Beef Broth Quality:</strong> Use the best quality beef broth you can find. A homemade or premium broth makes a dramatic difference in the final result.</li>
+            <li><strong>Wine Choice:</strong> A dry white wine (Pinot Grigio, Sauvignon Blanc) works well. If you prefer not to use alcohol, substitute with additional beef broth.</li>
+            <li><strong>Cheese Options:</strong> Gruyère is traditional and delicious. Emmental, Swiss, or a mix of cheeses also work beautifully.</li>
+            <li><strong>Bread Matters:</strong> Authentic French bread or a good baguette is essential. It should be crusty on the outside, tender inside, and sturdy enough to support the cheese.</li>
+            <li><strong>Oven-Safe Bowls:</strong> Use proper ceramic or cast-iron soup bowls that can handle broiler heat. Be careful—they get very hot!</li>
+            <li><strong>Make Ahead:</strong> The soup base (without bread and cheese) can be made up to 2 days ahead and reheated. Assemble the final bowls just before serving.</li>
+            <li><strong>Tomato Paste Innovation:</strong> The small amount of tomato paste adds umami and depth without making the soup tomato-flavored. It's a subtle but crucial ingredient.</li>
+            <li><strong>Variations:</strong> Some add a splash of cognac or sherry in addition to wine. A touch of Worcestershire sauce can also enhance the savory notes.</li>
+        </ul>
+    </div>
+</body>
+</html>
