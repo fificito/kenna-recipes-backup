@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choucroute Garnie Recipe</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="choucroute-garnie.html" class="active">English</a>
+        <a href="choucroute-garnie-es.html">Español</a>
+    </div>
+
+    <a href="index.html" class="back-button">← Back to Home</a>
+    
+    <header>
+        <h1>Choucroute Garnie</h1>
+        <p class="subtitle"><a href="https://www.seriouseats.com/choucroute-garnie-alsatian-braised-sauerkraut-meat-sausage-recipe" target="_blank">Serious Eats Recipe →</a></p>
+        <div class="category-badge">Main Course</div>
+        <div class="category-badge">Alsatian</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep Time</span>
+            <span class="meta-value">20 minutes</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cook Time</span>
+            <span class="meta-value">1.5 hours</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Total Time</span>
+            <span class="meta-value">2 hours</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Servings</span>
+            <span class="meta-value">4-6</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredients</h3>
+        <ul class="recipe-list-styled">
+            <li>2 tablespoons butter or lard</li>
+            <li>1 large onion, sliced thin</li>
+            <li>1 pound smoked pork belly or bacon, diced</li>
+            <li>2 pounds sauerkraut (fresh or canned), rinsed and drained</li>
+            <li>2 cups chicken or pork stock</li>
+            <li>1 cup dry white wine (Alsatian Riesling preferred)</li>
+            <li>4-6 pork sausages (kielbasa or bratwurst)</li>
+            <li>4-6 slices of cooked ham or pork jowl</li>
+            <li>1 bay leaf</li>
+            <li>6-8 juniper berries</li>
+            <li>6-8 black peppercorns</li>
+            <li>1 teaspoon caraway seeds (optional)</li>
+            <li>Salt and freshly ground black pepper, to taste</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instructions</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Prepare the Base</h4>
+            <div class="instruction-text">
+                Heat butter or lard in a large, heavy pot or Dutch oven over medium heat. Add sliced onions and cook until soft and golden, about 5 minutes. Add the diced pork belly and cook until lightly browned, about 5-7 minutes. The rendered fat will flavor the entire dish.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Add Sauerkraut</h4>
+            <div class="instruction-text">
+                Add the rinsed sauerkraut to the pot. Stir well to combine with the pork and onions. Cook for 2-3 minutes, stirring occasionally. This allows the sauerkraut to absorb the flavors of the rendered fat.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Deglaze and Season</h4>
+            <div class="instruction-text">
+                Pour in the white wine and scrape the bottom of the pot to deglaze. Add the stock, bay leaf, juniper berries, peppercorns, and caraway seeds (if using). Stir well and bring to a simmer. Season with salt and pepper to taste, remembering that the sausages and ham are already salty.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Add Meats and Braise</h4>
+            <div class="instruction-text">
+                Nestle the sausages and ham slices into the sauerkraut. Cover the pot and reduce heat to low. Braise for 1 to 1.5 hours, stirring occasionally and checking that the liquid hasn't evaporated too much. The mixture should be moist but not soupy. Add more stock if needed.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Taste and Adjust</h4>
+            <div class="instruction-text">
+                Before serving, taste the sauerkraut and adjust seasoning with salt and pepper as needed. Remove the bay leaf. The sausages should be heated through and tender, and the sauerkraut should have absorbed all the wonderful flavors.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Serve</h4>
+            <div class="instruction-text">
+                Transfer to a serving platter or individual bowls. Top with the sausages and ham pieces nestled into the sauerkraut. Serve hot with crusty bread, mustard, and a glass of Alsatian wine. This is a rustic, hearty dish meant to be shared and savored.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Chef's Tips for Perfect Choucroute Garnie</h3>
+        <ul>
+            <li><strong>Quality Sauerkraut:</strong> Fresh sauerkraut from a deli counter is superior to canned, but both work. Always rinse to reduce acidity if too strong.</li>
+            <li><strong>Wine Selection:</strong> An Alsatian Riesling is traditional and adds a subtle sweetness that balances the sauerkraut's acidity.</li>
+            <li><strong>Meat Variations:</strong> This is a forgiving dish. Use whatever cured pork is available—smoked chicken, different sausage varieties, or pork shoulder.</li>
+            <li><strong>Juniper Berries:</strong> These berries are essential for authentic flavor. Crush them slightly before adding to release their oils.</li>
+            <li><strong>Slow Cooking:</strong> Low and slow is key. The long braise allows flavors to meld and tenderize the meats.</li>
+            <li><strong>Make Ahead:</strong> This dish actually improves if made a day ahead. Reheat gently before serving.</li>
+            <li><strong>Serving Sides:</strong> Serve with boiled potatoes, crusty bread, or mustard for a complete Alsatian experience.</li>
+            <li><strong>Storage:</strong> Keeps well in the refrigerator for 3-4 days. Freezes beautifully for up to 2 months.</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Choucroute Garnie</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="choucroute-garnie.html">English</a>
+        <a href="choucroute-garnie-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Choucroute Garnie</h1>
+        <p class="subtitle"><a href="https://www.seriouseats.com/choucroute-garnie-alsatian-braised-sauerkraut-meat-sausage-recipe" target="_blank">Receta de Serious Eats →</a></p>
+        <div class="category-badge">Plato Principal</div>
+        <div class="category-badge">Alsacia</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep</span>
+            <span class="meta-value">20 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cocción</span>
+            <span class="meta-value">1.5 horas</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Tiempo Total</span>
+            <span class="meta-value">2 horas</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">4-6</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredientes</h3>
+        <ul class="recipe-list-styled">
+            <li>2 cucharadas de mantequilla o manteca de cerdo</li>
+            <li>1 cebolla grande, rebanada fina</li>
+            <li>1 libra (450g) de tocino o panceta ahumada, en dados</li>
+            <li>2 libras (900g) de chucrut (fresco o enlatado), enjuagado y escurrido</li>
+            <li>2 tazas de caldo de pollo o cerdo</li>
+            <li>1 taza de vino blanco seco (preferiblemente Riesling alsaciano)</li>
+            <li>4-6 salchichas de cerdo (kielbasa o bratwurst)</li>
+            <li>4-6 rebanadas de jamón cocido o papada de cerdo</li>
+            <li>1 hoja de laurel</li>
+            <li>6-8 bayas de enebro</li>
+            <li>6-8 granos de pimienta negra</li>
+            <li>1 cucharadita de semillas de comino (opcional)</li>
+            <li>Sal y pimienta negra recién molida, al gusto</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Preparar la Base</h4>
+            <div class="instruction-text">
+                Calienta la mantequilla o manteca en una cazuela grande y pesada o en una olla holandesa a fuego medio. Añade la cebolla rebanada y cocina hasta que esté suave y dorada, aproximadamente 5 minutos. Agrega el tocino en dados y cocina hasta que esté ligeramente dorado, unos 5-7 minutos. La grasa que se rinde sazará todo el plato.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Añadir Chucrut</h4>
+            <div class="instruction-text">
+                Agrega el chucrut enjuagado a la cazuela. Revuelve bien para combinar con el cerdo y las cebollas. Cocina durante 2-3 minutos, revolviendo ocasionalmente. Esto permite que el chucrut absorba los sabores de la grasa que se ha vertido.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Deglacé y Sazona</h4>
+            <div class="instruction-text">
+                Vierte el vino blanco y raspa el fondo de la cazuela para deglasear. Añade el caldo, hoja de laurel, bayas de enebro, granos de pimienta y semillas de comino (si las usas). Revuelve bien y trae a un hervor suave. Condimenta con sal y pimienta al gusto, recordando que las salchichas y el jamón ya son salados.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Añadir Carnes y Brasar</h4>
+            <div class="instruction-text">
+                Coloca las salchichas y rebanadas de jamón en el chucrut. Cubre la cazuela y reduce el fuego a bajo. Cocina a fuego lento durante 1 a 1.5 horas, revolviendo ocasionalmente y verificando que el líquido no se haya evaporado demasiado. La mezcla debe estar húmeda pero no aguada. Añade más caldo si es necesario.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Probar y Ajustar</h4>
+            <div class="instruction-text">
+                Antes de servir, prueba el chucrut y ajusta el sazón con sal y pimienta según sea necesario. Retira la hoja de laurel. Las salchichas deben estar calientes y tiernas, y el chucrut debe haber absorbido todos los sabores maravillosos.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Servir</h4>
+            <div class="instruction-text">
+                Transfiere a una fuente de servicio o a tazones individuales. Coloca las salchichas y piezas de jamón en el chucrut. Sirve caliente con pan tostado, mostaza y un vaso de vino alsaciano. Este es un plato rústico y abundante para compartir y saborear.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef para Choucroute Garnie Perfecto</h3>
+        <ul>
+            <li><strong>Chucrut de Calidad:</strong> El chucrut fresco del mostrador de un delicatessen es superior al enlatado, pero ambos funcionan. Siempre enjuaga para reducir la acidez si es demasiado fuerte.</li>
+            <li><strong>Selección de Vino:</strong> Un Riesling alsaciano es tradicional y añade una dulzura sutil que equilibra la acidez del chucrut.</li>
+            <li><strong>Variaciones de Carne:</strong> Este es un plato indulgente. Usa la carne de cerdo curada que tengas disponible—pollo ahumado, diferentes variedades de salchichas, o hombro de cerdo.</li>
+            <li><strong>Bayas de Enebro:</strong> Estas bayas son esenciales para un sabor auténtico. Aplástalas ligeramente antes de añadir para liberar sus aceites.</li>
+            <li><strong>Cocción Lenta:</strong> Lento y a fuego bajo es clave. El braseado prolongado permite que los sabores se mezclen y ablanden las carnes.</li>
+            <li><strong>Preparación Anticipada:</strong> Este plato en realidad mejora si se hace un día antes. Recalienta suavemente antes de servir.</li>
+            <li><strong>Acompañamientos:</strong> Sirve con papas hervidas, pan tostado o mostaza para una experiencia alsaciana completa.</li>
+            <li><strong>Almacenamiento:</strong> Se mantiene bien en el refrigerador durante 3-4 días. Se congela hermosamente hasta 2 meses.</li>
+        </ul>
+    </div>
+</body>
+</html>
