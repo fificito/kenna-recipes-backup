@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receta de Vichyssoise Clásica</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="vichyssoise.html">English</a>
+        <a href="vichyssoise-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+    
+    <header>
+        <h1>Vichyssoise Clásica</h1>
+        <p class="subtitle"><a href="https://www.allrecipes.com/recipe/13392/classic-vichyssoise/" target="_blank">Receta de All Recipes →</a></p>
+        <div class="category-badge">Sopa</div>
+        <div class="category-badge">Francesa</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Prep</span>
+            <span class="meta-value">20 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cocción</span>
+            <span class="meta-value">45 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Enfriamiento</span>
+            <span class="meta-value">2 horas</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">6</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredientes</h3>
+        <ul class="recipe-list-styled">
+            <li>3 cucharadas de mantequilla</li>
+            <li>4 puerros, parte blanca solamente, limpios y rebanados</li>
+            <li>1 cebolla, rebanada</li>
+            <li>4 papas, peladas y cortadas en cubos</li>
+            <li>4 tazas de caldo de vegetales o pollo</li>
+            <li>1 cucharadita de sal</li>
+            <li>1/2 cucharadita de pimienta blanca</li>
+            <li>1/4 cucharadita de pimienta de cayena</li>
+            <li>1 hoja de laurel</li>
+            <li>1 taza de crema pesada o crème fraîche</li>
+            <li>2 cucharadas de cebollino fresco, finamente picado</li>
+            <li>Sal y pimienta blanca adicional al gusto</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Instrucciones</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Preparar las Verduras</h4>
+            <div class="instruction-text">
+                Limpia los puerros cuidadosamente cortándolos por la mitad a lo largo e enjuagando entre capas para eliminar arena. Rebana en medias lunas. Pela las papas y córtalas en cubos pequeños (aproximadamente cubos de 1 cm). Las verduras deben tener aproximadamente el mismo tamaño para una cocción uniforme.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Saltear los Puerros y la Cebolla</h4>
+            <div class="instruction-text">
+                Derrite la mantequilla en una olla grande a fuego medio. Añade los puerros rebanados y la cebolla. Cocina suavemente durante 5-7 minutos, revolviendo ocasionalmente, hasta que estén suave y translúcida pero sin dorar. Este cocción suave realza la dulzura natural de los puerros sin añadir color.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Añadir Papas y Caldo</h4>
+            <div class="instruction-text">
+                Añade las papas cortadas en cubos, caldo, sal, pimienta blanca, cayena y hoja de laurel. Lleva a ebullición, luego reduce el fuego a bajo e hierve a fuego lento suavemente durante 25-30 minutos hasta que las papas estén muy tiernas y comiencen a desmenuzarse. La sopa debe hervir a fuego lento suavemente, no vigorosamente.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Licuar Hasta que Sea Suave</h4>
+            <div class="instruction-text">
+                Retira la hoja de laurel. Usando una licuadora de inmersión, licúa la sopa hasta que sea completamente suave y sedosa. Si no tienes una licuadora de inmersión, transfiere cuidadosamente la sopa en lotes a una licuadora regular, licúa hasta que sea suave y devuelve a la olla. La textura debe ser aterciopelada sin grumos.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Añadir Crema y Condimentar</h4>
+            <div class="instruction-text">
+                Incorpora la crema pesada. Prueba y ajusta los condimentos con sal y pimienta blanca adicional según sea necesario. La sopa debe tener un sabor equilibrado y ligeramente delicado, no demasiado salada o pimienta. Cocina suavemente durante 2-3 minutos más sin hervir para combinar sabores.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Enfriar Completamente</h4>
+            <div class="instruction-text">
+                Transfiere la sopa a un tazón y refrigera durante al menos 2 horas, preferiblemente 4 horas o durante la noche. La sopa debe servirse muy fría. Puedes preparar esto con anticipación y mantenerlo refrigerado hasta 2 días. Antes de servir, prueba de nuevo y ajusta los condimentos si es necesario: la sopa fría a menudo necesita un poco más de condimento que la sopa caliente.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">7</span>Servir</h4>
+            <div class="instruction-text">
+                Sirve la sopa fría en tazones enfriados. Adorna generosamente con cebollino fresco. Un pequeño toque de crème fraîche o crema agria en la parte superior es tradicional y añade elegancia. Sirve inmediatamente mientras está muy fría. La presentación debe ser impecable y refinada: esta es una sopa francesa clásica destinada a impresionar.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos del Chef para Vichyssoise Perfecta</h3>
+        <ul>
+            <li><strong>Selección de Puerros:</strong> Usa solo las partes blancas y verde claro de los puerros. Las partes verde oscuro son demasiado duras y pueden hacer la sopa amarga. Limpialas muy cuidadosamente ya que la arena puede esconderse entre capas.</li>
+            <li><strong>Textura Suave:</strong> Licúa hasta que sea completamente sedosa. Una textura ligeramente granulada arruinará esta sopa elegante. Usa una licuadora de inmersión para mejor control, o licúa en lotes pequeños en una licuadora regular.</li>
+            <li><strong>Calidad de la Crema:</strong> Usa crema pesada real o crème fraîche. Evita leche evaporada o sustitutos de crema: la riqueza es esencial para el carácter del plato.</li>
+            <li><strong>Pimienta Blanca:</strong> La pimienta blanca es más delicada que la pimienta negra y no mostrará especks oscuros en la sopa pálida. Esto es tradicional e importa para la presentación.</li>
+            <li><strong>La Temperatura Importa:</strong> Sirve en tazones enfriados. La sopa fría sabe diferente que la sopa caliente: a menudo necesita un poco más de condimento. Siempre prueba antes de servir.</li>
+            <li><strong>Preparación Anticipada:</strong> La vichyssoise en realidad mejora con un día en el refrigerador a medida que los sabores se mezclan. Prepárala el día anterior para mejores resultados.</li>
+            <li><strong>Servir Muy Fría:</strong> Esta sopa pierde su atractivo si se sirve a temperatura ambiente o apenas enfriada. Debe servirse directamente del refrigerador o sobre hielo.</li>
+            <li><strong>Opciones de Adorno:</strong> El cebollino fresco es tradicional, pero también puedes usar trozos de tocino crujiente, un chorrito de aceite de trufa, o chips crujientes de puerro para variaciones.</li>
+            <li><strong>Calidad de la Papa:</strong> Usa papas harinosas como russets, no papas cerosas. Las papas harinosas se desharán y licuarán mejor para una textura más sedosa.</li>
+            <li><strong>Caldo de Verduras vs. Pollo:</strong> El caldo de verduras es más tradicional y permite que el sabor del puerro brille, pero el caldo de pollo también funciona hermosamente.</li>
+        </ul>
+    </div>
+</body>
+</html>
