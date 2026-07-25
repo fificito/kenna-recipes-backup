@@ -83,7 +83,7 @@ Remaining (NO RENUMBERING):
 If items 1 and 3 are deleted, the list shows: 2, 4, 5, 6... (gaps preserved)
 This is NOT a bug — it is intentional. Deletion gaps track which items were purchased together at same store location.
 
-Only compress numbering when user says "finalizada".
+**ONLY renumber when user says "finalizada"** — NOT before, NOT by default, NOT ever until explicitly commanded.
 
 ### Step 4: Track Deletion Order
 Internally track which items are deleted and in what order. This reveals store layout:
@@ -93,11 +93,11 @@ Deletion Order: 2, 4, 1 → Items were close together
 Grouping: Pan-Leche-Servilletas are nearby
 ```
 
-### Step 5: Finalize List
+### Step 5: Finalize List (RENUMBER HERE)
 When user says "finalizada" or "finished":
 1. **RENUMBER all remaining items starting from 1** (compress all gaps)
 2. Organize by deletion order (items deleted in sequence = nearby in store)
-3. Display final optimized list with message confirming list was finalized
+3. Display final optimized list with confirmation message
 
 ```
 User says: finalizada
@@ -107,6 +107,11 @@ User says: finalizada
 📋 Lista Final (Renumerada):
 1. Servilletas de cocina
 2. Leche
+3. Pan
+(Gaps eliminated, fresh numbering from 1)
+```
+
+**This is the ONLY time renumbering happens.** Never renumber during shopping.
 3. Pan
 (Gaps eliminated, fresh numbering from 1)
 ```
@@ -169,6 +174,7 @@ Assistant: 📋 Lista Final:
 - ❌ **AUTO-RENUMBERING BUG (Session 18):** Agent renumbered list after each deletion despite user instruction not to. User had to explicitly say "Do not renumber until I say finalizada". Now fixed: never renumber gaps until user says "finalizada".
 - ❌ **CONFIRMED AGAIN (Session ~22):** User reinforced: "Do not renumber until I say finalizada" — this is non-negotiable. Maintain gaps in numbering until explicit "finalizada" command. This is the ONLY accepted workflow for this user.
 - ✅ **SESSION 25 FIX:** Added explicit behavior: After "finalizada", MUST renumber remaining items starting from 1 to compress all gaps. User corrected agent for not renumbering after finalizing the list.
+- ✅ **SESSION 25 CLARIFICATION:** After "finalizada" is called, remaining items become the new list (renumbered from 1). New items added after that continue from the highest number. Items only leave the list when user provides their number to delete. Never assume finalizada clears the list — only items explicitly deleted by number are removed.
 
 ## Verification
 
