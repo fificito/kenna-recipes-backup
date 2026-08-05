@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enchiladas Agustinas Receta</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.intro {
+    background: #fff8f3;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem 1.5rem;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    color: #555;
+    font-style: italic;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="enchiladas-agustinas.html">English</a>
+        <a href="enchiladas-agustinas-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+
+    <header>
+        <h1>Enchiladas Agustinas</h1>
+        <p class="subtitle"><a href="https://polacocina.com/2024/08/01/enchiladas-agustinas-receta/" target="_blank">Pola Cocina →</a></p>
+        <div class="category-badge">Plato Principal</div>
+        <div class="category-badge">Mexicana</div>
+        <div class="category-badge">Puebla</div>
+    </header>
+
+    <div class="intro">
+        En temporada de chiles en nogada, esta receta poblana es la alternativa perfecta: enmoladas con el mismo relleno de los chiles en nogada, cubiertas con mole poblano y adornadas con granada, ajonjolí y perejil. Ideal para quienes no comen capeado o chiles, sin renunciar a los sabores de temporada.
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredientes</h3>
+        <ul class="recipe-list-styled">
+            <li>300 gr de pierna de cerdo picada (no molida)</li>
+            <li>½ cebolla blanca</li>
+            <li>2 dientes de ajo</li>
+            <li>2 jitomates</li>
+            <li>1 cucharada de consomé en polvo</li>
+            <li>1 plátano macho picado en cuadritos</li>
+            <li>2 manzanas de Zacatlán peladas y picadas en cuadritos</li>
+            <li>5 peras lecheras peladas y picadas en cuadritos</li>
+            <li>2 duraznos pelados y picados en cuadritos</li>
+            <li>½ taza de pasitas</li>
+            <li>1 taza de almendras peladas</li>
+            <li>Azúcar al gusto</li>
+            <li>½ kg de tortillas de maíz</li>
+            <li>Aceite para freír</li>
+            <li>2 tazas de mole poblano</li>
+            <li>Granada, ajonjolí y perejil para servir</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Preparación</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Cocinar la Carne</h4>
+            <div class="instruction-text">
+                En una olla, cocina la carne con un poco de aceite, la cebolla picada y el ajo a fuego medio, para que suelte su jugo y comience a dorarse.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Cocinar la Fruta</h4>
+            <div class="instruction-text">
+                Aparte, en una olla grande, cocina el jitomate con el consomé hasta que suelte su jugo. Agrega la fruta (plátano, manzanas, peras, duraznos), las almendras, las pasas y un poco de azúcar al gusto. Cocina hasta que la fruta esté suave y los sabores se integren.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Mezclar y Sazonar</h4>
+            <div class="instruction-text">
+                Mezcla la fruta cocida con la carne. Ajusta la sazón al gusto. Reserva.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Freír las Tortillas y Rellenar</h4>
+            <div class="instruction-text">
+                Calienta suficiente aceite en un sartén. Pasa cada tortilla por el aceite caliente durante unos segundos por lado para que queden suaves y ligeramente doradas (no crujientes). Colócalas en un plato y rellénalas con la mezcla de carne y fruta. Enrolla o dobla y acomoda en el platón de servicio.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Cubrir con Mole</h4>
+            <div class="instruction-text">
+                Baña generosamente las enchiladas con el mole poblano, cubriéndolas por completo.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">6</span>Decorar y Servir</h4>
+            <div class="instruction-text">
+                Espolvorea abundante granada, ajonjolí y perejil fresco. Sirve de inmediato.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos de Pola</h3>
+        <ul>
+            <li><strong>Platillo de temporada:</strong> Es un clásico de la temporada de chiles en nogada (agosto–septiembre) en Puebla. El relleno es el mismo que el de los chiles — prepara de más y usa el sobrante para esta receta.</li>
+            <li><strong>Mole poblano:</strong> Usa mole casero para mejores resultados. Pola Cocina tiene su propia receta de mole poblano en el sitio.</li>
+            <li><strong>Sustitutos de fruta:</strong> Las peras lecheras pueden reemplazarse con peras Bartlett o cualquier pera jugosa. Las manzanas de Zacatlán son dulces — usa Gala o Golden Delicious como alternativa.</li>
+            <li><strong>No omitas el frito rápido:</strong> Pasar las tortillas por aceite caliente es esencial — las hace maleables y les da sabor. Deben quedar suaves, no crujientes.</li>
+            <li><strong>Preparar con anticipación:</strong> El relleno puede hacerse un día antes y refrigerarse. Arma y baña con mole justo antes de servir.</li>
+            <li><strong>Sin capeado, sin chile:</strong> Perfecta para quienes no comen frituras o no toleran el picante, manteniendo los sabores de la temporada poblana.</li>
+        </ul>
+    </div>
+</body>
+</html>
