@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duraznos Asados con Feta y Pistachos Receta</title>
+    <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fdfbf7;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid #e0dcd0;
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #8d6e63;
+    font-size: 1.1rem;
+}
+
+.subtitle a {
+    color: #d4a574;
+    text-decoration: none;
+    border-bottom: 1px solid #d4a574;
+}
+
+.subtitle a:hover {
+    color: #5d4037;
+    border-bottom-color: #5d4037;
+}
+
+.language-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+}
+
+.language-switcher a {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.language-switcher a.active {
+    background: #e8d4c4;
+    color: #5d4037;
+}
+
+.language-switcher a:hover {
+    background: #f5e6d3;
+}
+
+.back-button {
+    color: #795548;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.ingredient-group {
+    margin-bottom: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ingredient-group h3 {
+    font-size: 1.2rem;
+    color: #795548;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.recipe-list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.recipe-list-styled li {
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+.recipe-list-styled li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c49a7f;
+    font-weight: bold;
+}
+
+.instructions-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.instructions-section h2 {
+    color: #5d4037;
+    margin-top: 0;
+    border-bottom: 2px solid #f5f2eb;
+    padding-bottom: 0.5rem;
+}
+
+.instruction-step {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #f5f2eb;
+}
+
+.instruction-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.instruction-step h4 {
+    color: #795548;
+    font-size: 1.1rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-number {
+    display: inline-block;
+    background: #c49a7f;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.instruction-text {
+    margin-left: 40px;
+    color: #555;
+    line-height: 1.7;
+}
+
+.notes {
+    background: #fef5f1;
+    border-left: 4px solid #c49a7f;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 4px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #795548;
+}
+
+.notes ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.notes li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.category-badge {
+    display: inline-block;
+    background: #e8d4c4;
+    color: #795548;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0dcd0;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-label {
+    font-weight: 600;
+    color: #795548;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: #555;
+    font-size: 1rem;
+}
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <a href="broiled-peaches-feta-pistachios.html">English</a>
+        <a href="broiled-peaches-feta-pistachios-es.html" class="active">Español</a>
+    </div>
+
+    <a href="index-es.html" class="back-button">← Volver al Inicio</a>
+
+    <header>
+        <h1>Duraznos Asados con Feta y Pistachos</h1>
+        <p class="subtitle"><a href="https://cooking.nytimes.com/recipes/784063103-broiled-peaches-with-feta-and-pistachios" target="_blank">NYT Cooking — David Tanis →</a></p>
+        <div class="category-badge">Postre</div>
+        <div class="category-badge">Verano</div>
+        <div class="category-badge">Vegetariano</div>
+    </header>
+
+    <div class="recipe-meta">
+        <div class="meta-item">
+            <span class="meta-label">Preparación</span>
+            <span class="meta-value">5 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Cocción</span>
+            <span class="meta-value">20 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Total</span>
+            <span class="meta-value">25 minutos</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Porciones</span>
+            <span class="meta-value">6</span>
+        </div>
+    </div>
+
+    <div class="ingredient-group">
+        <h3>Ingredientes</h3>
+        <ul class="recipe-list-styled">
+            <li>½ taza de pistachos sin cáscara</li>
+            <li>6 duraznos o nectarinas medianos, preferiblemente de hueso libre</li>
+            <li>¾ taza de azúcar morena clara</li>
+            <li>¼ taza de miel, más para servir</li>
+            <li>6 rebanadas de queso feta de ¼ de pulgada de grosor (de un bloque de 8 onzas)</li>
+        </ul>
+    </div>
+
+    <div class="instructions-section">
+        <h2>Preparación</h2>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">1</span>Tostar los Pistachos</h4>
+            <div class="instruction-text">
+                Precalentar el grill del horno. En la hornalla, colocar una sartén pequeña a fuego medio. Agregar los pistachos y tostar revolviendo frecuentemente hasta que estén aromáticos, unos 3 minutos. Retirar del fuego, dejar enfriar y picar groseramente. Reservar.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">2</span>Preparar los Duraznos</h4>
+            <div class="instruction-text">
+                Cortar los duraznos por la mitad y retirar los huesos. Colocar las mitades en una fuente para horno apta para grill de 23 x 33 cm, con el lado cortado hacia arriba. Espolvorear cada mitad con aproximadamente una cucharada colmada de azúcar morena. Rociar cada mitad con aproximadamente 1 cucharadita de miel.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">3</span>Gratinar hasta Caramelizar</h4>
+            <div class="instruction-text">
+                Colocar la fuente bajo el grill a unos 15 cm de la fuente de calor. Gratinar hasta que el azúcar esté dorado y con algunos puntos ennegrecidos, y los duraznos se hayan ablandado un poco, unos 7 a 10 minutos, rotando la fuente según sea necesario. Dejar enfriar a temperatura ambiente.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">4</span>Emplatar y Servir</h4>
+            <div class="instruction-text">
+                Para servir, colocar 2 mitades de durazno en cada plato. Agregar una rebanada de queso feta en cada plato y espolvorear todo con los pistachos picados.
+            </div>
+        </div>
+
+        <div class="instruction-step">
+            <h4><span class="step-number">5</span>Terminar con Miel</h4>
+            <div class="instruction-text">
+                Rociar con los jugos que quedaron en la fuente o un poco más de miel si se desea. Se disfruta tanto caliente como a temperatura ambiente.
+            </div>
+        </div>
+    </div>
+
+    <div class="notes">
+        <h3>📝 Consejos y Variaciones</h3>
+        <ul>
+            <li><strong>Madurez del durazno:</strong> Los duraznos ligeramente verdes funcionan muy bien, o usar los firmes y maduros. Evitar los muy blandos, quedarán demasiado blandos bajo el grill.</li>
+            <li><strong>Variación a la parrilla:</strong> Funciona perfecto a la parrilla — colocarlos primero con el lado cortado hacia abajo, dar vuelta a los pocos minutos y colocar el feta encima. No hace falta azúcar ni miel si los duraznos están perfectamente maduros.</li>
+            <li><strong>Reducir el azúcar:</strong> Un espolvoreo ligero de azúcar morena (sin miel) funciona muy bien si se prefiere menos dulzor.</li>
+            <li><strong>Sustitutos del queso:</strong> La burrata o el feta batido (procesado hasta quedar cremoso y suave) son elegantes alternativas al feta en rebanadas.</li>
+            <li><strong>Nectarinas:</strong> Funcionan igualmente bien y no requieren pelado — excelente opción cuando los duraznos no están en su punto.</li>
+            <li><strong>Preparar con anticipación:</strong> Los duraznos gratinados pueden hacerse antes y servirse a temperatura ambiente — los sabores se profundizan al enfriar.</li>
+        </ul>
+    </div>
+</body>
+</html>
