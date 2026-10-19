@@ -15,31 +15,30 @@ Automates the complete workflow for adding recipes to a bilingual (English/Spani
 
 ## Workflow Steps
 
-### 1. Recipe Extraction & Creation
-- Curl the recipe URL or read uploaded file
-- Extract title, ingredients, instructions, cook times, source
-- Create English recipe HTML file (e.g., `bananas-flambe.html`)
-- Create Spanish translation (e.g., `bananas-flambe-es.html`)
-- Determine appropriate category
+### 1. Establish a Clean Baseline and Reject Duplicates
+1. Check `git status --short --branch` in `/data/kenna-recipes-backup`; do not build on unexplained changes.
+2. Search `/data/public_html` for the source recipe ID, canonical title, canonical source URL, and proposed slug before creating files.
+3. If the recipe already exists, reverify the current ZIP and Git state and resend it; do not create duplicate pages.
 
-### 2. Recipe Page Format (Fixed Template)
-**Structure:**
-- Language switcher (English/Español)
-- Back button to homepage
-- Header with title + clickable subtitle link to original source
-- Recipe metadata: Prep time, Cook time, Total time, Servings
-- Ingredients section with bullet points
-- Numbered instruction steps with step numbers in circles
-- Notes/Tips section with detailed chef's tips
-- Category badges
+### 2. Fetch and Extract the Source
+1. For NYT Cooking, fetch the tracked URL with compression enabled:
+   ```bash
+   curl -L --compressed --max-time 45 -A 'Mozilla/5.0 (compatible)' \
+     -o /tmp/recipe-source.html -w 'status=%{http_code} bytes=%{size_download}\n' 'URL'
+   ```
+2. Parse schema.org Recipe JSON-LD from the downloaded HTML with `scripts/extract-jsonld-recipe.py`; it handles both plain and gzip-compressed files.
+3. Extract the canonical title, author, description, yield, prep/cook/total times, ingredients, instructions, category, cuisine, and canonical source URL.
+4. Preserve source quantities and temperatures exactly. Translate them faithfully; metric equivalents may be added but must not silently replace or distort the source.
+5. If the source omits prep or cook time, display `Not specified` / `No especificada` and add a short source-timing note. Never invent a split merely to fill metadata fields.
 
-**Styling:**
-- External `style.css` reference (no inline styles)
-- Warm brown color scheme: #5d4037, #795548, #c49a7f
-- Clean typography, minimal padding
-- Responsive design
+### 3. Create the Bilingual Recipe Pages
+- Create English and Spanish files from the approved page structure, using one concise canonical title without promotional qualifiers.
+- When a source title leads with a person, publication, or brand attribution, use the standalone dish name as the display title and preserve the attribution in the linked source subtitle instead; this keeps indexes concise without losing provenance.
+- Include the reciprocal language switcher, back link, clickable canonical source link, metadata, ingredients, numbered directions, practical tips, category badges, all favicon links, and external `style.css` only.
+- Keep tips grounded in the source or ordinary cooking technique; do not add unsupported claims.
+- Determine category from the complete dish presentation, not from one keyword in the title.
 
-### 3. Homepage Update (Compact Index Format)
+### 4. Update the Compact Homepages
 **Format:**
 - Compact list style (NOT grid/cards)
 - Arrow indicators (→) before recipe links
@@ -48,31 +47,41 @@ Automates the complete workflow for adding recipes to a bilingual (English/Spani
 - External `style.css` reference
 - Language switcher at top
 
-**Categories (9):**
-- 🍽️ Appetizers
-- 🥞 Breakfast
-- 🥣 Soups
-- 🥗 Salads
-- 🍝 Main Courses
-- 🧂 Sauces & Condiments
-- 🥔 Side Dishes
-- 🍌 Desserts
+### 5. Verify, Package, and Mirror the Backup
+1. Insert the recipe in the affected English category by English display-title order, then insert the Spanish slug at the identical position.
+2. Run `scripts/verify-recipe-site.py --slug SLUG --source-url CANONICAL_URL`; this validates both pages and assets, all nine category orders, mirrored EN/ES slug order, ZIP contents, and the backup mirror.
+3. Treat the verifier's ZIP entry count and SHA-256 as the only reportable package totals; never carry counts forward from a previous recipe.
 
-### 4. GitHub Backup
-- Copy files to `~/kenna-recipes-backup/website/public_html/`
-- Commit with descriptive message
-- Push to GitHub
+### 6. Commit and Prove the Push
+1. Commit the mirrored website with a descriptive recipe-specific message and push `main`.
+2. Before pushing, verify `GITHUB_TOKEN` or `GH_TOKEN` is visible to the live container without printing its value.
+3. Compare `git rev-parse HEAD` with `git ls-remote origin refs/heads/main`; require equality and a clean `git status --short --branch` before claiming GitHub success.
+4. If authentication blocks the push, keep the verified local commit, report the exact ahead count from `git status --short --branch`, and state that GitHub is pending; never describe the backup as pushed or synchronized. After credentials are restored, push the entire queued commit chain and re-run the local/remote hash proof.
+5. If a token is present in hPanel but absent from the process environment, require a full hPanel application Stop/Start or Redeploy. Telegram `/restart` only restarts the gateway and does not reload container environment variables.
 
-### 5. ZIP File Generation
-- Include ALL files: HTML files + style.css
-- Create `recetas-kenna-website.zip`
-- Verify style.css is included
-- Verify both index files have recipe links
+### 7. Deliver on Telegram
+- Send the verified ZIP as `MEDIA:/data/public_html/recetas-kenna-website.zip`.
+- Keep the message concise: bilingual completion, category, mirrored ordering, verified ZIP count, GitHub backup, and local/remote synchronization.
+- Do not append a full recipe inventory or repeat deployment instructions unless the user asks.
 
-### 6. Delivery & Verification
-- Send ZIP file to Telegram
-- Send summary with complete recipe list
-- Include deployment instructions
+### 8. Homepage Ordering Rules
+
+**Categories (9), in fixed homepage order:**
+1. 🍽️ Appetizers
+2. 🥞 Breakfast
+3. 🥣 Soups
+4. 🥗 Salads
+5. 🍝 Main Courses
+6. 🧂 Sauces & Condiments
+7. 🥔 Side Dishes
+8. 🍸 Cocktails
+9. 🍌 Desserts
+
+**Recipe ordering within categories (Felipe approved):**
+- Sort recipes alphabetically by their **English display title** inside every category.
+- Mirror that exact recipe sequence on `index-es.html`; do **not** independently alphabetize Spanish titles.
+- Whenever a recipe is added or renamed, re-sort its entire category in `index.html`, then reproduce the same slug order in `index-es.html`.
+- Before packaging, verify all 9 English categories are alphabetized and that the English/Spanish slug sequences match category by category.
 
 ## Working Directory
 
@@ -84,65 +93,251 @@ Automates the complete workflow for adding recipes to a bilingual (English/Spani
 
 ## Design Standards (Felipe Approved)
 
-**Index/Homepage:**
-- Compact list style (NOT grid/cards)
-- Arrow indicators before links
-- Minimal spacing, smaller fonts
+**Index/Homepage (COMPACT FORMAT):**
+- **Compact list style ONLY** (NOT grid/cards — user rejected cards explicitly)
+- Arrow indicators (→) before EVERY recipe link
+- Minimal spacing, smaller fonts, clean typography
 - Emoji category headers
-- External style.css reference
+- External style.css reference ONLY (no inline styles)
+- Language switcher at top
+- Hover effects on links
+- Max width 900px, centered container
+- This is the ONLY acceptable format — do not deviate
 
-**Recipe Pages:**
-- Metadata section
-- Ingredient lists with bullets
-- Numbered steps with circular numbers
-- Notes/Tips section
-- Warm brown colors
-- Language switcher + back button
-- Clickable source links
+**Recipe Pages (PERFECT FORMAT):**
+- Language switcher (English/Español) + back button
+- Title + clickable subtitle link to original source (target="_blank")
+- Recipe metadata: Prep time, Cook time, Total time, Servings/Yield; mark source-omitted fields as not specified rather than estimating them
+- Ingredients section with bullet points (use • character)
+- Numbered instruction steps with circular step numbers
+- Notes/Tips section with detailed chef's tips
+- Category badges
+- Warm brown colors: #5d4037 (dark), #795548 (medium), #c49a7f (light)
+- External style.css reference (no inline styles)
+- Responsive design (mobile/tablet friendly)
+- This format is approved and should NOT change
 
-**All ZIP Files:**
-- Always include style.css
-- Ready for complete site replacement
-- Always verify before sending
+**All ZIP Files (NON-NEGOTIABLE):**
+- ALWAYS include style.css
+- ALWAYS include both homepages (index.html + index-es.html)
+- ALWAYS include all recipe files (both EN and ES versions)
+- ALWAYS include favicon.svg, favicon.ico, and apple-touch-icon.png
+- Ready for complete site replacement: user can wipe all files on hosting and upload ZIP contents
+- ALWAYS verify before sending to user (see references/verification-techniques.md)
+- Use `scripts/extract-jsonld-recipe.py` for saved JSON-LD recipe pages and `scripts/verify-recipe-site.py` for the final package gate.
 
-## Current State
+## Dynamic Site State
 
-**Active Site:** 17 recipes across 9 categories, fully bilingual
-- Total files in ZIP: 37 (36 HTML + 1 CSS)
-- Homepage format: Compact list
-- Recipe page format: Perfect (approved)
+- Never store recipe totals, ZIP counts, recent additions, or the current Git commit in this skill; they become stale after every update.
+- Derive the current state from `/data/public_html`, the freshly built ZIP, and local/remote Git hashes during each run.
+- Homepage format remains the approved compact list, and recipe pages remain fully bilingual.
 
-## Verification Checklist
+## Verification Gate (CRITICAL)
 
-- [ ] Recipe files created (English + Spanish)
-- [ ] Both index files updated
-- [ ] style.css included in ZIP
-- [ ] Both index files reference style.css
-- [ ] Recipe link appears in both homepages
-- [ ] GitHub commit successful
-- [ ] ZIP verified with all files
+Before delivering any ZIP:
 
-## Common Pitfalls
+1. Run `scripts/verify-recipe-site.py --slug SLUG --source-url CANONICAL_URL` successfully.
+2. Confirm the reported archive contains both indexes, `style.css`, all three favicon assets, and both new language pages.
+3. Confirm all nine English categories are alphabetized and every Spanish category mirrors the English slug sequence.
+4. Confirm the canonical source appears in both packaged recipe pages.
+5. Commit the backup and attempt the push; prove local `HEAD` equals remote `main` before claiming GitHub synchronization.
+6. If package checks fail, fix and rebuild before delivery. If only remote authentication is blocked, deliver the verified ZIP with an explicit `GitHub pending` warning, preserve the local commits, and report the exact ahead count rather than withholding the working site artifact.
 
-**Pitfall:** Forgetting style.css in ZIP
-**Solution:** Verify with `ls -la /data/public_html/style.css` before ZIP
+## Critical Pitfalls
 
-**Pitfall:** Index files with inline styles
-**Solution:** Use `<link rel="stylesheet" href="style.css">` only
+**Package-content rule:** Inspect the generated archive itself, not only the working directory; a successful page edit does not prove the delivered ZIP contains the link, stylesheet, assets, and both language pages.
 
-**Pitfall:** Recipe missing from one homepage
-**Solution:** Always update BOTH index.html AND index-es.html
+**External-style rule:** Keep all homepages and recipe pages on `style.css`; inline styles fragment future design changes across many files.
 
-**Pitfall:** Not verifying recipe in homepage
-**Solution:** Use `grep -n "recipe-name" /data/public_html/index*.html`
+**Bilingual-index rule:** Update both indexes in the same patch and verify mirrored slug order; updating only one language makes navigation incomplete.
 
-**Pitfall:** Using grid/card layout
-**Solution:** Keep compact list format with arrow indicators only
+**Homepage-layout rule:** Preserve the approved compact arrow list; substituting cards or grids violates the user's fixed site design.
+
+**NYT structured-data rule:** Fetch with `curl -L --compressed` and parse every `application/ld+json` block recursively for an object whose `@type` contains `Recipe`; pages can arrive gzip-compressed and the Recipe object may be nested, so a single regex against one script block is brittle. Use `scripts/extract-jsonld-recipe.py` on the saved response.
+
+**Missing-time rule:** Preserve the source's total time while marking omitted prep/cook fields as not specified; guessing a split turns absent source data into false precision.
+
+**Index-edit rule:** Patch around stable href/title context and inspect the diff; fuzzy replacement can unintentionally rewrite a neighboring translated display title.
+
+**Canonical-title rule:** Remove leading person, publication, brand, and promotional attribution from the homepage display title when the dish name stands alone; retain full provenance in the recipe subtitle and source link.
+
+**Push-proof rule:** A local commit is not a GitHub backup. On push failure, preserve the queued commits and label synchronization as pending with the exact ahead count; claim success only after local and remote hashes match.
 
 ## Deployment Instructions
 
-1. Download ZIP file
-2. Extract all 37 files
-3. Delete ALL files on hosting
-4. Upload ALL 37 files
-5. Site is live!
+1. Download the newly verified ZIP.
+2. Extract every file in the archive; never quote a hardcoded count.
+3. Delete the old files in the hosting web root.
+4. Upload the complete extracted archive contents.
+5. Hard-refresh or reopen the site after deployment, especially when favicon changes are involved.
+
+---
+
+## Web Hosting Options
+
+### Option A: Managed Hosting (Recommended for Simplicity)
+
+**Providers:** Hostinger, cPanel, Plesk, GoDaddy, etc.
+
+**Setup:**
+1. Sign up for hosting account
+2. Point domain A record to hosting IP (usually automated)
+3. Use web file manager or FTP to upload files
+
+**Upload Method (Recommended):**
+- Use **FileZilla** with plain FTP (passive mode) — most reliable
+- Or use web file manager UI in control panel
+- Or use SFTP if available (more secure than FTP)
+
+**See `references/ftp-upload-limitations.md` for Hostinger-specific workarounds and firewall bypass.**
+
+**FTP Credentials for Hostinger:**
+- Hostname: `ftp.yourdomain.com` or `srv###.hstgr.io`
+- Username/Password: From hosting control panel (FTP section)
+- Note: Web login ≠ FTP password (reset FTP password separately)
+
+**Troubleshooting:**
+- FTP hangs on data transfer (VPS network blocking)? Use SFTP instead or web file manager
+- See `references/hostinger-ftp-troubleshooting.md` for detailed diagnosis
+
+### Option B: VPS with Python HTTP Server
+
+**When to use:** Full control, custom domain, want to run your own server
+
+**Setup:**
+```bash
+# Copy files to web directory
+mkdir -p ~/public_html
+cp -r /path/to/recetas-kenna/* ~/public_html/
+
+# Start Python HTTP server
+cd ~/public_html
+python3 -m http.server --bind 0.0.0.0 8000
+
+# Set up cron watchdog for persistence
+hermes cronjob create \
+  --name "web-server-watchdog" \
+  --schedule "every 5m" \
+  --prompt "Check if python3 HTTP server running on 8000; restart if down"
+```
+
+**Domain DNS:** Update A record to point to your VPS's public IP
+```bash
+curl https://api.ipify.org  # Get your public IP
+# Update DNS A record to this IP
+# Wait 15-30 minutes for propagation
+```
+
+**Port Issues:**
+- Ports 80/443 need root access but work externally
+- Ports 8000+ may be blocked by ISP/VPS firewall
+- If blocked, contact VPS provider or use a reverse proxy (Nginx)
+
+### Option C: All-in-One HTML Fallback (When Upload Methods Fail)
+
+When FTP/SFTP/API all fail, consolidate everything into a single `.html` file:
+
+**Structure:**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* All CSS embedded */
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('recipe1')">Recipe 1</button>
+
+    <!-- All pages -->
+    <div id="home" class="page active">
+        ... homepage content ...
+    </div>
+    <div id="recipe1" class="page">
+        ... recipe 1 content ...
+    </div>
+
+    <script>
+        function showPage(name) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(name).classList.add('active');
+        }
+    </script>
+</body>
+</html>
+```
+
+**Advantages:**
+- Upload one file only (via browser)
+- No external dependencies
+- Works even when FTP blocked
+- Fast to update
+
+**Disadvantages:**
+- One large file (usually 20-50 KB for recipe site)
+- All pages load at once (slower for 100+ recipes)
+- Not suitable for large media assets
+
+See `references/all-in-one-html-pattern.md` for build automation.
+
+---
+
+## GitHub Backup Automation
+
+Save your site to GitHub for version control and easy restoration:
+
+```bash
+# Set up repository
+cd ~/kenna-recipes-backup
+git init
+git remote add origin https://github.com/yourname/kenna-recipes.git
+
+# Copy site files
+cp -r /data/public_html/* website/public_html/
+
+# Commit
+git add .
+git commit -m "Add 17 recipes: [list]"
+git push -u origin main
+
+# Automate weekly backup via cron
+hermes cronjob create \
+  --name "recipes-weekly-github-backup" \
+  --schedule "0 18 * * 5" \  # Friday 6 PM
+  --prompt "Backup recipe website to GitHub: copy /data/public_html/* to backup dir, commit, push"
+```
+
+---
+
+## Monitoring & Watchdog
+
+A silent cron watchdog monitors the site every 5 minutes:
+- ✅ Checks if index.html and index-es.html exist and are valid HTML
+- ✅ Runs silently if everything is healthy
+- ❌ Alerts only if files are missing or corrupted
+
+**Location:** Depends on hosting type
+- **Managed Hosting:** No watchdog (provider monitors)
+- **VPS:** Use cron job (auto-restart if server crashes)
+
+See `references/site-watchdog-pattern.md` for setup.
+
+---
+
+## Troubleshooting Uploads
+
+**FTP Login succeeds but file transfer hangs**
+- **Cause:** Network/ISP blocking FTP data channel (port 20)
+- **Solution:** Use SFTP instead (port 22) or web file manager
+
+**"530 Login incorrect" on FTP**
+- **Cause:** FTP credentials different from web login
+- **Solution:** Check FTP section of control panel, reset FTP password separately
+
+**Files uploaded but site shows 404**
+- **Cause:** Files in wrong directory or permissions wrong
+- **Solution:** Verify files are in web root (usually `~/public_html/` or `/home/user/public_html`)
+
+See `references/web-hosting-troubleshooting.md` for more diagnostic trees

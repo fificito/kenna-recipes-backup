@@ -224,7 +224,7 @@ User removes: 2, 3, 4  (removal order: papel → leche → pan)
 
 Session 2:
 User adds: servilletas, papel de baño, leche, mantequilla, pan, huevos, queso
-(New items grouped near learned proximity: 
+(New items grouped near learned proximity:
  mantequilla near leche, huevos near dairy section)
 User removes: 2, 3, 4, 5, 6  (follow same chain)
 → Confirm and strengthen: paper → dairy section is a real aisle sequence

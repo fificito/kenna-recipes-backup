@@ -24,7 +24,13 @@ kenna-recipes-backup/
 │       │       └── classic-lemon-meringue-pie.html
 │       └── TRANSLATION-WORKFLOW.md  # Translation workflow guide
 ├── scripts/                          # Monitoring & automation
-│   └── kenna-watchdog.sh            # Silent health monitoring script
+│   ├── kenna-watchdog.sh            # Silent health monitoring script
+│   └── github-weekly-backup.sh      # Complete website/skills GitHub backup
+├── skills/                           # User-maintained Hermes skills
+│   ├── recipe-website-manager/
+│   ├── shopping-list-manager/
+│   └── hermes-automation-setup/
+├── config/                           # Sanitized configuration documentation
 ├── docs/                             # Documentation
 │   ├── SETUP.md                     # Setup instructions
 │   ├── WORKFLOW.md                  # Translation workflow
@@ -112,12 +118,9 @@ Example:
 
 **Hosting Provider:** Hostinger with LiteSpeed
 
-**Upload Method:** File Manager at https://srv458-files.hstgr.io/
+**Upload Method:** Hostinger web File Manager. FTP authentication may work, but data transfers time out in the current network environment.
 
-**FTP Credentials:**
-- Host: 45.93.101.155
-- Username: u328513210
-- Password: Mami!a11 (stored securely)
+Credentials are stored only in the appropriate hosting control panel or hPanel environment. They are never committed to this repository.
 
 ## 📋 Maintenance
 
@@ -150,7 +153,7 @@ Both versions are complete with:
 ## 🔐 Security
 
 - All credentials stored securely
-- GitHub uses personal access tokens
+- GitHub uses the hPanel environment variable `KENNA_GITHUB_TOKEN`; its value is never written to disk or committed
 - FTP credentials encrypted in hosting provider
 - No sensitive data in repository
 
@@ -167,7 +170,7 @@ This is a personal recipe collection for Kenna. All rights reserved.
 
 ---
 
-**Last Updated:** July 21, 2026
+**Last Updated:** October 19, 2026
 **Website Status:** ✅ Live & Active
 **Bilingual Status:** ✅ Complete (English & Spanish)
 **Monitoring:** ✅ Active (Silent Watchdog)

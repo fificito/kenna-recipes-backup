@@ -3,8 +3,7 @@
 ## Quick Deployment to Hosting
 
 ### Prerequisites
-- Hostinger account with FTP access
-- File manager access at https://srv458-files.hstgr.io/
+- Hostinger account with web File Manager access
 
 ### Step 1: Prepare Files
 
@@ -19,23 +18,13 @@ sally-lemon-meringue-es.html  # Recipe (Spanish)
 ### Step 2: Upload to Hosting
 
 **Option A: Via File Manager (Recommended)**
-1. Go to https://srv458-files.hstgr.io/671474cab92cabb7/files/
+1. Open the Hostinger web File Manager from the hosting dashboard
 2. Log in with your hosting credentials
-3. Upload each HTML file to the root directory
-4. Files overwrite existing versions
+3. Extract `recetas-kenna-website.zip`
+4. Replace the contents of the remote `public_html/` directory with all extracted files
 
 **Option B: Via FTP**
-```bash
-ftp 45.93.101.155
-Username: u328513210
-Password: Mami!a11
-
-# Upload files
-put index.html
-put index-es.html
-put sally-lemon-meringue.html
-put sally-lemon-meringue-es.html
-```
+FTP credentials are managed in Hostinger and are not stored in this repository. Automated FTP data transfers time out in the current network environment, so the web File Manager is the supported deployment method.
 
 ### Step 3: Verify
 
@@ -107,7 +96,8 @@ bash scripts/kenna-watchdog.sh
 - Ensure links in file are correct
 
 **Issue: Styling not displaying**
-- CSS is embedded in each HTML file (no external dependencies)
+- Verify `style.css` was uploaded with the HTML files
+- Confirm pages reference the external `style.css` file
 - Check browser cache and hard refresh (Ctrl+Shift+R)
 - Verify HTML file didn't get corrupted on upload
 
@@ -140,4 +130,4 @@ Planned features:
 
 ---
 
-**Last Updated:** July 21, 2026
+**Last Updated:** October 19, 2026
