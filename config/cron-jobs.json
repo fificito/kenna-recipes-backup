@@ -1,0 +1,33 @@
+{
+  "snapshot_date": "2026-10-19",
+  "profile": "default",
+  "jobs": [
+    {
+      "job_id": "fc784b4d420f",
+      "name": "kenna-recipes-watchdog",
+      "schedule": "every 5m",
+      "script": "kenna-watchdog.sh",
+      "no_agent": true,
+      "enabled": true,
+      "delivery": "origin"
+    },
+    {
+      "job_id": "f7d131877c54",
+      "name": "kenna-recipes-github-backup",
+      "schedule": "0 18 * * 5",
+      "timezone": "UTC",
+      "script": "github-weekly-backup.sh",
+      "no_agent": true,
+      "enabled": true,
+      "delivery": "origin"
+    }
+  ],
+  "environment_variable_names": [
+    "KENNA_GITHUB_TOKEN"
+  ],
+  "notes": [
+    "Secret values are intentionally excluded.",
+    "Environment variables are managed in hPanel, not in repository files.",
+    "The GitHub backup script synchronizes the website, selected custom skills and automation scripts before committing."
+  ]
+}
