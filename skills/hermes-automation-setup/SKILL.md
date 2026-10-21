@@ -1,14 +1,21 @@
 ---
 name: hermes-automation-setup
 title: Hermes Automation Setup
-description: Set up and manage cron jobs, background scripts, and automated workflows in Hermes Agent
+description: Use when scheduling scripts, backups, or watchdogs.
+version: 1.1.0
+author: Hermes Agent
+license: MIT
+metadata:
+  hermes:
+    tags: [automation, cron, backups, watchdogs, github]
+    related_skills: [hermes-agent, github-repo-management]
 ---
 
 # Hermes Automation Setup
 
 Configure recurring tasks, background monitoring, and scheduled workflows in Hermes Agent with proper script placement, verification, and error handling.
 
-## Trigger
+## When to Use
 
 User needs to:
 - Create recurring cron jobs (daily, weekly, custom schedules)
@@ -69,9 +76,10 @@ fi
 
 **Cron job config:**
 ```
-no_agent=true  # Skip LLM, just run script
-notify_on_complete=false  # Silent on success; errors auto-notify
+no_agent=true  # Skip the LLM and run only the script
+deliver='origin'
 ```
+Keep successful stdout empty when no notification is desired; script-only jobs deliver non-empty stdout and failures.
 
 ### Pattern 2: Data Collection (For Processing)
 
@@ -127,9 +135,9 @@ echo "✅ Backup completed at $(date '+%Y-%m-%d %H:%M:%S')"
 **Cron job config:**
 ```
 no_agent=true
-notify_on_complete=false  # Silent unless there was a backup
 script='github-backup.sh'
 schedule='0 18 * * 5'  # Fridays 6 PM
+deliver='origin'
 ```
 
 **Output behavior:**
@@ -186,7 +194,7 @@ cronjob(
     schedule='0 18 * * 5',  # Fridays 6 PM
     script='my-backup.sh',
     no_agent=True,  # Script only, no LLM
-    notify_on_complete=False,  # Silent unless error or output
+    deliver='origin',
 )
 ```
 
@@ -215,9 +223,7 @@ This runs the job immediately, same conditions as scheduled run.
 
 **Pitfall:** Script file not created before scheduling cron job.
 
-**Solution:** ALWAYS create and test the script manually before creating the cron job. Use `bash ~/scripts/my-script.sh` to test. Fix any errors before scheduling. Verify the script exists at the exact path referenced in cronjob(script=...) by listing: `ls -la ~/scripts/` or `ls -la /data/scripts/`.
-
-**Session Note (Session 26):** Cron job was created with script='github-weekly-backup.sh', but the file `/data/scripts/github-weekly-backup.sh` did not exist. Hermes reported error status on the job. Solution: Created the script file, made it executable, tested manually, then cron job worked. Always verify file existence before relying on scheduled run.
+**Solution:** Create the script before scheduling, make it executable, run it manually from a different working directory, and verify the exact scheduler-resolved path. A scheduled filename without a real executable file produces recurring failures.
 
 **Impact:** Cron job fails silently or sends error alerts on every run. User has to debug and fix script, then recreate job.
 
@@ -285,7 +291,7 @@ Before scheduling any cron job:
 - [ ] Script is executable: `ls -la` shows 'x' permission
 - [ ] Script tested manually: `bash ~/scripts/my-script.sh` runs successfully
 - [ ] Script uses absolute paths (test from different directory)
-- [ ] If silent mode (no_agent=True, notify_on_complete=False): verify output is minimal and only errors/status
+- [ ] If silent mode (`no_agent=True`): verify successful no-change runs produce empty stdout and failures return non-zero
 - [ ] GitHub or backup destination is ready (if relevant)
 - [ ] Schedule is correct cron syntax or human-readable
 - [ ] repeat parameter set correctly (1 for one-shot, omit or >1 for recurring)
@@ -297,8 +303,7 @@ Before scheduling any cron job:
 ## Reference
 
 See also:
-- `references/github-backup-pattern.md` — Reusable backup script design pattern with troubleshooting
-- `references/github-weekly-backup-example.md` — Production example from Kenna recipe site automation
-- `scripts/github-weekly-backup.sh` — Ready-to-use GitHub backup script (copy and customize for your repo)
+- `references/github-backup-pattern.md` — Complete idempotent backup procedure, authentication, verification, and failure rules
+- `scripts/github-weekly-backup.sh` — Ready-to-run Kenna backup script
 - `hermes-agent` skill for full Hermes configuration
-- Hermes documentation: https://hermes-agent.nousresearch.com/docs (cronjob section)
+- Hermes documentation: https://hermes-agent.nousresearch.com/docs

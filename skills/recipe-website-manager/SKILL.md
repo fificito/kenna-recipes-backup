@@ -1,12 +1,23 @@
 ---
 name: recipe-website-manager
 title: Recipe Website Manager
-description: End-to-end bilingual recipe website management for recetasdekenna.com
+description: Use when maintaining Kenna's bilingual recipe website.
+version: 1.1.0
+author: Hermes Agent
+license: MIT
+metadata:
+  hermes:
+    tags: [recipes, bilingual, website, deployment, github]
+    related_skills: [hermes-automation-setup]
 ---
 
 # Recipe Website Manager
 
 Automates the complete workflow for adding recipes to a bilingual (English/Spanish) recipe website with compact index format, perfect recipe pages, and one-command ZIP file deployment.
+
+## When to Use
+
+Use for any recipe URL, recipe file, recipe-page correction, homepage reordering, replacement ZIP build, hosting handoff, or GitHub backup related to Kenna's bilingual recipe site.
 
 ## Trigger Commands
 
@@ -53,11 +64,12 @@ Automates the complete workflow for adding recipes to a bilingual (English/Spani
 3. Treat the verifier's ZIP entry count and SHA-256 as the only reportable package totals; never carry counts forward from a previous recipe.
 
 ### 6. Commit and Prove the Push
-1. Commit the mirrored website with a descriptive recipe-specific message and push `main`.
-2. Before pushing, verify `GITHUB_TOKEN` or `GH_TOKEN` is visible to the live container without printing its value.
-3. Compare `git rev-parse HEAD` with `git ls-remote origin refs/heads/main`; require equality and a clean `git status --short --branch` before claiming GitHub success.
-4. If authentication blocks the push, keep the verified local commit, report the exact ahead count from `git status --short --branch`, and state that GitHub is pending; never describe the backup as pushed or synchronized. After credentials are restored, push the entire queued commit chain and re-run the local/remote hash proof.
-5. If a token is present in hPanel but absent from the process environment, require a full hPanel application Stop/Start or Redeploy. Telegram `/restart` only restarts the gateway and does not reload container environment variables.
+1. Commit the mirrored website with a descriptive recipe-specific message.
+2. For this workflow, confirm `KENNA_GITHUB_TOKEN` is visible to the live container by printing only a presence boolean—never its value.
+3. Push HTTPS with a temporary `GIT_ASKPASS` helper that reads `KENNA_GITHUB_TOKEN` at runtime; protect it with mode `700` and delete it with a shell `trap`. Never embed a token in a command, remote URL, committed file, tool output, or chat.
+4. Compare `git rev-parse HEAD` with `git ls-remote origin refs/heads/main`; require equality and a clean `git status --short --branch` before claiming GitHub success.
+5. If authentication blocks the push, keep the verified local commit, report the exact ahead count, and state that GitHub is pending. After credentials are restored, push the entire queued commit chain and repeat the local/remote hash proof.
+6. hPanel environment changes require a full application Stop/Start or Redeploy; Telegram `/restart` restarts only the gateway and does not reload container variables.
 
 ### 7. Deliver on Telegram
 - Send the verified ZIP as `MEDIA:/data/public_html/recetas-kenna-website.zip`.
@@ -153,6 +165,8 @@ Before delivering any ZIP:
 
 **Homepage-layout rule:** Preserve the approved compact arrow list; substituting cards or grids violates the user's fixed site design.
 
+**Pinterest-source rule:** Pinterest share and feedback URLs may redirect to `/sent/` and hide the original recipe behind client data. Fetch the pin HTML, parse the `<script data-test-id="resource-response-data" type="application/json">` block, and use `resource_response.data.link` as the original source. Confirm the pin's `grid_title`, description, and domain agree before extracting the recipe from that source. Never treat the Pinterest image URL as the canonical recipe source.
+
 **NYT structured-data rule:** Fetch with `curl -L --compressed` and parse every `application/ld+json` block recursively for an object whose `@type` contains `Recipe`; pages can arrive gzip-compressed and the Recipe object may be nested, so a single regex against one script block is brittle. Use `scripts/extract-jsonld-recipe.py` on the saved response.
 
 **Missing-time rule:** Preserve the source's total time while marking omitted prep/cook fields as not specified; guessing a split turns absent source data into false precision.
@@ -184,21 +198,12 @@ Before delivering any ZIP:
 2. Point domain A record to hosting IP (usually automated)
 3. Use web file manager or FTP to upload files
 
-**Upload Method (Recommended):**
-- Use **FileZilla** with plain FTP (passive mode) — most reliable
-- Or use web file manager UI in control panel
-- Or use SFTP if available (more secure than FTP)
+**Upload Method (Required for this site):**
+- Deliver the verified complete-replacement ZIP through Telegram.
+- Deploy with the Hostinger web File Manager; automated FTP/SFTP transfers authenticate but time out during data transfer from the agent environment.
+- Keep hosting credentials only in Hostinger. Never store them in skills, scripts, Git, summaries, or chat.
 
-**See `references/ftp-upload-limitations.md` for Hostinger-specific workarounds and firewall bypass.**
-
-**FTP Credentials for Hostinger:**
-- Hostname: `ftp.yourdomain.com` or `srv###.hstgr.io`
-- Username/Password: From hosting control panel (FTP section)
-- Note: Web login ≠ FTP password (reset FTP password separately)
-
-**Troubleshooting:**
-- FTP hangs on data transfer (VPS network blocking)? Use SFTP instead or web file manager
-- See `references/hostinger-ftp-troubleshooting.md` for detailed diagnosis
+See `references/ftp-upload-limitations.md` for the verified asynchronous deployment workflow.
 
 ### Option B: VPS with Python HTTP Server
 
@@ -280,34 +285,12 @@ When FTP/SFTP/API all fail, consolidate everything into a single `.html` file:
 - All pages load at once (slower for 100+ recipes)
 - Not suitable for large media assets
 
-See `references/all-in-one-html-pattern.md` for build automation.
 
 ---
 
 ## GitHub Backup Automation
 
-Save your site to GitHub for version control and easy restoration:
-
-```bash
-# Set up repository
-cd ~/kenna-recipes-backup
-git init
-git remote add origin https://github.com/yourname/kenna-recipes.git
-
-# Copy site files
-cp -r /data/public_html/* website/public_html/
-
-# Commit
-git add .
-git commit -m "Add 17 recipes: [list]"
-git push -u origin main
-
-# Automate weekly backup via cron
-hermes cronjob create \
-  --name "recipes-weekly-github-backup" \
-  --schedule "0 18 * * 5" \  # Friday 6 PM
-  --prompt "Backup recipe website to GitHub: copy /data/public_html/* to backup dir, commit, push"
-```
+Use the `hermes-automation-setup` skill and its maintained `scripts/github-weekly-backup.sh` rather than creating a second recipe-specific backup implementation. The backup must synchronize the complete website, this skill and its support files, related user-maintained skills, and active automation scripts; then stage, commit, push with `KENNA_GITHUB_TOKEN`, and prove local/remote hash equality.
 
 ---
 
@@ -322,22 +305,16 @@ A silent cron watchdog monitors the site every 5 minutes:
 - **Managed Hosting:** No watchdog (provider monitors)
 - **VPS:** Use cron job (auto-restart if server crashes)
 
-See `references/site-watchdog-pattern.md` for setup.
 
 ---
 
 ## Troubleshooting Uploads
 
-**FTP Login succeeds but file transfer hangs**
-- **Cause:** Network/ISP blocking FTP data channel (port 20)
-- **Solution:** Use SFTP instead (port 22) or web file manager
-
-**"530 Login incorrect" on FTP**
-- **Cause:** FTP credentials different from web login
-- **Solution:** Check FTP section of control panel, reset FTP password separately
+**FTP login succeeds but file transfer hangs**
+- Treat authentication success and data-transfer success as separate checks; a working login does not prove uploads will complete.
+- Use the Hostinger web File Manager and the verified replacement ZIP instead of retrying automated FTP/SFTP paths.
 
 **Files uploaded but site shows 404**
 - **Cause:** Files in wrong directory or permissions wrong
 - **Solution:** Verify files are in web root (usually `~/public_html/` or `/home/user/public_html`)
 
-See `references/web-hosting-troubleshooting.md` for more diagnostic trees
