@@ -38,9 +38,11 @@ Use for any recipe URL, recipe file, recipe-page correction, homepage reordering
      -o /tmp/recipe-source.html -w 'status=%{http_code} bytes=%{size_download}\n' 'URL'
    ```
 2. Parse schema.org Recipe JSON-LD from the downloaded HTML with `scripts/extract-jsonld-recipe.py`; it handles both plain and gzip-compressed files.
-3. Extract the canonical title, author, description, yield, prep/cook/total times, ingredients, instructions, category, cuisine, and canonical source URL.
-4. Preserve source quantities and temperatures exactly. Translate them faithfully; metric equivalents may be added but must not silently replace or distort the source.
-5. If the source omits prep or cook time, display `Not specified` / `No especificada` and add a short source-timing note. Never invent a split merely to fill metadata fields.
+3. For Pinterest links, extract `resource_response.data.link` from the pin's `resource-response-data` JSON before fetching the recipe; the pin is provenance, not the recipe source.
+4. If the canonical recipe page is WAF-blocked, keep that canonical URL and search the exact title plus domain for same-domain recipe-card surfaces such as `/wprm_print/SLUG` or `/print`. Use search snippets only when they expose the complete card, and cross-check title, author, times, yield, ingredients, and directions against another same-domain result; never substitute a similarly titled recipe from another publisher.
+5. Extract the canonical title, author, description, yield, prep/cook/total times, ingredients, instructions, category, cuisine, and canonical source URL. Link the canonical article, not a print endpoint or search-result URL.
+6. Preserve source quantities and temperatures exactly. Translate them faithfully; metric equivalents may be added but must not silently replace or distort the source.
+7. If the source omits prep or cook time, display `Not specified` / `No especificada` and add a short source-timing note. Never invent a split merely to fill metadata fields.
 
 ### 3. Create the Bilingual Recipe Pages
 - Create English and Spanish files from the approved page structure, using one concise canonical title without promotional qualifiers.
@@ -61,7 +63,8 @@ Use for any recipe URL, recipe file, recipe-page correction, homepage reordering
 ### 5. Verify, Package, and Mirror the Backup
 1. Insert the recipe in the affected English category by English display-title order, then insert the Spanish slug at the identical position.
 2. Run `scripts/verify-recipe-site.py --slug SLUG --source-url CANONICAL_URL`; this validates both pages and assets, all nine category orders, mirrored EN/ES slug order, ZIP contents, and the backup mirror.
-3. Treat the verifier's ZIP entry count and SHA-256 as the only reportable package totals; never carry counts forward from a previous recipe.
+3. Inspect `git status --short` and the staged/unstaged diff immediately after verification. The mirror removes backup files absent from `/data/public_html`; commit those deletions only when they are stale deploy artifacts, not intentional repository documentation or archives.
+4. Treat the verifier's ZIP entry count and SHA-256 as the only reportable package totals; never carry counts forward from a previous recipe.
 
 ### 6. Commit and Prove the Push
 1. Commit the mirrored website with a descriptive recipe-specific message.
@@ -171,7 +174,7 @@ Before delivering any ZIP:
 
 **Missing-time rule:** Preserve the source's total time while marking omitted prep/cook fields as not specified; guessing a split turns absent source data into false precision.
 
-**Index-edit rule:** Patch around stable href/title context and inspect the diff; fuzzy replacement can unintentionally rewrite a neighboring translated display title.
+**Index-edit rule:** Patch around stable href/title context and inspect the diff. If the patch tool reports a non-exact or context-aware match, compare the entire affected category and restore every unrelated title immediately; fuzzy matching can silently rewrite neighboring translated labels even when slug order remains valid.
 
 **Canonical-title rule:** Remove leading person, publication, brand, and promotional attribution from the homepage display title when the dish name stands alone; retain full provenance in the recipe subtitle and source link.
 
