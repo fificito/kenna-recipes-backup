@@ -29,7 +29,8 @@ kenna-recipes-backup/
 ├── skills/                           # User-maintained Hermes skills
 │   ├── recipe-website-manager/
 │   ├── shopping-list-manager/
-│   └── hermes-automation-setup/
+│   ├── hermes-automation-setup/
+│   └── typesafe-ai/
 ├── config/                           # Sanitized configuration documentation
 ├── docs/                             # Documentation
 │   ├── SETUP.md                     # Setup instructions

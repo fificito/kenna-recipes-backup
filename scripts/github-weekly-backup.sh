@@ -36,6 +36,7 @@ skills = {
     Path('/data/skills/content-management/recipe-website-manager'): repo / 'skills' / 'recipe-website-manager',
     Path('/data/skills/productivity/shopping-list-manager'): repo / 'skills' / 'shopping-list-manager',
     Path('/data/skills/software-development/hermes-automation-setup'): repo / 'skills' / 'hermes-automation-setup',
+    Path('/data/skills/typesafe-ai'): repo / 'skills' / 'typesafe-ai',
 }
 for source, target in skills.items():
     if source.is_dir():

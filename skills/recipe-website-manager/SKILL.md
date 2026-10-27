@@ -123,7 +123,7 @@ Use for any recipe URL, recipe file, recipe-page correction, homepage reordering
 - Language switcher (English/Español) + back button
 - Title + clickable subtitle link to original source (target="_blank")
 - Recipe metadata: Prep time, Cook time, Total time, Servings/Yield; mark source-omitted fields as not specified rather than estimating them
-- Ingredients section with bullet points (use • character)
+- Ingredients section using the approved `<ul class="recipe-list-styled"><li>…</li></ul>` structure; let the shared stylesheet render bullets rather than hand-prefixing bullet characters
 - Numbered instruction steps with circular step numbers
 - Notes/Tips section with detailed chef's tips
 - Category badges
@@ -154,8 +154,8 @@ Before delivering any ZIP:
 1. Run `scripts/verify-recipe-site.py --slug SLUG --source-url CANONICAL_URL` successfully.
 2. Confirm the reported archive contains both indexes, `style.css`, all three favicon assets, and both new language pages.
 3. Confirm all nine English categories are alphabetized and every Spanish category mirrors the English slug sequence.
-4. Confirm the canonical source appears in both packaged recipe pages.
-5. Commit the backup and attempt the push; prove local `HEAD` equals remote `main` before claiming GitHub synchronization.
+4. Open the generated archive and assert that both packaged recipe pages contain the canonical source plus one representative ingredient or quantity from each language page; this catches stale or wrong recipe content that structural checks alone cannot detect.
+5. Inspect post-mirror `git status` before staging, then commit and attempt the push; prove local `HEAD` equals remote `main` before claiming GitHub synchronization.
 6. If package checks fail, fix and rebuild before delivery. If only remote authentication is blocked, deliver the verified ZIP with an explicit `GitHub pending` warning, preserve the local commits, and report the exact ahead count rather than withholding the working site artifact.
 
 ## Critical Pitfalls

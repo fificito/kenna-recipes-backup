@@ -24,6 +24,7 @@ This directory documents the active workflow without storing credentials or secr
 - `skills/recipe-website-manager/`
 - `skills/shopping-list-manager/`
 - `skills/hermes-automation-setup/`
+- `skills/typesafe-ai/`
 
 These directories are synchronized from the active `/data/skills/` copies by `github-weekly-backup.sh`.
 
