@@ -283,6 +283,14 @@ This runs the job immediately, same conditions as scheduled run.
 
 ---
 
+**Pitfall:** Installing a new operational skill without extending an explicit backup allowlist leaves the active workflow unrecoverable even though the scheduled backup still succeeds.
+
+**Solution:** Whenever a class-level skill becomes part of the project, add its source-to-target mapping to the maintained backup script, update the sanitized backup inventory, run the backup once, compare the live and backed-up `SKILL.md`, prove local and remote Git hashes match, then run the script again and require an empty no-change result.
+
+**Impact:** Repository recovery silently restores an older skill set and loses the procedures the live agent depended on.
+
+---
+
 ## Verification Checklist
 
 Before scheduling any cron job:

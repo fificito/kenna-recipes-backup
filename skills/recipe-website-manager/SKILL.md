@@ -38,11 +38,15 @@ Use for any recipe URL, recipe file, recipe-page correction, homepage reordering
      -o /tmp/recipe-source.html -w 'status=%{http_code} bytes=%{size_download}\n' 'URL'
    ```
 2. Parse schema.org Recipe JSON-LD from the downloaded HTML with `scripts/extract-jsonld-recipe.py`; it handles both plain and gzip-compressed files.
-3. For Pinterest links, extract `resource_response.data.link` from the pin's `resource-response-data` JSON before fetching the recipe; the pin is provenance, not the recipe source.
+3. For redirecting share links such as `share.google/...`, fetch with `curl -L --compressed` and record `%{url_effective}`. Treat the final publisher URL as canonical, rerun duplicate checks against it, parse the downloaded final page, and link the publisher URL rather than the share URL.
+4. For Pinterest links, extract `resource_response.data.link` from the pin's `resource-response-data` JSON before fetching the recipe; the pin is provenance, not the recipe source.
 4. If the canonical recipe page is WAF-blocked, keep that canonical URL and search the exact title plus domain for same-domain recipe-card surfaces such as `/wprm_print/SLUG` or `/print`. Use search snippets only when they expose the complete card, and cross-check title, author, times, yield, ingredients, and directions against another same-domain result; never substitute a similarly titled recipe from another publisher.
 5. Extract the canonical title, author, description, yield, prep/cook/total times, ingredients, instructions, category, cuisine, and canonical source URL. Link the canonical article, not a print endpoint or search-result URL.
 6. Preserve source quantities and temperatures exactly. Translate them faithfully; metric equivalents may be added but must not silently replace or distort the source.
 7. If the source omits prep or cook time, display `Not specified` / `No especificada` and add a short source-timing note. Never invent a split merely to fill metadata fields.
+8. For a recipe photo or screenshot, transcribe every visible title, serving, ingredient, quantity, and unit exactly, and determine whether the image cuts off instructions or timing. Search by exact title and distinctive quantities only to recover the same source; never replace it with a similar publisher's recipe.
+9. If instructions are missing, ask for the continuation image first. When the user explicitly authorizes a best-effort reconstruction, build the method only from the supplied ingredients and ordinary cooking technique; state clearly in both language pages that the method was reconstructed, and keep all omitted times marked as unspecified.
+10. Preserve a user-supplied source image as `SLUG-source.EXT` in `/data/public_html/`, link it from both recipe subtitles, and require that asset in the generated ZIP and Git mirror. This keeps provenance clickable when no public source URL exists.
 
 ### 3. Create the Bilingual Recipe Pages
 - Create English and Spanish files from the approved page structure, using one concise canonical title without promotional qualifiers.
@@ -77,6 +81,7 @@ Use for any recipe URL, recipe file, recipe-page correction, homepage reordering
 ### 7. Deliver on Telegram
 - Send the verified ZIP as `MEDIA:/data/public_html/recetas-kenna-website.zip`.
 - Keep the message concise: bilingual completion, category, mirrored ordering, verified ZIP count, GitHub backup, and local/remote synchronization.
+- When the user asks only to create, resend, or make the ZIP downloadable, rerun the verifier against the most recent recipe and reply with only the `MEDIA:` line; do not add a preamble.
 - Do not append a full recipe inventory or repeat deployment instructions unless the user asks.
 
 ### 8. Homepage Ordering Rules
