@@ -1,0 +1,9 @@
+- 50g dried porcini mushrooms
+- 1 vegetable stock cube
+- 2 tbsp [olive oil](https://www.bbcgoodfood.com/glossary/olive-oil-glossary)
+- 1 [onion,](https://www.bbcgoodfood.com/glossary/onion-glossary) finely chopped
+- 2 [garlic cloves,](https://www.bbcgoodfood.com/glossary/garlic-glossary) finely chopped
+- 250g [pack chestnut mushrooms,](https://www.bbcgoodfood.com/glossary/mushroom-glossary) chopped
+- 300g [risotto rice,](https://www.bbcgoodfood.com/glossary/risotto-rice-glossary) such as arborio
+- 1 x 175ml glass white wine
+- 25g [butter](https://www.bbcgoodfood.com/glossary/butter-glossary)
