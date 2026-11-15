@@ -2,7 +2,7 @@
 name: recipe-website-manager
 title: Recipe Website Manager
 description: Use when maintaining Kenna's bilingual recipe website.
-version: 1.1.0
+version: 1.1.1
 author: Hermes Agent
 license: MIT
 metadata:
@@ -30,6 +30,7 @@ Use for any recipe URL, recipe file, recipe-page correction, homepage reordering
 1. Check `git status --short --branch` in `/data/kenna-recipes-backup`; do not build on unexplained changes.
 2. Search `/data/public_html` for the source recipe ID, canonical title, canonical source URL, and proposed slug before creating files.
 3. If the recipe already exists, reverify the current ZIP and Git state and resend it; do not create duplicate pages.
+4. When several recipe attachments arrive while work is in progress, treat them as one queue: preserve the partial work, finish every queued recipe, then run one final package/commit/push gate. Do not deliver an intermediate ZIP that omits later queued items, and do not leave orphaned source assets from an abandoned partial recipe.
 
 ### 2. Fetch and Extract the Source
 1. For NYT Cooking, fetch the tracked URL with compression enabled:
@@ -47,6 +48,8 @@ Use for any recipe URL, recipe file, recipe-page correction, homepage reordering
 8. For a recipe photo or screenshot, transcribe every visible title, serving, ingredient, quantity, and unit exactly, and determine whether the image cuts off instructions or timing. Search by exact title and distinctive quantities only to recover the same source; never replace it with a similar publisher's recipe.
 9. If instructions are missing, ask for the continuation image first. When the user explicitly authorizes a best-effort reconstruction, build the method only from the supplied ingredients and ordinary cooking technique; state clearly in both language pages that the method was reconstructed, and keep all omitted times marked as unspecified.
 10. Preserve a user-supplied source image as `SLUG-source.EXT` in `/data/public_html/`, link it from both recipe subtitles, and require that asset in the generated ZIP and Git mirror. This keeps provenance clickable when no public source URL exists.
+11. Preserve a user-supplied text or Markdown recipe unchanged as `SLUG-source.EXT`, link it from both subtitles, and require it in the ZIP and Git mirror. If its title conflicts with its ingredients or method, retain the supplied title and add a concise bilingual note describing the mismatch; never silently rename or “correct” the source.
+12. When a partial document contains distinctive publisher links, quantities, or ingredient wording, locate the exact canonical recipe and compare those fingerprints before completing omitted ingredients, directions, yield, or timing. Attribute the canonical page and state on both language pages that the supplied document was partial and was completed from that source; do not present recovered material as if it appeared in the attachment.
 
 ### 3. Create the Bilingual Recipe Pages
 - Create English and Spanish files from the approved page structure, using one concise canonical title without promotional qualifiers.
@@ -69,6 +72,7 @@ Use for any recipe URL, recipe file, recipe-page correction, homepage reordering
 2. Run `scripts/verify-recipe-site.py --slug SLUG --source-url CANONICAL_URL`; this validates both pages and assets, all nine category orders, mirrored EN/ES slug order, ZIP contents, and the backup mirror.
 3. Inspect `git status --short` and the staged/unstaged diff immediately after verification. The mirror removes backup files absent from `/data/public_html`; commit those deletions only when they are stale deploy artifacts, not intentional repository documentation or archives.
 4. Treat the verifier's ZIP entry count and SHA-256 as the only reportable package totals; never carry counts forward from a previous recipe.
+5. For a queued batch, run the verifier once per new slug against its own canonical source, then inspect the final archive once and assert that every queued EN page, ES page, and preserved source asset is present. This catches a structurally valid package that accidentally omits one queued attachment.
 
 ### 6. Commit and Prove the Push
 1. Commit the mirrored website with a descriptive recipe-specific message.
