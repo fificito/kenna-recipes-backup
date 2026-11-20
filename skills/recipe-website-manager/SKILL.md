@@ -2,7 +2,7 @@
 name: recipe-website-manager
 title: Recipe Website Manager
 description: Use when maintaining Kenna's bilingual recipe website.
-version: 1.1.1
+version: 1.1.2
 author: Hermes Agent
 license: MIT
 metadata:
@@ -39,7 +39,7 @@ Use for any recipe URL, recipe file, recipe-page correction, homepage reordering
      -o /tmp/recipe-source.html -w 'status=%{http_code} bytes=%{size_download}\n' 'URL'
    ```
 2. Parse schema.org Recipe JSON-LD from the downloaded HTML with `scripts/extract-jsonld-recipe.py`; it handles both plain and gzip-compressed files.
-3. For redirecting share links such as `share.google/...`, fetch with `curl -L --compressed` and record `%{url_effective}`. Treat the final publisher URL as canonical, rerun duplicate checks against it, parse the downloaded final page, and link the publisher URL rather than the share URL.
+3. For redirecting share links such as `share.google/...`, fetch with `curl -L --compressed` and record `%{url_effective}`. Treat the final publisher URL as canonical, rerun duplicate checks against it, and link the publisher URL rather than the share URL. Run the JSON-LD extractor first; when a plain blog post has no Recipe object, extract the recipe only from the canonical article body (for WordPress, the `entry-content` block), preserving the listed ingredient order and method wording. Add unlisted flour, frying oil, water, or similar staples only when the method explicitly uses them, and label their quantity by purpose rather than inventing a measurement.
 4. For Pinterest links, extract `resource_response.data.link` from the pin's `resource-response-data` JSON before fetching the recipe; the pin is provenance, not the recipe source.
 4. If the canonical recipe page is WAF-blocked, keep that canonical URL and search the exact title plus domain for same-domain recipe-card surfaces such as `/wprm_print/SLUG` or `/print`. Use search snippets only when they expose the complete card, and cross-check title, author, times, yield, ingredients, and directions against another same-domain result; never substitute a similarly titled recipe from another publisher.
 5. Extract the canonical title, author, description, yield, prep/cook/total times, ingredients, instructions, category, cuisine, and canonical source URL. Link the canonical article, not a print endpoint or search-result URL.
@@ -48,8 +48,9 @@ Use for any recipe URL, recipe file, recipe-page correction, homepage reordering
 8. For a recipe photo or screenshot, transcribe every visible title, serving, ingredient, quantity, and unit exactly, and determine whether the image cuts off instructions or timing. Search by exact title and distinctive quantities only to recover the same source; never replace it with a similar publisher's recipe.
 9. If instructions are missing, ask for the continuation image first. When the user explicitly authorizes a best-effort reconstruction, build the method only from the supplied ingredients and ordinary cooking technique; state clearly in both language pages that the method was reconstructed, and keep all omitted times marked as unspecified.
 10. Preserve a user-supplied source image as `SLUG-source.EXT` in `/data/public_html/`, link it from both recipe subtitles, and require that asset in the generated ZIP and Git mirror. This keeps provenance clickable when no public source URL exists.
-11. Preserve a user-supplied text or Markdown recipe unchanged as `SLUG-source.EXT`, link it from both subtitles, and require it in the ZIP and Git mirror. If its title conflicts with its ingredients or method, retain the supplied title and add a concise bilingual note describing the mismatch; never silently rename or “correct” the source.
-12. When a partial document contains distinctive publisher links, quantities, or ingredient wording, locate the exact canonical recipe and compare those fingerprints before completing omitted ingredients, directions, yield, or timing. Attribute the canonical page and state on both language pages that the supplied document was partial and was completed from that source; do not present recovered material as if it appeared in the attachment.
+11. Preserve a user-supplied text or Markdown recipe unchanged as `SLUG-source.EXT`, link it from both subtitles, and require it in the ZIP and Git mirror. Treat a recipe typed directly into chat the same way: save the message verbatim as `SLUG-source.txt` before editing or translating it. If its title conflicts with its ingredients or method, retain the supplied title and add a concise bilingual note describing the mismatch; never silently rename or “correct” the source.
+12. When the user supplies a personal or family method and asks to search the traditional dish, keep the supplied method as the canonical recipe. Use external sources only to confirm names, context, or a clearly separated traditional variation; do not replace flexible family quantities with measurements from another recipe. Mark omitted quantities, yield, and timing as flexible or unspecified.
+13. When a partial document contains distinctive publisher links, quantities, or ingredient wording, locate the exact canonical recipe and compare those fingerprints before completing omitted ingredients, directions, yield, or timing. Attribute the canonical page and state on both language pages that the supplied document was partial and was completed from that source; do not present recovered material as if it appeared in the attachment.
 
 ### 3. Create the Bilingual Recipe Pages
 - Create English and Spanish files from the approved page structure, using one concise canonical title without promotional qualifiers.
